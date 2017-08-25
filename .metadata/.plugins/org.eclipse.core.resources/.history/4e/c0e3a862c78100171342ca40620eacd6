@@ -1,0 +1,18 @@
+package com.softdelsur.agricola.controller;
+
+public  class CampoDTO {
+	
+	String  idCampo ="dfsadfsdfasdfsafsdfsadf";
+	  int altitud=34;
+	  int codigo=23;
+	  int hectarea=123;
+	String nombre="campo1";
+	String tipo="tipo1";
+	
+	public CampoDTO() {
+		
+	}
+	
+
+
+}

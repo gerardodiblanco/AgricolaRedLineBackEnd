@@ -1,0 +1,60 @@
+package com.softdelsur.agricola.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.softdelsur.agricola.entity.Campo;
+import com.softdelsur.agricola.model.CampoModel;
+import com.softdelsur.agricola.service.CampoService;
+
+@RestController
+@RequestMapping("/campo")
+public class CampoController {
+	Campo1 campo1;
+	Campo1 campo2;
+	
+	List<Campo1> campos = new ArrayList<Campo1>();
+	public CampoController() {
+		campo1= new Campo1();
+		campo2= new Campo1();
+		campos.add(campo1);
+		campos.add(campo2);
+	}
+	 
+	
+	@Autowired
+	@Qualifier("campoServiceImpl")
+	CampoService campoService;
+	
+	/*
+	@RequestMapping("/all")
+	public List<CampoModel> getCampos() {
+		
+		return campoService.findCampos();
+		
+	}
+	*/
+	
+	@RequestMapping("/all")
+	public List<Campo1> getCampos() {
+		
+		return campos;
+		
+	}
+
+
+
+}
+class Campo1{
+String  idCampo ="dfsadfsdfasdfsafsdfsadf";
+  int altitud=34;
+  int codigo=23;
+  int hectarea=123;
+String nombre="campo1";
+String tipo="tipo1";
+}

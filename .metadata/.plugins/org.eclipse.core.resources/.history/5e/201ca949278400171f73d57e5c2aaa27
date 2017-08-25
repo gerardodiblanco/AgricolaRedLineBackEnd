@@ -1,0 +1,76 @@
+package com.softdelsur.agricola.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.softdelsur.agricola.entity.Campo;
+import com.softdelsur.agricola.model.CampoModel;
+import com.softdelsur.agricola.service.CampoService;
+
+@RestController
+@RequestMapping("/campo")
+public class CampoController {
+
+
+	
+	@Autowired
+	@Qualifier("campoServiceImpl")
+	CampoService campoService;
+	
+	@CrossOrigin
+	@RequestMapping("/all")
+	public List<CampoDTO> getCampos() {
+		List<CampoDTO> campoDTOs = new ArrayList<CampoDTO>();
+		
+		for (CampoModel campoModel : campoService.findCampos()) {
+			CampoDTO campoDTO = new CampoDTO();
+			campoDTO.setCodigo(campoModel.getCodigo());
+			campoDTO.setHectarea(campoModel.getHectarea());
+		}
+		
+		return campoDTOs;
+		
+	}
+	
+	
+
+	
+	
+	  
+
+
+
+
+}
+
+	class CampoDTO{
+	private String nombre;
+	private int codigo;
+	private float hectarea;
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public int getHectarea() {
+		return hectarea;
+	}
+	public void setHectarea(int hectarea) {
+		this.hectarea = hectarea;
+	}
+	
+	
+}

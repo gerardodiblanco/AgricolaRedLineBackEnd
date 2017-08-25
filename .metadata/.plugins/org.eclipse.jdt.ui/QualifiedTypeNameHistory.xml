@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="javax.persistence.Table"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="org.hibernate.annotations.GenericGenerator"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.model.CoordenadaDTO"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.converter.CoordenadaConverter"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.converter.CampoConerter"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.converter.CampoConverter"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.repository.CampoRepository"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.entity.Campo"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.entity.Coordenada"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.model.CoordenadaModel"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.model.CampoModel"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Qualifier"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.service.CampoService"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.entity.Domicilio"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.model.DomicilioModel"/>
+<fullyQualifiedTypeName name="com.softdelsur.agricola.model.LocalidadModel"/>
+</qualifiedTypeNameHistroy>
