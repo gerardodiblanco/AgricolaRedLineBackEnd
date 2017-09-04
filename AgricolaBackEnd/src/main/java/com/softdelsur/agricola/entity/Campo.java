@@ -125,6 +125,7 @@ public int hashCode() {
 	result = prime * result + ((cuartelList == null) ? 0 : cuartelList.hashCode());
 	result = prime * result + ((domicilio == null) ? 0 : domicilio.hashCode());
 	result = prime * result + Float.floatToIntBits(hectarea);
+	result = prime * result + ((idCampo == null) ? 0 : idCampo.hashCode());
 	result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 	result = prime * result + ((proveedor == null) ? 0 : proveedor.hashCode());
 	result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
@@ -167,6 +168,11 @@ public boolean equals(Object obj) {
 	} else if (!domicilio.equals(other.domicilio))
 		return false;
 	if (Float.floatToIntBits(hectarea) != Float.floatToIntBits(other.hectarea))
+		return false;
+	if (idCampo == null) {
+		if (other.idCampo != null)
+			return false;
+	} else if (!idCampo.equals(other.idCampo))
 		return false;
 	if (nombre == null) {
 		if (other.nombre != null)

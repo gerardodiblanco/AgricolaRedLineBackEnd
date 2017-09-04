@@ -6,10 +6,12 @@ public class CoordenadaModel {
     
     private double latitud;
     private double longitud;
+    private int nroOrden;
     
-    public CoordenadaModel(double lat,double lng) {
+    public CoordenadaModel(int orden,double lat,double lng) {
     	this.latitud = lat;
     	this.longitud = lng;
+    	this.nroOrden = orden;
     }
     
     
@@ -35,6 +37,19 @@ public class CoordenadaModel {
 	public void setLongitud(double longitud) {
 		this.longitud = longitud;
 	}
+
+
+
+	public int getNroOrden() {
+		return nroOrden;
+	}
+
+
+
+	public void setNroOrden(int nroOrden) {
+		this.nroOrden = nroOrden;
+	}
+	
     
     
 

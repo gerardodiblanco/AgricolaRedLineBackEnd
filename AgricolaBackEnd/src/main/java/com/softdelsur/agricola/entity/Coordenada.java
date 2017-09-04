@@ -22,6 +22,7 @@ public class Coordenada {
 	    
 	    private double latitud;
 	    private double longitud;
+	    private int nroOrden;
 	    
 	    
 	    
@@ -46,6 +47,12 @@ public class Coordenada {
 		public void setLongitud(double longitud) {
 			this.longitud = longitud;
 		}
+		public int getNroOrden() {
+			return nroOrden;
+		}
+		public void setNroOrden(int nroOrden) {
+			this.nroOrden = nroOrden;
+		}
 		@Override
 		public int hashCode() {
 			final int prime = 31;
@@ -55,6 +62,7 @@ public class Coordenada {
 			result = prime * result + (int) (temp ^ (temp >>> 32));
 			temp = Double.doubleToLongBits(longitud);
 			result = prime * result + (int) (temp ^ (temp >>> 32));
+			result = prime * result + nroOrden;
 			return result;
 		}
 		@Override
@@ -70,12 +78,11 @@ public class Coordenada {
 				return false;
 			if (Double.doubleToLongBits(longitud) != Double.doubleToLongBits(other.longitud))
 				return false;
+			if (nroOrden != other.nroOrden)
+				return false;
 			return true;
 		}
-	
-
-	
-	    
-	    
+		
+   
 	   
 }

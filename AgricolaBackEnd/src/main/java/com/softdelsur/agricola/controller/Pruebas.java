@@ -57,18 +57,22 @@ public class Pruebas {
 		
 		
 		
-		CoordenadaModel coordenada1 = new CoordenadaModel(-32.880459, -68.854432);
-		CoordenadaModel coordenada2 = new CoordenadaModel(-32.875174, -68.837376 );
-		CoordenadaModel coordenada3 = new CoordenadaModel(-32.880913, -68.833190);
+		CoordenadaModel coordenada1 = new CoordenadaModel(1, -32.880459, -68.854432);
+		CoordenadaModel coordenada2 = new CoordenadaModel(2, -32.875174, -68.837376 );
+		CoordenadaModel coordenada3 = new CoordenadaModel(3, -32.880913, -68.833190);
+		CoordenadaModel coordenada4 = new CoordenadaModel(4, -32.883914, -68.836198);
+		CoordenadaModel coordenada5 = new CoordenadaModel(5, -32.881914, -68.835192);
 		
 		CampoModel campo1 = new CampoModel();
 		campo1.setCodigo(123);
 		campo1.setHectarea(24);
 		campo1.setNombre("campo1");
+		campo1.setCUIT("2-654654165-46");
 		
 		campo1.getCoordenadaList().add(coordenada1);
 		campo1.getCoordenadaList().add(coordenada2);
 		campo1.getCoordenadaList().add(coordenada3);
+		campo1.getCoordenadaList().add(coordenada4);
 		
 		campo1.setDomicilio(domicilio);
 		EstadoProveedorModel estadoProveedorModel = new EstadoProveedorModel();

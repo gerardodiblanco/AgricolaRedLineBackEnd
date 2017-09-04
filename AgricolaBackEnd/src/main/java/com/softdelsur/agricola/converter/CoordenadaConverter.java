@@ -16,6 +16,7 @@ public class CoordenadaConverter {
 		coordenada.setId(coordenadaModel.getId());
 		coordenada.setLatitud(coordenadaModel.getLatitud());
 		coordenada.setLongitud(coordenadaModel.getLongitud());
+		coordenada.setNroOrden(coordenadaModel.getNroOrden());
 		
 		return coordenada;
 	}
@@ -25,6 +26,7 @@ public class CoordenadaConverter {
 		coordenadaModel.setId(coordenada.getId());
 		coordenadaModel.setLatitud(coordenada.getLatitud());
 		coordenadaModel.setLongitud(coordenada.getLongitud());
+		coordenadaModel.setNroOrden(coordenada.getNroOrden());
 		
 		return coordenadaModel;
 	}
