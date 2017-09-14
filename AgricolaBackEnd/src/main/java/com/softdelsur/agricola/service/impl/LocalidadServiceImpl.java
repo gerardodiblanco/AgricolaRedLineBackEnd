@@ -1,5 +1,7 @@
 package com.softdelsur.agricola.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -26,6 +28,18 @@ public class LocalidadServiceImpl implements LocalidadService {
 		Localidad localidad = localidadConverter.convertLocalidadModelToLocalidad(localidadModel);
 		
 		return localidadConverter.convertLocalidadToLocalidadModel(localidadRepository.save(localidad));
+	}
+
+	@Override
+	public Localidad findByNombreLocalidad(String nombre) {
+		
+		return localidadRepository.findByNombre(nombre);
+	}
+
+	@Override
+	public List<LocalidadModel> findLocalidadesAll() {
+		
+		return localidadConverter.convertListLocalidadToListLocalidadModel(localidadRepository.findAll());
 	}
 
 }

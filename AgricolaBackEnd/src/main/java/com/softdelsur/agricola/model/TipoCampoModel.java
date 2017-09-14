@@ -4,15 +4,11 @@ public class TipoCampoModel {
 
     private String idTipo;
 private int codigo;
-private int descripcion;
+private String nombre;
 	public TipoCampoModel(){
 		
 	}
-	public TipoCampoModel(int codigo, int descripcion) {
-		super();
-		this.codigo = codigo;
-		this.descripcion = descripcion;
-	}
+
 	public String getIdTipo() {
 		return idTipo;
 	}
@@ -25,11 +21,14 @@ private int descripcion;
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public int getDescripcion() {
-		return descripcion;
+
+	public String getNombre() {
+		return nombre;
 	}
-	public void setDescripcion(int descripcion) {
-		this.descripcion = descripcion;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
+
 	
 }

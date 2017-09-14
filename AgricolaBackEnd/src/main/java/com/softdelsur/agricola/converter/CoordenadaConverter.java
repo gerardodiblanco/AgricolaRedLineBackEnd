@@ -3,17 +3,30 @@ package com.softdelsur.agricola.converter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.softdelsur.agricola.entity.Coordenada;
 
 import com.softdelsur.agricola.model.CoordenadaModel;
+import com.softdelsur.agricola.service.CoordenadaService;
 
 @Component("coordenadaConverter")
 public class CoordenadaConverter {
+	
+	@Autowired
+	@Qualifier("coordenadaServiceImpl")
+	CoordenadaService coordenadaService;
+	
 	public Coordenada convertCoordenadaModelToCoordenada(CoordenadaModel coordenadaModel) {
+		System.out.println("convirtiendo coordenadas");
 		Coordenada coordenada = new Coordenada();
+		if(coordenadaModel.getId() == null) {
+			coordenada = coordenadaService.addCorrdenada(coordenada);
+		}else {
 		coordenada.setId(coordenadaModel.getId());
+		}
 		coordenada.setLatitud(coordenadaModel.getLatitud());
 		coordenada.setLongitud(coordenadaModel.getLongitud());
 		coordenada.setNroOrden(coordenadaModel.getNroOrden());

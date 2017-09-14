@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.converter;
 
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.softdelsur.agricola.entity.Campo;
+import com.softdelsur.agricola.model.CampoDTO;
 import com.softdelsur.agricola.model.CampoModel;
 
 @Component("campoConverter")
@@ -25,16 +25,22 @@ public class CampoConverter {
 	ProveedorConverter proveedorConverter;
 	
 	@Autowired
+	@Qualifier("tipoCampoConverter")
+	TipoCampoConverter tipoCampoConverter;
+	
+	@Autowired
 	@Qualifier("coordenadaConverter")
 	CoordenadaConverter coordenadaConverter;
 
 	public Campo convertCampoModelToCampo(CampoModel campoModel){
 		Campo campo = new Campo();
 		campo.setIdCampo(campoModel.getIdCampo());
-		campo.setAltitud(campoModel.getAltitud());
+		
 		campo.setCodigo(campoModel.getCodigo());
 		campo.setCUIT(campoModel.getCUIT());
 		campo.setHectarea(campoModel.getHectarea());
+		
+		campo.setTipo(tipoCampoConverter.convertTipoCampoModelToTipoCampo(campoModel.getTipo()));
 
 		campo.setNombre(campoModel.getNombre());
 		campo.setCuartelList(cuartelConverter.convertListCuartelModelToListCuartel(campoModel.getCuartelList()));
@@ -46,10 +52,12 @@ public class CampoConverter {
 	public CampoModel convertCampoToCampoModel(Campo campo){
 		CampoModel campoModel = new CampoModel();
 		campoModel.setIdCampo(campo.getIdCampo());
-		campoModel.setAltitud(campo.getAltitud());
+		
 		campoModel.setCodigo(campo.getCodigo());
 		campoModel.setCUIT(campo.getCUIT());
 		campoModel.setHectarea(campo.getHectarea());
+		
+		campoModel.setTipo(tipoCampoConverter.convertTipoCampoToTipoCampoModel(campo.getTipo()));
 
 		campoModel.setNombre(campo.getNombre());
 		campoModel.setCuartelList(cuartelConverter.convertListCuartelToListCuartelModel(campo.getCuartelList()));
@@ -75,4 +83,33 @@ public class CampoConverter {
 		return campoModelList;
 		
 	}
+	
+	
+	
+	
+	//converter para CampoDTO
+	
+	public CampoDTO convertCampoToCampoDTO(Campo campo) {
+		CampoDTO campoDTO = new CampoDTO();
+		campoDTO.setCuit(campo.getCUIT());
+		campoDTO.setHectarea(campo.getHectarea());
+		campoDTO.setIdCampo(campo.getIdCampo());
+		campoDTO.setNombre(campo.getNombre());
+		campoDTO.setTipo(campo.getTipo().getNombre());
+	
+		System.out.println("convirtiendo..");
+		return campoDTO;
+	}
+	
+	public List<CampoDTO> convertListCampoToListCampoDTO(List<Campo> campoList){
+		List<CampoDTO> campoDTOList = new ArrayList<CampoDTO>();
+		for (Campo campo : campoList) {
+			campoDTOList.add(convertCampoToCampoDTO(campo));
+		}
+		return campoDTOList;
+	}
+	
+	
+	
+	
 }

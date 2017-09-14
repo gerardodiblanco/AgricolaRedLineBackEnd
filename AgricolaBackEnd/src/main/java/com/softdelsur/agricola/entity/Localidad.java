@@ -17,45 +17,36 @@ public class Localidad {
 	    @Column(name= "id_localidad", unique = true, nullable = false)
 	    @GenericGenerator(name = "uuid", strategy = "uuid2")
 	    @GeneratedValue(generator = "uuid")
-	    private String idLocalidad;
-	    @Column(name = "codigo_postal")
-	private int codPostal;
-	    @Column(name = "nombre")
-	private String nombreLocalidad;
+	    private String idLocalidad;	  
+	    private String nombre;
+	    
 		public Localidad() {
-			super();
+			
 		}
-		public Localidad(int codPostal, String nombreLocalidad) {
-			super();
-			this.codPostal = codPostal;
-			this.nombreLocalidad = nombreLocalidad;
-		}
+
 		public String getIdLocalidad() {
 			return idLocalidad;
 		}
 		public void setIdLocalidad(String idLocalidad) {
 			this.idLocalidad = idLocalidad;
 		}
-		public int getCodPostal() {
-			return codPostal;
+
+		public String getNombre() {
+			return nombre;
 		}
-		public void setCodPostal(int codPostal) {
-			this.codPostal = codPostal;
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
 		}
-		public String getNombreLocalidad() {
-			return nombreLocalidad;
-		}
-		public void setNombreLocalidad(String nombreLocalidad) {
-			this.nombreLocalidad = nombreLocalidad;
-		}
+
 		@Override
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + codPostal;
-			result = prime * result + ((nombreLocalidad == null) ? 0 : nombreLocalidad.hashCode());
+			result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 			return result;
 		}
+
 		@Override
 		public boolean equals(Object obj) {
 			if (this == obj)
@@ -65,14 +56,16 @@ public class Localidad {
 			if (getClass() != obj.getClass())
 				return false;
 			Localidad other = (Localidad) obj;
-			if (codPostal != other.codPostal)
-				return false;
-			if (nombreLocalidad == null) {
-				if (other.nombreLocalidad != null)
+			if (nombre == null) {
+				if (other.nombre != null)
 					return false;
-			} else if (!nombreLocalidad.equals(other.nombreLocalidad))
+			} else if (!nombre.equals(other.nombre))
 				return false;
 			return true;
 		}
+
+
+
+	
 
 }

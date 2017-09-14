@@ -9,5 +9,7 @@ import com.softdelsur.agricola.entity.Campo;
 
 @Repository("campoRepository")
 public interface CampoRepository extends JpaRepository<Campo, Serializable>{
+	
+	Campo findCampoByIdCampo(String idCampo);
 
 }

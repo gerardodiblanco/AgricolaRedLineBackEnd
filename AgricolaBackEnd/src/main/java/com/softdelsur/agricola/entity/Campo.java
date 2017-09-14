@@ -26,11 +26,12 @@ public class Campo {
 	    @GeneratedValue(generator = "uuid")
 	    private String idCampo;
 	    
-	private String altitud;
+	
 	private int codigo;
 	private String CUIT;
 	private float hectarea;
 	private String nombre;
+	@JoinColumn
 @ManyToOne(cascade = CascadeType.REFRESH)
 	private TipoCampo tipo;
 @ManyToOne(cascade = CascadeType.REFRESH)
@@ -41,7 +42,7 @@ public class Campo {
 @OneToMany(cascade = CascadeType.REFRESH)
 	private List<Cuartel> cuartelList = new ArrayList<Cuartel>();
 
-@OneToMany(cascade = CascadeType.PERSIST )
+@OneToMany(cascade = CascadeType.MERGE )
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
 
 public Campo() {
@@ -53,12 +54,7 @@ public String getIdCampo() {
 public void setIdCampo(String idCampo) {
 	this.idCampo = idCampo;
 }
-public String getAltitud() {
-	return altitud;
-}
-public void setAltitud(String altitud) {
-	this.altitud = altitud;
-}
+
 public int getCodigo() {
 	return codigo;
 }
@@ -119,7 +115,6 @@ public int hashCode() {
 	final int prime = 31;
 	int result = 1;
 	result = prime * result + ((CUIT == null) ? 0 : CUIT.hashCode());
-	result = prime * result + ((altitud == null) ? 0 : altitud.hashCode());
 	result = prime * result + codigo;
 	result = prime * result + ((coordenadaList == null) ? 0 : coordenadaList.hashCode());
 	result = prime * result + ((cuartelList == null) ? 0 : cuartelList.hashCode());
@@ -144,11 +139,6 @@ public boolean equals(Object obj) {
 		if (other.CUIT != null)
 			return false;
 	} else if (!CUIT.equals(other.CUIT))
-		return false;
-	if (altitud == null) {
-		if (other.altitud != null)
-			return false;
-	} else if (!altitud.equals(other.altitud))
 		return false;
 	if (codigo != other.codigo)
 		return false;
@@ -191,6 +181,11 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
+
+
+
+
+
 
 
 

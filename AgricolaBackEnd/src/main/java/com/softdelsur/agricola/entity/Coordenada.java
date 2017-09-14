@@ -57,6 +57,7 @@ public class Coordenada {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
+			result = prime * result + ((id == null) ? 0 : id.hashCode());
 			long temp;
 			temp = Double.doubleToLongBits(latitud);
 			result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -74,6 +75,11 @@ public class Coordenada {
 			if (getClass() != obj.getClass())
 				return false;
 			Coordenada other = (Coordenada) obj;
+			if (id == null) {
+				if (other.id != null)
+					return false;
+			} else if (!id.equals(other.id))
+				return false;
 			if (Double.doubleToLongBits(latitud) != Double.doubleToLongBits(other.latitud))
 				return false;
 			if (Double.doubleToLongBits(longitud) != Double.doubleToLongBits(other.longitud))
@@ -83,6 +89,5 @@ public class Coordenada {
 			return true;
 		}
 		
-   
 	   
 }

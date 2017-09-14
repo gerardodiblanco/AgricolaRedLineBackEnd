@@ -19,15 +19,12 @@ public class TipoCampo {
 	    @GeneratedValue(generator = "uuid")
 	    private String idTipo;
 	private int codigo;
-	private int descripcion;
+	private String nombre;
+	
 	public TipoCampo(){
 		
 	}
-	public TipoCampo(int codigo, int descripcion) {
-		super();
-		this.codigo = codigo;
-		this.descripcion = descripcion;
-	}
+
 	public String getIdTipo() {
 		return idTipo;
 	}
@@ -40,20 +37,25 @@ public class TipoCampo {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-	public int getDescripcion() {
-		return descripcion;
+
+	public String getNombre() {
+		return nombre;
 	}
-	public void setDescripcion(int descripcion) {
-		this.descripcion = descripcion;
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + codigo;
-		result = prime * result + descripcion;
+		result = prime * result + ((idTipo == null) ? 0 : idTipo.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -65,10 +67,21 @@ public class TipoCampo {
 		TipoCampo other = (TipoCampo) obj;
 		if (codigo != other.codigo)
 			return false;
-		if (descripcion != other.descripcion)
+		if (idTipo == null) {
+			if (other.idTipo != null)
+				return false;
+		} else if (!idTipo.equals(other.idTipo))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
 			return false;
 		return true;
 	}
+
+
+
 	
 
 }

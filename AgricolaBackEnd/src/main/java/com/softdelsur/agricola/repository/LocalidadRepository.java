@@ -11,4 +11,5 @@ import com.softdelsur.agricola.entity.Localidad;
 public interface LocalidadRepository extends JpaRepository<Localidad, Serializable>{
 	
 
+	Localidad findByNombre(String nombre);
 }

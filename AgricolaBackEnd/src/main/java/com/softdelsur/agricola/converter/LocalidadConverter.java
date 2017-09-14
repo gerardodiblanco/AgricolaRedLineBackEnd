@@ -1,7 +1,10 @@
 package com.softdelsur.agricola.converter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.RequestToViewNameTranslator;
+
 
 import com.softdelsur.agricola.entity.Localidad;
 import com.softdelsur.agricola.model.LocalidadModel;
@@ -11,17 +14,27 @@ public class LocalidadConverter {
 	public Localidad convertLocalidadModelToLocalidad(LocalidadModel localidadModel){
 		Localidad localidad = new Localidad();
 		localidad.setIdLocalidad(localidadModel.getIdLocalidad());
-		localidad.setCodPostal(localidadModel.getCodPostal());
-		localidad.setNombreLocalidad(localidadModel.getIdLocalidad());
+		
+		localidad.setNombre(localidadModel.getNombre());
 		return localidad;
 		
 	}
 	public LocalidadModel convertLocalidadToLocalidadModel(Localidad localidad){
 		LocalidadModel localidadModel = new LocalidadModel();
 		localidadModel.setIdLocalidad(localidad.getIdLocalidad());
-		localidadModel.setCodPostal(localidad.getCodPostal());
-		localidadModel.setNombreLocalidad(localidad.getNombreLocalidad());
+		
+		localidadModel.setNombre(localidad.getNombre());
 		return localidadModel;
+	}
+	
+	public List<LocalidadModel> convertListLocalidadToListLocalidadModel(List<Localidad> localidadList){
+		List<LocalidadModel> localidadModelList = new ArrayList<LocalidadModel>();
+		
+		for(Localidad localidad: localidadList) {
+			localidadModelList.add(convertLocalidadToLocalidadModel(localidad));
+		}
+		
+		return localidadModelList;
 	}
 
 }
