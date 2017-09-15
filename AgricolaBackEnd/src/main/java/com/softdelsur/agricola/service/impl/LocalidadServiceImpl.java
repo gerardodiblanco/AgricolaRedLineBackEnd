@@ -24,10 +24,10 @@ public class LocalidadServiceImpl implements LocalidadService {
 	LocalidadConverter localidadConverter;
 
 	@Override
-	public LocalidadModel addLocalidad(LocalidadModel localidadModel) {
-		Localidad localidad = localidadConverter.convertLocalidadModelToLocalidad(localidadModel);
+	public Localidad addLocalidad(Localidad localidad) {
 		
-		return localidadConverter.convertLocalidadToLocalidadModel(localidadRepository.save(localidad));
+		
+		return localidadRepository.save(localidad);
 	}
 
 	@Override

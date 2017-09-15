@@ -1,9 +1,9 @@
 package com.softdelsur.agricola.service;
 
-import com.softdelsur.agricola.model.ProveedorModel;
+import com.softdelsur.agricola.entity.Proveedor;
 
 public interface ProveedorService {
 	
-	ProveedorModel addProveedor(ProveedorModel proveedorModel);
+	Proveedor addProveedor(Proveedor proveedor);
 
 }

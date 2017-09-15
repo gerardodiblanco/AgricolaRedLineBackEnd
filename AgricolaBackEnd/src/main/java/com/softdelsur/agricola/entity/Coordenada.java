@@ -27,8 +27,22 @@ public class Coordenada {
 	    
 	    
 		public Coordenada() {
-			super();
+			
 		}
+		
+		
+		
+		
+		public Coordenada(int nroOrden ,double latitud, double longitud)  {
+			super();
+			this.latitud = latitud;
+			this.longitud = longitud;
+			this.nroOrden = nroOrden;
+		}
+
+
+
+
 		public String getId() {
 			return id;
 		}

@@ -3,10 +3,14 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.softdelsur.agricola.entity.Campo;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
-public class CampoModel {
+import com.softdelsur.agricola.entity.Caracteristica;
+import com.softdelsur.agricola.entity.Coordenada;
 
+
+public class CampoModelNO {
     private String idCampo;
     
 
@@ -15,36 +19,21 @@ private String CUIT;
 private float hectarea;
 private String nombre;
 
-//tipoCampo
-private String tipo;
+private TipoCampoModel tipo;
 
-//domicilio
-private String calle;
+private DomicilioModel domicilio;
 
-private int numeroDomicilio;
-
-//localidad
-
-private String localidad;
-
-
-
- // private ProveedorModel proveedor;
-
-
-
+private ProveedorModel proveedor;
 
 private List<CuartelModel> cuartelList = new ArrayList<CuartelModel>();
 private List<CoordenadaModel> coordenadaList = new ArrayList<CoordenadaModel>();
 
-public CampoModel() {
+public CampoModelNO() {
 	super();
 }
-
 public String getIdCampo() {
 	return idCampo;
 }
-
 public void setIdCampo(String idCampo) {
 	this.idCampo = idCampo;
 }
@@ -52,23 +41,18 @@ public void setIdCampo(String idCampo) {
 public int getCodigo() {
 	return codigo;
 }
-
 public void setCodigo(int codigo) {
 	this.codigo = codigo;
 }
-
 public String getCUIT() {
 	return CUIT;
 }
-
 public void setCUIT(String cUIT) {
 	CUIT = cUIT;
 }
-
 public float getHectarea() {
 	return hectarea;
 }
-
 public void setHectarea(float hectarea) {
 	this.hectarea = hectarea;
 }
@@ -76,61 +60,39 @@ public void setHectarea(float hectarea) {
 public String getNombre() {
 	return nombre;
 }
-
 public void setNombre(String nombre) {
 	this.nombre = nombre;
 }
-
-public String getTipo() {
+public TipoCampoModel getTipo() {
 	return tipo;
 }
-
-public void setTipo(String tipo) {
+public void setTipo(TipoCampoModel tipo) {
 	this.tipo = tipo;
 }
-
-
-public String getCalle() {
-	return calle;
+public DomicilioModel getDomicilio() {
+	return domicilio;
 }
-
-public void setCalle(String calle) {
-	this.calle = calle;
+public void setDomicilio(DomicilioModel domicilio) {
+	this.domicilio = domicilio;
 }
-
-public int getNumeroDomicilio() {
-	return numeroDomicilio;
+public ProveedorModel getProveedor() {
+	return proveedor;
 }
-
-public void setNumeroDomicilio(int numeroDomicilio) {
-	this.numeroDomicilio = numeroDomicilio;
+public void setProveedor(ProveedorModel proveedor) {
+	this.proveedor = proveedor;
 }
-
-public String getLocalidad() {
-	return localidad;
-}
-
-public void setLocalidad(String localidad) {
-	this.localidad = localidad;
-}
-
 public List<CuartelModel> getCuartelList() {
 	return cuartelList;
 }
-
 public void setCuartelList(List<CuartelModel> cuartelList) {
 	this.cuartelList = cuartelList;
 }
-
 public List<CoordenadaModel> getCoordenadaList() {
 	return coordenadaList;
 }
-
 public void setCoordenadaList(List<CoordenadaModel> coordenadaList) {
 	this.coordenadaList = coordenadaList;
 }
 
 
 }
-
-

@@ -7,7 +7,7 @@ import com.softdelsur.agricola.model.LocalidadModel;
 
 public interface LocalidadService {
 	
-	LocalidadModel addLocalidad(LocalidadModel localidadModel);
+	Localidad addLocalidad(Localidad localidad);
 	Localidad findByNombreLocalidad(String nombre);
 	
 	List<LocalidadModel> findLocalidadesAll();

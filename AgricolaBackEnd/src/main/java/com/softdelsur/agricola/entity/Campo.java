@@ -44,6 +44,9 @@ public class Campo {
 
 @OneToMany(cascade = CascadeType.MERGE )
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
+@JoinColumn(name = "id_estado")	
+@ManyToOne(cascade = CascadeType.REFRESH)
+	private EstadoCampo estadoCampo;
 
 public Campo() {
 	super();
@@ -110,6 +113,14 @@ public List<Coordenada> getCoordenadaList() {
 public void setCoordenadaList(List<Coordenada> coordenadaList) {
 	this.coordenadaList = coordenadaList;
 }
+
+public EstadoCampo getEstadoCampo() {
+	return estadoCampo;
+}
+public void setEstadoCampo(EstadoCampo estadoCampo) {
+	this.estadoCampo = estadoCampo;
+}
+
 @Override
 public int hashCode() {
 	final int prime = 31;

@@ -21,11 +21,6 @@ public class DomicilioServiceImpl implements DomicilioService {
 	@Qualifier("domicilioConverter")
 	DomicilioConverter domicilioConverter;
 	  
-	@Override
-	public DomicilioModel addDomicilioModel(DomicilioModel domicilioModel) {
-		Domicilio domicilio = domicilioConverter.convertDomicilioModelToDomicilio(domicilioModel);
-		return domicilioConverter.convertDomicilioToDomicilioModel(domicilioRepository.save(domicilio));
-	}
 
 	@Override
 	public Domicilio addDomicilio(Domicilio domicilio) {

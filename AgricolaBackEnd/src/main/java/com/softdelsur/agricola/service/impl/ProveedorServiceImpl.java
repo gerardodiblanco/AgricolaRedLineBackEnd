@@ -22,9 +22,8 @@ public class ProveedorServiceImpl implements ProveedorService {
 	ProveedorRepository proveedorRepository;
 
 	@Override
-	public ProveedorModel addProveedor(ProveedorModel proveedorModel) {
-		Proveedor proveedor = proveedorConverter.convertProveedorModelToProveedor(proveedorModel);
-		return proveedorConverter.convertProveedorToProveedorModel(proveedorRepository.save(proveedor));
+	public Proveedor addProveedor(Proveedor proveedor) {
+		return proveedorRepository.save(proveedor);
 	}
 
 }

@@ -7,7 +7,7 @@ import com.softdelsur.agricola.model.TipoCampoModel;
 
 public interface TipoCampoService {
 
-	TipoCampoModel addTipoCampo(TipoCampoModel tipoCampoModel);
+	TipoCampo addTipoCampo(TipoCampo tipoCampo);
 	List<TipoCampoModel> findAll();
 	
 	TipoCampo findTipoCampoByNombre(String nombre);

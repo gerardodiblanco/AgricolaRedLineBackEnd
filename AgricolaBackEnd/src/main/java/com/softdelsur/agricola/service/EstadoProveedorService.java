@@ -1,9 +1,10 @@
 package com.softdelsur.agricola.service;
 
-import com.softdelsur.agricola.model.EstadoProveedorModel;
+import com.softdelsur.agricola.entity.EstadoProveedor;
+
 
 public interface EstadoProveedorService {
 	
-	EstadoProveedorModel addEstadoProveedor(EstadoProveedorModel estadoProveedorModel);
+	EstadoProveedor addEstadoProveedor(EstadoProveedor estadoProveedor);
 
 }

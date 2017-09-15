@@ -23,9 +23,9 @@ public class TipoCampoServiceImpl implements TipoCampoService {
 	TipoCampoConverter tipoCampoConverter;
 	
 	@Override
-	public TipoCampoModel addTipoCampo(TipoCampoModel tipoCampoModel) {
+	public TipoCampo addTipoCampo(TipoCampo tipoCampo) {
 		
-		return tipoCampoConverter.convertTipoCampoToTipoCampoModel(tipoCampoRepository.save(tipoCampoConverter.convertTipoCampoModelToTipoCampo(tipoCampoModel)));
+		return tipoCampoRepository.save(tipoCampo);
 	}
 
 	@Override

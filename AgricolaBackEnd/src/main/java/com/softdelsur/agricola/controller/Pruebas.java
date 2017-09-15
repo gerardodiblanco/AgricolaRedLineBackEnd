@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.softdelsur.agricola.entity.Campo;
 import com.softdelsur.agricola.entity.Coordenada;
 import com.softdelsur.agricola.entity.Domicilio;
+import com.softdelsur.agricola.entity.EstadoCampo;
 import com.softdelsur.agricola.entity.EstadoProveedor;
+import com.softdelsur.agricola.entity.Localidad;
 import com.softdelsur.agricola.entity.Proveedor;
 import com.softdelsur.agricola.entity.TipoCampo;
 import com.softdelsur.agricola.model.CampoModel;
@@ -21,6 +23,7 @@ import com.softdelsur.agricola.model.TipoCampoModel;
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.CoordenadaService;
 import com.softdelsur.agricola.service.DomicilioService;
+import com.softdelsur.agricola.service.EstadoCampoService;
 import com.softdelsur.agricola.service.EstadoProveedorService;
 import com.softdelsur.agricola.service.LocalidadService;
 import com.softdelsur.agricola.service.ProveedorService;
@@ -58,35 +61,46 @@ public class Pruebas {
 	@Qualifier("tipoCampoServiceImpl")
 	TipoCampoService tipoCampoService;
 	
+	@Autowired
+	@Qualifier("estadoCampoServiceImpl")
+	EstadoCampoService estadoCampoService;
+	
 	@RequestMapping("/campo")
 	public String crear() {
+		
+		EstadoCampo estadoCampoEliminado = new EstadoCampo("Eliminado");
+		estadoCampoEliminado = estadoCampoService.addEstadoCampo(estadoCampoEliminado);
+		
+		EstadoCampo estadoCampoActivo = new EstadoCampo("Activo");
+		estadoCampoActivo = estadoCampoService.addEstadoCampo(estadoCampoActivo);
+		
 	
-		DomicilioModel domicilio = new DomicilioModel();
-		LocalidadModel localidad = new LocalidadModel();
+		Domicilio domicilio = new Domicilio();
+		Localidad localidad = new Localidad();
 		localidad.setNombre("Agrelo");
 		localidad = localidadService.addLocalidad(localidad);
 		
-		LocalidadModel localidad2 = new LocalidadModel();
+		Localidad localidad2 = new Localidad();
 		localidad2.setNombre("La Consulta");
 		localidad2 = localidadService.addLocalidad(localidad2);
 		
 		domicilio.setLocalidad(localidad);
-		domicilio = domicilioService.addDomicilioModel(domicilio);
+		domicilio = domicilioService.addDomicilio(domicilio);
 		
 		
 		
-		CoordenadaModel coordenada1 = new CoordenadaModel(1, -32.880459, -68.854432);
-		coordenada1 = coordenadaService.addCorrdenadaModel(coordenada1);
-		CoordenadaModel coordenada2 = new CoordenadaModel(2, -32.875174, -68.837376 );
-		coordenada2 = coordenadaService.addCorrdenadaModel(coordenada2);
-		CoordenadaModel coordenada3 = new CoordenadaModel(3, -32.880913, -68.833190);
-		coordenada3 = coordenadaService.addCorrdenadaModel(coordenada3);
-		CoordenadaModel coordenada4 = new CoordenadaModel(4, -32.883914, -68.836198);
-		coordenada4 = coordenadaService.addCorrdenadaModel(coordenada4);
-		CoordenadaModel coordenada5 = new CoordenadaModel(5, -32.881914, -68.835192);
-		coordenada5 = coordenadaService.addCorrdenadaModel(coordenada5);
+		Coordenada coordenada1 = new Coordenada(1, -32.880459, -68.854432);
+		coordenada1 = coordenadaService.addCorrdenada(coordenada1);
+		Coordenada coordenada2 = new Coordenada(2, -32.875174, -68.837376 );
+		coordenada2 = coordenadaService.addCorrdenada(coordenada2);
+		Coordenada coordenada3 = new Coordenada(3, -32.880913, -68.833190);
+		coordenada3 = coordenadaService.addCorrdenada(coordenada3);
+		Coordenada coordenada4 = new Coordenada(4, -32.883914, -68.836198);
+		coordenada4 = coordenadaService.addCorrdenada(coordenada4);
+		Coordenada coordenada5 = new Coordenada(5, -32.881914, -68.835192);
+		coordenada5 = coordenadaService.addCorrdenada(coordenada5);
 		
-		CampoModel campo1 = new CampoModel();
+		Campo campo1 = new Campo();
 		campo1.setCodigo(123);
 		campo1.setHectarea(24);
 		campo1.setNombre("campo1");
@@ -98,32 +112,38 @@ public class Pruebas {
 		campo1.getCoordenadaList().add(coordenada4);
 		
 		campo1.setDomicilio(domicilio);
-		EstadoProveedorModel estadoProveedorModel = new EstadoProveedorModel();
-		estadoProveedorModel = estadoProveedorService.addEstadoProveedor(estadoProveedorModel);
+		EstadoProveedor estadoProveedor = new EstadoProveedor();
+		estadoProveedor = estadoProveedorService.addEstadoProveedor(estadoProveedor);
 		
-		ProveedorModel proveedorModel = new ProveedorModel();
-		proveedorModel.setEstado(estadoProveedorModel);
+		Proveedor proveedor = new Proveedor();
+		proveedor.setEstado(estadoProveedor);
 
-		proveedorModel = proveedorService.addProveedor(proveedorModel);
+		proveedor = proveedorService.addProveedor(proveedor);
 		
 		
-		campo1.setProveedor(proveedorModel);
+		campo1.setProveedor(proveedor);
+		
+		
 		
 		
 		//tipo campo
 		
-		TipoCampoModel tipoCampoModel2 = new TipoCampoModel();
-		tipoCampoModel2.setCodigo(456);
-		tipoCampoModel2.setNombre("papa");
-		tipoCampoModel2 = tipoCampoService.addTipoCampo(tipoCampoModel2);
+		TipoCampo tipoCampo2 = new TipoCampo();
+		tipoCampo2.setCodigo(456);
+		tipoCampo2.setNombre("papa");
+		tipoCampo2 = tipoCampoService.addTipoCampo(tipoCampo2);
 		
-		TipoCampoModel tipoCampoModel = new TipoCampoModel();
-		tipoCampoModel.setCodigo(123);
-		tipoCampoModel.setNombre("viñedo");
-		tipoCampoModel = tipoCampoService.addTipoCampo(tipoCampoModel);
-		campo1.setTipo(tipoCampoModel);
+		TipoCampo tipoCampo = new TipoCampo();
+		tipoCampo.setCodigo(123);
+		tipoCampo.setNombre("viñedo");
+		tipoCampo = tipoCampoService.addTipoCampo(tipoCampo);
+		campo1.setTipo(tipoCampo);
 		
-		campo1 = campoService.addCampoModel(campo1);
+	//set estado
+		campo1.setEstadoCampo(estadoCampoActivo);
+		
+		campo1 = campoService.addCampo(campo1);
+		
 		
 		return "hecho";
 		
