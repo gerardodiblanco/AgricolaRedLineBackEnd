@@ -84,6 +84,22 @@ public class Pruebas {
 		localidad2.setNombre("La Consulta");
 		localidad2 = localidadService.addLocalidad(localidad2);
 		
+		Localidad localidad3 = new Localidad();
+		localidad3.setNombre("Palmira");
+		localidad3 = localidadService.addLocalidad(localidad3);
+		
+		Localidad localidad4 = new Localidad();
+		localidad4.setNombre("Pareditas");
+		localidad4 = localidadService.addLocalidad(localidad4);
+		
+		Localidad localidad5 = new Localidad();
+		localidad5.setNombre("Potrerillos");
+		localidad5 = localidadService.addLocalidad(localidad5);
+		
+		Localidad localidad6 = new Localidad();
+		localidad6.setNombre("Jocolì");
+		localidad6 = localidadService.addLocalidad(localidad6);
+		
 		domicilio.setLocalidad(localidad);
 		domicilio = domicilioService.addDomicilio(domicilio);
 		
@@ -128,16 +144,26 @@ public class Pruebas {
 		
 		//tipo campo
 		
-		TipoCampo tipoCampo2 = new TipoCampo();
-		tipoCampo2.setCodigo(456);
-		tipoCampo2.setNombre("papa");
-		tipoCampo2 = tipoCampoService.addTipoCampo(tipoCampo2);
-		
 		TipoCampo tipoCampo = new TipoCampo();
 		tipoCampo.setCodigo(123);
-		tipoCampo.setNombre("viñedo");
+		tipoCampo.setNombre("Frutales");
 		tipoCampo = tipoCampoService.addTipoCampo(tipoCampo);
-		campo1.setTipo(tipoCampo);
+		
+		TipoCampo tipoCampo2 = new TipoCampo();
+		tipoCampo2.setCodigo(456);
+		tipoCampo2.setNombre("Ganadero");
+		tipoCampo2 = tipoCampoService.addTipoCampo(tipoCampo2);
+		
+		TipoCampo tipoCampo3 = new TipoCampo();
+		tipoCampo3.setCodigo(789);
+		tipoCampo3.setNombre("Cereal");
+		tipoCampo3 = tipoCampoService.addTipoCampo(tipoCampo3);
+		
+		TipoCampo tipoCampo4 = new TipoCampo();
+		tipoCampo4.setCodigo(012);
+		tipoCampo4.setNombre("viñedo");
+		tipoCampo4 = tipoCampoService.addTipoCampo(tipoCampo4);
+		campo1.setTipo(tipoCampo4);
 		
 	//set estado
 		campo1.setEstadoCampo(estadoCampoActivo);
