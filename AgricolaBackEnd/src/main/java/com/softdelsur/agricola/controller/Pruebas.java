@@ -18,7 +18,7 @@ import com.softdelsur.agricola.model.CoordenadaModel;
 import com.softdelsur.agricola.model.DomicilioModel;
 import com.softdelsur.agricola.model.EstadoProveedorModel;
 import com.softdelsur.agricola.model.LocalidadModel;
-import com.softdelsur.agricola.model.ProveedorModel;
+import com.softdelsur.agricola.model.ProveedorModelABMCampo;
 import com.softdelsur.agricola.model.TipoCampoModel;
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.CoordenadaService;
@@ -128,14 +128,32 @@ public class Pruebas {
 		campo1.getCoordenadaList().add(coordenada4);
 		
 		campo1.setDomicilio(domicilio);
-		EstadoProveedor estadoProveedor = new EstadoProveedor();
-		estadoProveedor = estadoProveedorService.addEstadoProveedor(estadoProveedor);
+		EstadoProveedor estadoProveedorActivo = new EstadoProveedor();
+		estadoProveedorActivo.setNombreEstadoProveedor("Activo");
+		estadoProveedorActivo = estadoProveedorService.addEstadoProveedor(estadoProveedorActivo);
+		
+		EstadoProveedor estadoProveedorInactivo = new EstadoProveedor();
+		estadoProveedorInactivo.setNombreEstadoProveedor("Inactivo");
+		estadoProveedorInactivo = estadoProveedorService.addEstadoProveedor(estadoProveedorInactivo);
 		
 		Proveedor proveedor = new Proveedor();
-		proveedor.setEstado(estadoProveedor);
+		proveedor.setEstado(estadoProveedorActivo);
 
+		proveedor.setRazonSocial("Soft del sur");
 		proveedor = proveedorService.addProveedor(proveedor);
 		
+		
+		Proveedor proveedor2 = new Proveedor();
+		proveedor2.setEstado(estadoProveedorActivo);
+
+		proveedor2.setRazonSocial("Juan Carlos");
+		proveedor2 = proveedorService.addProveedor(proveedor2);
+		
+		Proveedor proveedor3 = new Proveedor();
+		proveedor3.setEstado(estadoProveedorActivo);
+
+		proveedor3.setRazonSocial("La Casona");
+		proveedor3 = proveedorService.addProveedor(proveedor3);
 		
 		campo1.setProveedor(proveedor);
 		

@@ -50,9 +50,9 @@ public class CampoController {
 	@CrossOrigin
 	@GetMapping("/allActivos")
 	public List<CampoDTO> getCamposDTOActivos() {
-
-		return campoService.findCamposDTOPorEstado("Activo");
-		
+		 List<CampoDTO> campoDTOs = campoService.findCamposDTOPorEstado("Activo");
+		 System.out.println("fin buscar campos ");
+		return campoDTOs;
 	}
 
 	@CrossOrigin
@@ -60,7 +60,7 @@ public class CampoController {
 	public void guardarCampo(@RequestBody  CampoModel campoModel2) { 
 		
 		 campoService.addCampo(campoConverter.convertCampoModelToCampo(campoModel2));
-			System.out.println("Campo guardado");
+			System.out.println("fin - Campo guardado");
 	}
 	
 	@CrossOrigin
@@ -74,10 +74,10 @@ public class CampoController {
 	@CrossOrigin
 	@DeleteMapping("/remove/{idCampo}")
 	public String eliminarCampo(@PathVariable("idCampo") String idCampo) {
+		String rta = campoService.eliminarCampo(idCampo);
 		
-		
-		
-		return campoService.eliminarCampo(idCampo);
+		System.out.println("fin eliminar campo");
+		return rta;
 		
 	}
 	

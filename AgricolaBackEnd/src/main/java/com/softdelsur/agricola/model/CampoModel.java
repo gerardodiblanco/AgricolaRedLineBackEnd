@@ -27,9 +27,9 @@ private int numeroDomicilio;
 
 private String localidad;
 
+//proveedor
 
-
- // private ProveedorModel proveedor;
+  private String proveedorRazonSocial;
 
 
 
@@ -129,6 +129,15 @@ public List<CoordenadaModel> getCoordenadaList() {
 public void setCoordenadaList(List<CoordenadaModel> coordenadaList) {
 	this.coordenadaList = coordenadaList;
 }
+
+public String getProveedorRazonSocial() {
+	return proveedorRazonSocial;
+}
+
+public void setProveedorRazonSocial(String proveedorRazonSocial) {
+	this.proveedorRazonSocial = proveedorRazonSocial;
+}
+
 
 
 }

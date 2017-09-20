@@ -23,7 +23,7 @@ private TipoCampoModel tipo;
 
 private DomicilioModel domicilio;
 
-private ProveedorModel proveedor;
+private ProveedorModelABMCampo proveedor;
 
 private List<CuartelModel> cuartelList = new ArrayList<CuartelModel>();
 private List<CoordenadaModel> coordenadaList = new ArrayList<CoordenadaModel>();
@@ -75,10 +75,10 @@ public DomicilioModel getDomicilio() {
 public void setDomicilio(DomicilioModel domicilio) {
 	this.domicilio = domicilio;
 }
-public ProveedorModel getProveedor() {
+public ProveedorModelABMCampo getProveedor() {
 	return proveedor;
 }
-public void setProveedor(ProveedorModel proveedor) {
+public void setProveedor(ProveedorModelABMCampo proveedor) {
 	this.proveedor = proveedor;
 }
 public List<CuartelModel> getCuartelList() {

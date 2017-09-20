@@ -21,6 +21,12 @@ public class EstadoProveedorServiceImpl implements EstadoProveedorService {
 		return estadoProveedorRepository.save(estadoProveedor);
 	}
 
+	@Override
+	public EstadoProveedor findEstadoByNombre(String nombre) {
+		
+		return estadoProveedorRepository.findByNombreEstadoProveedor(nombre);
+	}
+
 
 	
 	
