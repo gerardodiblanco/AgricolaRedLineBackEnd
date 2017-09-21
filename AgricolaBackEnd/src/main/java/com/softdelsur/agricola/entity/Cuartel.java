@@ -3,6 +3,7 @@ package com.softdelsur.agricola.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,9 +31,11 @@ public class Cuartel {
 	@JoinColumn(name = "id_cuartel")
 	@OneToMany
 	private List<SubCuartel> subcuarteles  = new ArrayList<SubCuartel>();
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	private Campo campo;
 	
 	public Cuartel() {
-		super();
+		
 	}
 	public String getIdCuartel() {
 		return idCuartel;
@@ -64,13 +67,21 @@ public class Cuartel {
 	public void setSubcuarteles(List<SubCuartel> subcuarteles) {
 		this.subcuarteles = subcuarteles;
 	}
+	public Campo getCampo() {
+		return campo;
+	}
+	public void setCampo(Campo campo) {
+		this.campo = campo;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((campo == null) ? 0 : campo.hashCode());
 		result = prime * result + codigo;
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
 		result = prime * result + Float.floatToIntBits(hectarea);
+		result = prime * result + ((idCuartel == null) ? 0 : idCuartel.hashCode());
 		result = prime * result + ((subcuarteles == null) ? 0 : subcuarteles.hashCode());
 		return result;
 	}
@@ -83,6 +94,11 @@ public class Cuartel {
 		if (getClass() != obj.getClass())
 			return false;
 		Cuartel other = (Cuartel) obj;
+		if (campo == null) {
+			if (other.campo != null)
+				return false;
+		} else if (!campo.equals(other.campo))
+			return false;
 		if (codigo != other.codigo)
 			return false;
 		if (descripcion == null) {
@@ -92,6 +108,11 @@ public class Cuartel {
 			return false;
 		if (Float.floatToIntBits(hectarea) != Float.floatToIntBits(other.hectarea))
 			return false;
+		if (idCuartel == null) {
+			if (other.idCuartel != null)
+				return false;
+		} else if (!idCuartel.equals(other.idCuartel))
+			return false;
 		if (subcuarteles == null) {
 			if (other.subcuarteles != null)
 				return false;
@@ -99,6 +120,7 @@ public class Cuartel {
 			return false;
 		return true;
 	}
+
 
 
 }

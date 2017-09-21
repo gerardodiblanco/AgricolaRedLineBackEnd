@@ -81,8 +81,7 @@ public class CampoConverter {
 
 		campoModel.setTipo(campo.getTipo().getNombre());
 
-		campoModel.setCuartelList(cuartelConverter.convertListCuartelToListCuartelModel(campo.getCuartelList()));
-
+		
 		campoModel.setCalle(campo.getDomicilio().getCalle());
 		campoModel.setLocalidad(campo.getDomicilio().getLocalidad().getNombre());
 		campoModel.setNumeroDomicilio(campo.getDomicilio().getNumero());

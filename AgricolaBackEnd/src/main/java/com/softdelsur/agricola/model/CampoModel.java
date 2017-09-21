@@ -32,9 +32,6 @@ private String localidad;
   private String proveedorRazonSocial;
 
 
-
-
-private List<CuartelModel> cuartelList = new ArrayList<CuartelModel>();
 private List<CoordenadaModel> coordenadaList = new ArrayList<CoordenadaModel>();
 
 public CampoModel() {
@@ -114,13 +111,7 @@ public void setLocalidad(String localidad) {
 	this.localidad = localidad;
 }
 
-public List<CuartelModel> getCuartelList() {
-	return cuartelList;
-}
 
-public void setCuartelList(List<CuartelModel> cuartelList) {
-	this.cuartelList = cuartelList;
-}
 
 public List<CoordenadaModel> getCoordenadaList() {
 	return coordenadaList;

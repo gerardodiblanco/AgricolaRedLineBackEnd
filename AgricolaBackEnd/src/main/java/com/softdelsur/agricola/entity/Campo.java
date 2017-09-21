@@ -39,8 +39,6 @@ public class Campo {
 @ManyToOne(cascade = CascadeType.REFRESH)
 	private Proveedor proveedor;
 @JoinColumn(name = "id_Campo")
-@OneToMany(cascade = CascadeType.REFRESH)
-	private List<Cuartel> cuartelList = new ArrayList<Cuartel>();
 
 @OneToMany(cascade = CascadeType.MERGE )
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
@@ -101,12 +99,7 @@ public Proveedor getProveedor() {
 public void setProveedor(Proveedor proveedor) {
 	this.proveedor = proveedor;
 }
-public List<Cuartel> getCuartelList() {
-	return cuartelList;
-}
-public void setCuartelList(List<Cuartel> cuartelList) {
-	this.cuartelList = cuartelList;
-}
+
 public List<Coordenada> getCoordenadaList() {
 	return coordenadaList;
 }
@@ -120,7 +113,6 @@ public EstadoCampo getEstadoCampo() {
 public void setEstadoCampo(EstadoCampo estadoCampo) {
 	this.estadoCampo = estadoCampo;
 }
-
 @Override
 public int hashCode() {
 	final int prime = 31;
@@ -128,8 +120,8 @@ public int hashCode() {
 	result = prime * result + ((CUIT == null) ? 0 : CUIT.hashCode());
 	result = prime * result + codigo;
 	result = prime * result + ((coordenadaList == null) ? 0 : coordenadaList.hashCode());
-	result = prime * result + ((cuartelList == null) ? 0 : cuartelList.hashCode());
 	result = prime * result + ((domicilio == null) ? 0 : domicilio.hashCode());
+	result = prime * result + ((estadoCampo == null) ? 0 : estadoCampo.hashCode());
 	result = prime * result + Float.floatToIntBits(hectarea);
 	result = prime * result + ((idCampo == null) ? 0 : idCampo.hashCode());
 	result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
@@ -158,15 +150,15 @@ public boolean equals(Object obj) {
 			return false;
 	} else if (!coordenadaList.equals(other.coordenadaList))
 		return false;
-	if (cuartelList == null) {
-		if (other.cuartelList != null)
-			return false;
-	} else if (!cuartelList.equals(other.cuartelList))
-		return false;
 	if (domicilio == null) {
 		if (other.domicilio != null)
 			return false;
 	} else if (!domicilio.equals(other.domicilio))
+		return false;
+	if (estadoCampo == null) {
+		if (other.estadoCampo != null)
+			return false;
+	} else if (!estadoCampo.equals(other.estadoCampo))
 		return false;
 	if (Float.floatToIntBits(hectarea) != Float.floatToIntBits(other.hectarea))
 		return false;
@@ -192,9 +184,6 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
-
-
-
 
 
 
