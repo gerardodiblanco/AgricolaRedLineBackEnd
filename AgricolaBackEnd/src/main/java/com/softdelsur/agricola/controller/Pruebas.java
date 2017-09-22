@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.entity.Campo;
 import com.softdelsur.agricola.entity.Coordenada;
+import com.softdelsur.agricola.entity.Cuartel;
 import com.softdelsur.agricola.entity.Domicilio;
 import com.softdelsur.agricola.entity.EstadoCampo;
 import com.softdelsur.agricola.entity.EstadoProveedor;
@@ -22,6 +23,7 @@ import com.softdelsur.agricola.model.ProveedorModelABMCampo;
 import com.softdelsur.agricola.model.TipoCampoModel;
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.CoordenadaService;
+import com.softdelsur.agricola.service.CuartelService;
 import com.softdelsur.agricola.service.DomicilioService;
 import com.softdelsur.agricola.service.EstadoCampoService;
 import com.softdelsur.agricola.service.EstadoProveedorService;
@@ -64,6 +66,10 @@ public class Pruebas {
 	@Autowired
 	@Qualifier("estadoCampoServiceImpl")
 	EstadoCampoService estadoCampoService;
+	
+	@Autowired
+	@Qualifier("cuartelServiceImpl")
+	CuartelService cuartelService;
 	
 	@RequestMapping("/campo")
 	public String crear() {
@@ -187,6 +193,34 @@ public class Pruebas {
 		campo1.setEstadoCampo(estadoCampoActivo);
 		
 		campo1 = campoService.addCampo(campo1);
+		
+		Cuartel cuartel = new Cuartel();
+		cuartel.setCampo(campo1);
+		cuartel.setCodigo(2314);
+		cuartel.setHectarea(12);
+		cuartel.setNombre("cuartel 1");
+		
+		
+				Coordenada coordenada11 = new Coordenada(1, -32.880458, -68.854431);
+				coordenada11 = coordenadaService.addCorrdenada(coordenada11);
+				Coordenada coordenada22 = new Coordenada(2, -32.875173, -68.837375 );
+				coordenada22 = coordenadaService.addCorrdenada(coordenada22);
+				Coordenada coordenada33 = new Coordenada(3, -32.880913, -68.833195);
+				coordenada33 = coordenadaService.addCorrdenada(coordenada33);
+				Coordenada coordenada44 = new Coordenada(4, -32.883913, -68.836195);
+				coordenada44 = coordenadaService.addCorrdenada(coordenada44);
+				Coordenada coordenada55 = new Coordenada(5, -32.881913, -68.835195);
+				coordenada55 = coordenadaService.addCorrdenada(coordenada55);
+		
+		
+		cuartel.getCoordenadaList().add(coordenada11);
+		cuartel.getCoordenadaList().add(coordenada22);
+		cuartel.getCoordenadaList().add(coordenada33);
+		cuartel.getCoordenadaList().add(coordenada44);
+		cuartel.getCoordenadaList().add(coordenada55);
+		
+		cuartel = cuartelService.addCuartel(cuartel);
+		
 		
 		
 		return "hecho";
