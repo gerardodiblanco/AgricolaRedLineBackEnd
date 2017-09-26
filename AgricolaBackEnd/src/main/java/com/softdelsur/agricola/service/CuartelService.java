@@ -10,5 +10,7 @@ public interface CuartelService {
 	List<Cuartel> findCuartelByCampo(Campo campo);
 	
 	Cuartel addCuartel(Cuartel cuartel);
+	
+	Cuartel findCuartelById(String id);
 
 }

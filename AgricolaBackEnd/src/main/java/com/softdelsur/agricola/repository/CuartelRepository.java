@@ -12,4 +12,6 @@ import java.util.List;
 public interface CuartelRepository extends JpaRepository<Cuartel, Serializable> {
 
 	List<Cuartel> findByCampo(Campo campo);
+	
+	Cuartel findByIdCuartel(String idCuartel);
 }

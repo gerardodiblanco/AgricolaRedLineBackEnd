@@ -40,11 +40,13 @@ public class CuartelConverter {
 		cuartelModel.setHectarea(cuartel.getHectarea());
 		cuartelModel.setHectareaCampo(cuartel.getCampo().getHectarea());
 		cuartelModel.setIdCuartel(cuartel.getIdCuartel());
-		cuartelModel.setNombre(cuartel.getNombre());
+		cuartelModel.setDescripcion(cuartel.getDescripcion());
 		cuartelModel.setNombreCampo(cuartel.getCampo().getNombre());
 		cuartelModel.setProveedorCampo(cuartel.getCampo().getProveedor().getRazonSocial());
 		cuartelModel.setTipoCampo(cuartel.getCampo().getTipo().getNombre());
 		cuartelModel.setCoordenadaList(coordenadaConverter.convertListEntityToListModel(cuartel.getCoordenadaList()));
+		
+		cuartelModel.setIdCampo(cuartel.getCampo().getIdCampo());
 		
 		return cuartelModel;
 	}

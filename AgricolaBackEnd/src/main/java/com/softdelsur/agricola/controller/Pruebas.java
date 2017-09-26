@@ -111,16 +111,15 @@ public class Pruebas {
 		
 		
 		
-		Coordenada coordenada1 = new Coordenada(1, -32.880459, -68.854432);
+		Coordenada coordenada1 = new Coordenada(1, -32.883702587768035, -68.85610569842527);
 		coordenada1 = coordenadaService.addCorrdenada(coordenada1);
-		Coordenada coordenada2 = new Coordenada(2, -32.875174, -68.837376 );
+		Coordenada coordenada2 = new Coordenada(2, -32.877516742753954, -68.85445630700679 );
 		coordenada2 = coordenadaService.addCorrdenada(coordenada2);
-		Coordenada coordenada3 = new Coordenada(3, -32.880913, -68.833190);
+		Coordenada coordenada3 = new Coordenada(3, -32.8790028414513, -68.84576419586182);
 		coordenada3 = coordenadaService.addCorrdenada(coordenada3);
-		Coordenada coordenada4 = new Coordenada(4, -32.883914, -68.836198);
+		Coordenada coordenada4 = new Coordenada(4, -32.884598740608155, -68.8472272434692);
 		coordenada4 = coordenadaService.addCorrdenada(coordenada4);
-		Coordenada coordenada5 = new Coordenada(5, -32.881914, -68.835192);
-		coordenada5 = coordenadaService.addCorrdenada(coordenada5);
+		
 		
 		Campo campo1 = new Campo();
 		campo1.setCodigo(123);
@@ -198,26 +197,25 @@ public class Pruebas {
 		cuartel.setCampo(campo1);
 		cuartel.setCodigo(2314);
 		cuartel.setHectarea(12);
-		cuartel.setNombre("cuartel 1");
+		cuartel.setDescripcion("cuartel 1");
 		
 		
-				Coordenada coordenada11 = new Coordenada(1, -32.880458, -68.854431);
+				Coordenada coordenada11 = new Coordenada(1, -32.883702587768035, -68.85610569842527);
 				coordenada11 = coordenadaService.addCorrdenada(coordenada11);
-				Coordenada coordenada22 = new Coordenada(2, -32.875173, -68.837375 );
+				Coordenada coordenada22 = new Coordenada(2, -32.880832518970294,-68.85531461389155);
 				coordenada22 = coordenadaService.addCorrdenada(coordenada22);
-				Coordenada coordenada33 = new Coordenada(3, -32.880913, -68.833195);
+				Coordenada coordenada33 = new Coordenada(3, -32.881381523168265, -68.85202983612061);
 				coordenada33 = coordenadaService.addCorrdenada(coordenada33);
-				Coordenada coordenada44 = new Coordenada(4, -32.883913, -68.836195);
+				Coordenada coordenada44 = new Coordenada(4, -32.88387796087406, -68.85276332287594);
 				coordenada44 = coordenadaService.addCorrdenada(coordenada44);
-				Coordenada coordenada55 = new Coordenada(5, -32.881913, -68.835195);
-				coordenada55 = coordenadaService.addCorrdenada(coordenada55);
+		
 		
 		
 		cuartel.getCoordenadaList().add(coordenada11);
 		cuartel.getCoordenadaList().add(coordenada22);
 		cuartel.getCoordenadaList().add(coordenada33);
 		cuartel.getCoordenadaList().add(coordenada44);
-		cuartel.getCoordenadaList().add(coordenada55);
+		
 		
 		cuartel = cuartelService.addCuartel(cuartel);
 		

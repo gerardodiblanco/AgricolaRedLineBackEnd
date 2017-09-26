@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.converter.CuartelConverter;
 import com.softdelsur.agricola.entity.Campo;
+import com.softdelsur.agricola.entity.Cuartel;
 import com.softdelsur.agricola.model.CuartelModel;
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.CuartelService;
@@ -38,6 +39,13 @@ public class CuartelController {
 		Campo campo = campoService.findByIdCampo(idCampo);
 		return cuartelConverter.convertListCuartelToListCuartelModel(
 				cuartelService.findCuartelByCampo(campo));
+	}
+	
+	@CrossOrigin
+	@GetMapping("/getCuartel/{idCuartel}")
+	public CuartelModel getCuartel(@PathVariable("idCuartel") String idCuartel){
+		Cuartel cuartel = cuartelService.findCuartelById(idCuartel);
+		return cuartelConverter.convertCuartelToCuartelModel(cuartel);
 	}
 
 }

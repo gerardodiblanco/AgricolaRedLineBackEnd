@@ -30,4 +30,10 @@ public class CuartelServiceImpl implements CuartelService{
 		return cuartelRepository.save(cuartel);
 	}
 
+	@Override
+	public Cuartel findCuartelById(String id) {
+		
+		return cuartelRepository.findByIdCuartel(id);
+	}
+
 }

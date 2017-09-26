@@ -26,7 +26,7 @@ public class Cuartel {
 	    @GeneratedValue(generator = "uuid")
 	    private String idCuartel;
 	private int codigo;
-	private String nombre;
+	private String descripcion;
 	private float hectarea;
 	@JoinColumn(name = "id_cuartel")
 	@OneToMany
@@ -54,11 +54,11 @@ public class Cuartel {
 		this.codigo = codigo;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	public float getHectarea() {
 		return hectarea;
@@ -87,9 +87,6 @@ public class Cuartel {
 		this.coordenadaList = coordenadaList;
 
 	}
-		
-	
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -97,9 +94,9 @@ public class Cuartel {
 		result = prime * result + ((campo == null) ? 0 : campo.hashCode());
 		result = prime * result + codigo;
 		result = prime * result + ((coordenadaList == null) ? 0 : coordenadaList.hashCode());
+		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
 		result = prime * result + Float.floatToIntBits(hectarea);
 		result = prime * result + ((idCuartel == null) ? 0 : idCuartel.hashCode());
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
 		result = prime * result + ((subcuarteles == null) ? 0 : subcuarteles.hashCode());
 		return result;
 	}
@@ -124,17 +121,17 @@ public class Cuartel {
 				return false;
 		} else if (!coordenadaList.equals(other.coordenadaList))
 			return false;
+		if (descripcion == null) {
+			if (other.descripcion != null)
+				return false;
+		} else if (!descripcion.equals(other.descripcion))
+			return false;
 		if (Float.floatToIntBits(hectarea) != Float.floatToIntBits(other.hectarea))
 			return false;
 		if (idCuartel == null) {
 			if (other.idCuartel != null)
 				return false;
 		} else if (!idCuartel.equals(other.idCuartel))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
 			return false;
 		if (subcuarteles == null) {
 			if (other.subcuarteles != null)
@@ -143,4 +140,7 @@ public class Cuartel {
 			return false;
 		return true;
 	}
+
+	
+
 	}
