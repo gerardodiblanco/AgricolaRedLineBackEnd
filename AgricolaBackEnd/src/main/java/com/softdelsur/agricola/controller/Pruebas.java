@@ -221,6 +221,34 @@ public class Pruebas {
 		
 		
 		
+		Cuartel cuartel2 = new Cuartel();
+		cuartel2.setCampo(campo1);
+		cuartel2.setCodigo(3456);
+		cuartel2.setHectarea(10);
+		cuartel2.setDescripcion("cuartel 2");
+		
+		
+				Coordenada coordenada111 = new Coordenada(1, -32.880855444872765, -68.8553546799011);
+				coordenada111 = coordenadaService.addCorrdenada(coordenada111);
+				Coordenada coordenada222 = new Coordenada(2, -32.877516742753954,-68.85445630700679);
+				coordenada222 = coordenadaService.addCorrdenada(coordenada222);
+				Coordenada coordenada333 = new Coordenada(3, -32.87808378823655, -68.85121444458008);
+				coordenada333 = coordenadaService.addCorrdenada(coordenada333);
+				Coordenada coordenada444 = new Coordenada(4, -32.88146330605037, -68.85211959271237);
+				coordenada444 = coordenadaService.addCorrdenada(coordenada444);
+		
+		
+		
+		cuartel2.getCoordenadaList().add(coordenada111);
+		cuartel2.getCoordenadaList().add(coordenada222);
+		cuartel2.getCoordenadaList().add(coordenada333);
+		cuartel2.getCoordenadaList().add(coordenada444);
+		
+		
+		cuartel2 = cuartelService.addCuartel(cuartel2);
+		
+		
+		
 		return "hecho";
 		
 	}

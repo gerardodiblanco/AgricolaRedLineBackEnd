@@ -33,6 +33,7 @@ public class CuartelController {
 	@Qualifier("cuartelConverter")
 	CuartelConverter cuartelConverter;
 	
+	
 	@CrossOrigin
 	@GetMapping("/getAll/{idCampo}")
 	public List<CuartelModel> getCuarteles(@PathVariable("idCampo") String idCampo){
