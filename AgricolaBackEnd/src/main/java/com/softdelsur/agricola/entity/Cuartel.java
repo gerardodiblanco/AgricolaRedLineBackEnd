@@ -38,6 +38,9 @@ public class Cuartel {
 	@OneToMany(cascade = CascadeType.MERGE )
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
 	
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	private EstadoCuartel estadoCuartel;
+	
 	public Cuartel() {
 		
 	}
@@ -87,6 +90,14 @@ public class Cuartel {
 		this.coordenadaList = coordenadaList;
 
 	}
+	
+	
+	public EstadoCuartel getEstadoCuartel() {
+		return estadoCuartel;
+	}
+	public void setEstadoCuartel(EstadoCuartel estadoCuartel) {
+		this.estadoCuartel = estadoCuartel;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -95,6 +106,7 @@ public class Cuartel {
 		result = prime * result + codigo;
 		result = prime * result + ((coordenadaList == null) ? 0 : coordenadaList.hashCode());
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+		result = prime * result + ((estadoCuartel == null) ? 0 : estadoCuartel.hashCode());
 		result = prime * result + Float.floatToIntBits(hectarea);
 		result = prime * result + ((idCuartel == null) ? 0 : idCuartel.hashCode());
 		result = prime * result + ((subcuarteles == null) ? 0 : subcuarteles.hashCode());
@@ -126,6 +138,11 @@ public class Cuartel {
 				return false;
 		} else if (!descripcion.equals(other.descripcion))
 			return false;
+		if (estadoCuartel == null) {
+			if (other.estadoCuartel != null)
+				return false;
+		} else if (!estadoCuartel.equals(other.estadoCuartel))
+			return false;
 		if (Float.floatToIntBits(hectarea) != Float.floatToIntBits(other.hectarea))
 			return false;
 		if (idCuartel == null) {
@@ -140,6 +157,9 @@ public class Cuartel {
 			return false;
 		return true;
 	}
+	
+
+	
 
 	
 

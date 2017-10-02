@@ -10,6 +10,7 @@ import com.softdelsur.agricola.entity.Coordenada;
 import com.softdelsur.agricola.entity.Cuartel;
 import com.softdelsur.agricola.entity.Domicilio;
 import com.softdelsur.agricola.entity.EstadoCampo;
+import com.softdelsur.agricola.entity.EstadoCuartel;
 import com.softdelsur.agricola.entity.EstadoProveedor;
 import com.softdelsur.agricola.entity.Localidad;
 import com.softdelsur.agricola.entity.Proveedor;
@@ -26,6 +27,7 @@ import com.softdelsur.agricola.service.CoordenadaService;
 import com.softdelsur.agricola.service.CuartelService;
 import com.softdelsur.agricola.service.DomicilioService;
 import com.softdelsur.agricola.service.EstadoCampoService;
+import com.softdelsur.agricola.service.EstadoCuartelService;
 import com.softdelsur.agricola.service.EstadoProveedorService;
 import com.softdelsur.agricola.service.LocalidadService;
 import com.softdelsur.agricola.service.ProveedorService;
@@ -70,6 +72,10 @@ public class Pruebas {
 	@Autowired
 	@Qualifier("cuartelServiceImpl")
 	CuartelService cuartelService;
+	
+	@Autowired
+	@Qualifier("estadoCuartelServiceImpl")
+	EstadoCuartelService estadoCuartelService;
 	
 	@RequestMapping("/campo")
 	public String crear() {
@@ -188,6 +194,15 @@ public class Pruebas {
 		tipoCampo4 = tipoCampoService.addTipoCampo(tipoCampo4);
 		campo1.setTipo(tipoCampo4);
 		
+//estados cuarteles 
+		
+		EstadoCuartel estadoCuartelActivo = new EstadoCuartel("Activo");
+		estadoCuartelActivo = estadoCuartelService.addEstadoCuartel(estadoCuartelActivo);
+		
+		EstadoCuartel estadoCuartelInactivo = new EstadoCuartel("Inactivo");
+		estadoCuartelInactivo = estadoCuartelService.addEstadoCuartel(estadoCuartelInactivo);
+		
+		
 	//set estado
 		campo1.setEstadoCampo(estadoCampoActivo);
 		
@@ -215,6 +230,8 @@ public class Pruebas {
 		cuartel.getCoordenadaList().add(coordenada22);
 		cuartel.getCoordenadaList().add(coordenada33);
 		cuartel.getCoordenadaList().add(coordenada44);
+		
+		cuartel.setEstadoCuartel(estadoCuartelActivo);
 		
 		
 		cuartel = cuartelService.addCuartel(cuartel);
@@ -244,6 +261,8 @@ public class Pruebas {
 		cuartel2.getCoordenadaList().add(coordenada333);
 		cuartel2.getCoordenadaList().add(coordenada444);
 		
+		
+		cuartel2.setEstadoCuartel(estadoCuartelActivo);
 		
 		cuartel2 = cuartelService.addCuartel(cuartel2);
 		

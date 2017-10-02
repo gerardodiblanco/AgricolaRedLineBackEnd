@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.softdelsur.agricola.entity.Campo;
 import com.softdelsur.agricola.entity.Cuartel;
+import com.softdelsur.agricola.entity.EstadoCuartel;
 import com.softdelsur.agricola.repository.CuartelRepository;
 import com.softdelsur.agricola.service.CuartelService;
 
@@ -19,9 +20,9 @@ public class CuartelServiceImpl implements CuartelService{
 	CuartelRepository cuartelRepository;
 
 	@Override
-	public List<Cuartel> findCuartelByCampo(Campo campo) {
+	public List<Cuartel> findCuartelesByCampoAndEstadoCuartel(Campo campo, EstadoCuartel estadoCuartel) {
 		
-		return cuartelRepository.findByCampo(campo);
+		return cuartelRepository.findByCampoAndEstadoCuartel(campo, estadoCuartel);
 	}
 
 	@Override
@@ -34,6 +35,12 @@ public class CuartelServiceImpl implements CuartelService{
 	public Cuartel findCuartelById(String id) {
 		
 		return cuartelRepository.findByIdCuartel(id);
+	}
+
+	@Override
+	public String eliminarCuartel(String id) {
+		
+		return null;
 	}
 
 }
