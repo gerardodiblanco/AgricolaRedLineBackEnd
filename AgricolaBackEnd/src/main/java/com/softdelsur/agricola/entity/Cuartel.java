@@ -35,7 +35,7 @@ public class Cuartel {
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private Campo campo;
 	
-	@OneToMany(cascade = CascadeType.MERGE )
+	@OneToMany(cascade = CascadeType.REFRESH )
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
 	
 	@ManyToOne(cascade = CascadeType.REFRESH)

@@ -38,9 +38,9 @@ public class Campo {
 	private Domicilio domicilio;
 @ManyToOne(cascade = CascadeType.REFRESH)
 	private Proveedor proveedor;
-@JoinColumn(name = "id_Campo")
 
-@OneToMany(cascade = CascadeType.MERGE )
+
+@OneToMany(cascade = CascadeType.REFRESH)
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
 @JoinColumn(name = "id_estado")	
 @ManyToOne(cascade = CascadeType.REFRESH)

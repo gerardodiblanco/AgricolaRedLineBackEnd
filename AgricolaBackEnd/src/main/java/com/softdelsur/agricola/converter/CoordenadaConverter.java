@@ -21,11 +21,12 @@ public class CoordenadaConverter {
 	
 	public Coordenada convertCoordenadaModelToCoordenada(CoordenadaModel coordenadaModel) {
 		System.out.println("convirtiendo coordenadas");
-		Coordenada coordenada = new Coordenada();
-		if(coordenadaModel.getId() == null) {
+		Coordenada coordenada = null;
+		coordenada = coordenadaService.findCoordenadaById(coordenadaModel.getId());
+		
+		if(coordenada == null) {
+			coordenada = new Coordenada();
 			coordenada = coordenadaService.addCorrdenada(coordenada);
-		}else {
-		coordenada.setId(coordenadaModel.getId());
 		}
 		coordenada.setLatitud(coordenadaModel.getLatitud());
 		coordenada.setLongitud(coordenadaModel.getLongitud());
