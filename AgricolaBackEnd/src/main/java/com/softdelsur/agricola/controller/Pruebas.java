@@ -12,8 +12,10 @@ import com.softdelsur.agricola.entity.Domicilio;
 import com.softdelsur.agricola.entity.EstadoCampo;
 import com.softdelsur.agricola.entity.EstadoCuartel;
 import com.softdelsur.agricola.entity.EstadoProveedor;
+import com.softdelsur.agricola.entity.EstadoSubCuartel;
 import com.softdelsur.agricola.entity.Localidad;
 import com.softdelsur.agricola.entity.Proveedor;
+import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.entity.TipoCampo;
 import com.softdelsur.agricola.model.CampoModel;
 import com.softdelsur.agricola.model.CoordenadaModel;
@@ -29,8 +31,10 @@ import com.softdelsur.agricola.service.DomicilioService;
 import com.softdelsur.agricola.service.EstadoCampoService;
 import com.softdelsur.agricola.service.EstadoCuartelService;
 import com.softdelsur.agricola.service.EstadoProveedorService;
+import com.softdelsur.agricola.service.EstadoSubCuartelService;
 import com.softdelsur.agricola.service.LocalidadService;
 import com.softdelsur.agricola.service.ProveedorService;
+import com.softdelsur.agricola.service.SubCuartelService;
 import com.softdelsur.agricola.service.TipoCampoService;
 
 @RestController
@@ -76,6 +80,14 @@ public class Pruebas {
 	@Autowired
 	@Qualifier("estadoCuartelServiceImpl")
 	EstadoCuartelService estadoCuartelService;
+	
+	@Autowired
+	@Qualifier("subCuartelServiceImpl")
+	SubCuartelService subCuartelService;
+	
+	@Autowired
+	@Qualifier("estadoSubCuartelServiceImpl")
+	EstadoSubCuartelService estadoSubCuartelService;
 	
 	@RequestMapping("/campo")
 	public String crear() {
@@ -266,6 +278,70 @@ public class Pruebas {
 		
 		cuartel2 = cuartelService.addCuartel(cuartel2);
 		
+//estado sub Cuartel
+		
+		EstadoSubCuartel estadoSubCuartelActivo = new EstadoSubCuartel("Activo");
+		estadoSubCuartelActivo = estadoSubCuartelService.addEstadoSubCuartel(estadoSubCuartelActivo);
+		
+		EstadoSubCuartel estadoSubCuartelInactivo = new EstadoSubCuartel("Inactivo");
+		estadoSubCuartelInactivo = estadoSubCuartelService.addEstadoSubCuartel(estadoSubCuartelInactivo);
+		
+		
+		
+		SubCuartel subCuartel1 = new SubCuartel();
+		subCuartel1.setDescripcion("subCuartel 1");
+		subCuartel1.setHectarea(3);
+		subCuartel1.setEstado(estadoSubCuartelActivo);
+		subCuartel1.setCodigo(56);
+		subCuartel1.setCuartel(cuartel2);
+		subCuartel1.setAtributosSubCuartel(null);
+		subCuartel1.setCaracteristicas(null);
+		subCuartel1.setPeriodosVariedad(null);
+		
+			Coordenada coordenadaSubCuartel1 = new Coordenada(1, -32.88085994991795, -68.85533322222898);
+			coordenadaSubCuartel1 = coordenadaService.addCorrdenada(coordenadaSubCuartel1);
+			Coordenada coordenadaSubCuartel2 = new Coordenada(3, -32.87998946150223,-68.85301688903809);
+			coordenadaSubCuartel2 = coordenadaService.addCorrdenada(coordenadaSubCuartel2);
+			Coordenada coordenadaSubCuartel3 = new Coordenada(2, -32.87962065318705, -68.85501957089991);
+			coordenadaSubCuartel3 = coordenadaService.addCorrdenada(coordenadaSubCuartel3);
+			Coordenada coordenadaSubCuartel4 = new Coordenada(4, -32.88122904499201, -68.85336413769528);
+			coordenadaSubCuartel4 = coordenadaService.addCorrdenada(coordenadaSubCuartel4);
+		
+			subCuartel1.getCoordenadaList().add(coordenadaSubCuartel1);
+			subCuartel1.getCoordenadaList().add(coordenadaSubCuartel2);
+			subCuartel1.getCoordenadaList().add(coordenadaSubCuartel3);
+			subCuartel1.getCoordenadaList().add(coordenadaSubCuartel4);
+			
+			subCuartel1 = subCuartelService.addSubCuartel(subCuartel1);
+			
+			
+			
+			
+			SubCuartel subCuartel2 = new SubCuartel();
+			subCuartel2.setDescripcion("subCuartel 2");
+			subCuartel2.setHectarea(34);
+			subCuartel2.setEstado(estadoSubCuartelActivo);
+			subCuartel2.setCodigo(7);
+			subCuartel2.setCuartel(cuartel2);
+			subCuartel2.setAtributosSubCuartel(null);
+			subCuartel2.setCaracteristicas(null);
+			subCuartel2.setPeriodosVariedad(null);
+			
+				Coordenada coordenadaSubCuartel11 = new Coordenada(1, -32.87852180068769, -68.85473240740964);
+				coordenadaSubCuartel11 = coordenadaService.addCorrdenada(coordenadaSubCuartel11);
+				Coordenada coordenadaSubCuartel22 = new Coordenada(2, -32.87752575318348,-68.85445094258876);
+				coordenadaSubCuartel22 = coordenadaService.addCorrdenada(coordenadaSubCuartel22);
+				Coordenada coordenadaSubCuartel33 = new Coordenada(3, -32.8778765494303, -68.85239998096466);
+				coordenadaSubCuartel33 = coordenadaService.addCorrdenada(coordenadaSubCuartel33);
+				Coordenada coordenadaSubCuartel44 = new Coordenada(4, -32.8789134312214, -68.85263457684323);
+				coordenadaSubCuartel44 = coordenadaService.addCorrdenada(coordenadaSubCuartel44);
+			
+				subCuartel2.getCoordenadaList().add(coordenadaSubCuartel11);
+				subCuartel2.getCoordenadaList().add(coordenadaSubCuartel22);
+				subCuartel2.getCoordenadaList().add(coordenadaSubCuartel33);
+				subCuartel2.getCoordenadaList().add(coordenadaSubCuartel44);
+				
+				subCuartel2 = subCuartelService.addSubCuartel(subCuartel2);
 		
 		
 		return "hecho";

@@ -27,6 +27,10 @@ public class SubCuartelConverter {
 	@Qualifier("periodoVariedadConverter")
 	PeriodoVariedadConverter periodoVariedadConverter;
 	
+	@Autowired
+	@Qualifier("coordenadaConverter")
+	CoordenadaConverter coordenadaConverter;
+	
 	public SubCuartel convertSubCuartelModelToSubCuartel(SubCuartelModel subCuartelModel){
 		SubCuartel subCuartel = new SubCuartel();
 		subCuartel.setIdSubCuartel(subCuartelModel.getIdSubCuartel());
@@ -46,9 +50,10 @@ public class SubCuartelConverter {
 		subCuartelModel.setDescripcion(subCuartel.getDescripcion());
 		subCuartelModel.setHectarea(subCuartel.getHectarea());
 		subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
-		subCuartelModel.setEstado(estadoSubCuartelConverter.convertEstadoSubCuartelToEstadoSubCuartelModel(subCuartel.getEstado()));
+		subCuartelModel.setEstado(subCuartel.getEstado().getDescripcion());
 		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(subCuartel.getAtributosSubCuartel()));
 		subCuartelModel.setPeriodosVariedad(periodoVariedadConverter.convertListPeriodoVariedadToListPeriodoVariedadModel(subCuartel.getPeriodosVariedad()));
+		subCuartelModel.setCoordenadaList(coordenadaConverter.convertListEntityToListModel(subCuartel.getCoordenadaList()));
 		return subCuartelModel;
 	}
 	

@@ -23,6 +23,14 @@ public class EstadoSubCuartel {
 	public EstadoSubCuartel() {
 		super();
 	}
+	
+	
+	public EstadoSubCuartel(String descripcion) {
+		super();
+		this.descripcion = descripcion;
+	}
+
+
 	public String getIdEstado() {
 		return idEstado;
 	}

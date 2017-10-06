@@ -28,9 +28,7 @@ public class Cuartel {
 	private int codigo;
 	private String descripcion;
 	private float hectarea;
-	@JoinColumn(name = "id_cuartel")
-	@OneToMany
-	private List<SubCuartel> subcuarteles  = new ArrayList<SubCuartel>();
+	
 	
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private Campo campo;
@@ -69,12 +67,7 @@ public class Cuartel {
 	public void setHectarea(float hectarea) {
 		this.hectarea = hectarea;
 	}
-	public List<SubCuartel> getSubcuarteles() {
-		return subcuarteles;
-	}
-	public void setSubcuarteles(List<SubCuartel> subcuarteles) {
-		this.subcuarteles = subcuarteles;
-	}
+
 	public Campo getCampo() {
 		return campo;
 	}
@@ -109,7 +102,6 @@ public class Cuartel {
 		result = prime * result + ((estadoCuartel == null) ? 0 : estadoCuartel.hashCode());
 		result = prime * result + Float.floatToIntBits(hectarea);
 		result = prime * result + ((idCuartel == null) ? 0 : idCuartel.hashCode());
-		result = prime * result + ((subcuarteles == null) ? 0 : subcuarteles.hashCode());
 		return result;
 	}
 	@Override
@@ -150,16 +142,9 @@ public class Cuartel {
 				return false;
 		} else if (!idCuartel.equals(other.idCuartel))
 			return false;
-		if (subcuarteles == null) {
-			if (other.subcuarteles != null)
-				return false;
-		} else if (!subcuarteles.equals(other.subcuarteles))
-			return false;
 		return true;
 	}
-	
 
-	
 
 	
 

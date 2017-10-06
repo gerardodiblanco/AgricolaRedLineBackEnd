@@ -49,8 +49,6 @@ public class CuartelConverter {
 		cuartel.setCodigo(cuartelModel.getCodigo());
 		cuartel.setDescripcion(cuartelModel.getDescripcion());
 		cuartel.setHectarea(cuartelModel.getHectarea());
-		cuartel.setSubcuarteles(
-				subCuartelConverter.convertListSubCuartelModelToListSubCuartel(cuartelModel.getSubcuarteles()));
 		cuartel.setCoordenadaList(coordenadaConverter.convertListModelToListEntity(cuartelModel.getCoordenadaList()));
 		
 		

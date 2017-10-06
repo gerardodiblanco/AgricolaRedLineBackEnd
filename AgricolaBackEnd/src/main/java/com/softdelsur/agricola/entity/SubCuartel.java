@@ -3,6 +3,7 @@ package com.softdelsur.agricola.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,6 +31,8 @@ public class SubCuartel {
 	private String descripcion;
 	private float hectarea;
 	@ManyToOne
+	private Cuartel cuartel;
+	@ManyToOne
 	private EstadoSubCuartel estado;
 	@JoinColumn(name = "id_subcuartel")
 	@OneToMany
@@ -40,6 +43,9 @@ public class SubCuartel {
 	@JoinColumn(name = "id_subcuartel")
 	@OneToMany
 	public List<Caracteristica> caracteristicas  = new ArrayList<Caracteristica>();
+	@OneToMany(cascade = CascadeType.REFRESH )
+	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
+	
 	public SubCuartel() {
 		super();
 	}
@@ -91,6 +97,18 @@ public class SubCuartel {
 	public void setCaracteristicas(List<Caracteristica> caracteristicas) {
 		this.caracteristicas = caracteristicas;
 	}
+	public List<Coordenada> getCoordenadaList() {
+		return coordenadaList;
+	}
+	public void setCoordenadaList(List<Coordenada> coordenadaList) {
+		this.coordenadaList = coordenadaList;
+	}
+	public Cuartel getCuartel() {
+		return cuartel;
+	}
+	public void setCuartel(Cuartel cuartel) {
+		this.cuartel = cuartel;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -98,9 +116,12 @@ public class SubCuartel {
 		result = prime * result + ((atributosSubCuartel == null) ? 0 : atributosSubCuartel.hashCode());
 		result = prime * result + ((caracteristicas == null) ? 0 : caracteristicas.hashCode());
 		result = prime * result + codigo;
+		result = prime * result + ((coordenadaList == null) ? 0 : coordenadaList.hashCode());
+		result = prime * result + ((cuartel == null) ? 0 : cuartel.hashCode());
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
 		result = prime * result + Float.floatToIntBits(hectarea);
+		result = prime * result + ((idSubCuartel == null) ? 0 : idSubCuartel.hashCode());
 		result = prime * result + ((periodosVariedad == null) ? 0 : periodosVariedad.hashCode());
 		return result;
 	}
@@ -125,6 +146,16 @@ public class SubCuartel {
 			return false;
 		if (codigo != other.codigo)
 			return false;
+		if (coordenadaList == null) {
+			if (other.coordenadaList != null)
+				return false;
+		} else if (!coordenadaList.equals(other.coordenadaList))
+			return false;
+		if (cuartel == null) {
+			if (other.cuartel != null)
+				return false;
+		} else if (!cuartel.equals(other.cuartel))
+			return false;
 		if (descripcion == null) {
 			if (other.descripcion != null)
 				return false;
@@ -137,6 +168,11 @@ public class SubCuartel {
 			return false;
 		if (Float.floatToIntBits(hectarea) != Float.floatToIntBits(other.hectarea))
 			return false;
+		if (idSubCuartel == null) {
+			if (other.idSubCuartel != null)
+				return false;
+		} else if (!idSubCuartel.equals(other.idSubCuartel))
+			return false;
 		if (periodosVariedad == null) {
 			if (other.periodosVariedad != null)
 				return false;
@@ -144,6 +180,7 @@ public class SubCuartel {
 			return false;
 		return true;
 	}
+
 
 	
 }

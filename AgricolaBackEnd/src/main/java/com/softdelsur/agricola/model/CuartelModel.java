@@ -29,7 +29,7 @@ public class CuartelModel {
 	private String proveedorCampo;
 	private List<CoordenadaModel> coordenadaList = new ArrayList<CoordenadaModel>();
 	private String estadoCampo;
-	private List<SubCuartelModel> subcuarteles = new ArrayList<SubCuartelModel>();
+	
 	private String idCampo;
 
 	public CuartelModel() {
@@ -151,12 +151,5 @@ public class CuartelModel {
 		this.estadoCampo = estadoCampo;
 	}
 
-	public List<SubCuartelModel> getSubcuarteles() {
-		return subcuarteles;
-	}
-
-	public void setSubcuarteles(List<SubCuartelModel> subcuarteles) {
-		this.subcuarteles = subcuarteles;
-	}
 
 }
