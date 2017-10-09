@@ -20,7 +20,8 @@ public class SubCuartelModel {
 
 	private List<AtributoSubCuartelModel> atributosSubCuartel = new ArrayList<AtributoSubCuartelModel>();
 	
-	private List<PeriodoVariedadModel> periodosVariedad = new ArrayList<PeriodoVariedadModel>();
+	private String variedad;
+	private String colorVariedad;
 	
 	private List<CaracteristicaModel> caracteristicas = new ArrayList<CaracteristicaModel>();
 	
@@ -103,13 +104,21 @@ public class SubCuartelModel {
 		this.atributosSubCuartel = atributosSubCuartel;
 	}
 
-	public List<PeriodoVariedadModel> getPeriodosVariedad() {
-		return periodosVariedad;
+
+
+	public String getVariedad() {
+		return variedad;
 	}
 
-	public void setPeriodosVariedad(List<PeriodoVariedadModel> periodosVariedad) {
-		this.periodosVariedad = periodosVariedad;
+
+
+
+	public void setVariedad(String variedad) {
+		this.variedad = variedad;
 	}
+
+
+
 
 	public List<CaracteristicaModel> getCaracteristicas() {
 		return caracteristicas;
@@ -117,6 +126,20 @@ public class SubCuartelModel {
 
 	public void setCaracteristicas(List<CaracteristicaModel> caracteristicas) {
 		this.caracteristicas = caracteristicas;
+	}
+
+
+
+
+	public String getColorVariedad() {
+		return colorVariedad;
+	}
+
+
+
+
+	public void setColorVariedad(String colorVariedad) {
+		this.colorVariedad = colorVariedad;
 	}
 	
 	

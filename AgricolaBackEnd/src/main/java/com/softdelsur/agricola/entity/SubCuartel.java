@@ -35,14 +35,17 @@ public class SubCuartel {
 	@ManyToOne
 	private EstadoSubCuartel estado;
 	@JoinColumn(name = "id_subcuartel")
-	@OneToMany
+	@OneToMany(cascade = CascadeType.REFRESH)
 	public List<AtributoSubCuartel> atributosSubCuartel = new ArrayList<AtributoSubCuartel>();
+	
 	@JoinColumn(name = "id_subcuartel")
-	@OneToMany
+	@OneToMany(cascade = CascadeType.REFRESH)
 	public List<PeriodoVariedad> periodosVariedad  = new ArrayList<PeriodoVariedad>();
+	
 	@JoinColumn(name = "id_subcuartel")
-	@OneToMany
+	@OneToMany(cascade = CascadeType.REFRESH)
 	public List<Caracteristica> caracteristicas  = new ArrayList<Caracteristica>();
+	
 	@OneToMany(cascade = CascadeType.REFRESH )
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
 	

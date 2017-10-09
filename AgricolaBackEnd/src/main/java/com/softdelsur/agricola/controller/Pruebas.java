@@ -1,5 +1,8 @@
 package com.softdelsur.agricola.controller;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +17,11 @@ import com.softdelsur.agricola.entity.EstadoCuartel;
 import com.softdelsur.agricola.entity.EstadoProveedor;
 import com.softdelsur.agricola.entity.EstadoSubCuartel;
 import com.softdelsur.agricola.entity.Localidad;
+import com.softdelsur.agricola.entity.PeriodoVariedad;
 import com.softdelsur.agricola.entity.Proveedor;
 import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.entity.TipoCampo;
+import com.softdelsur.agricola.entity.Variedad;
 import com.softdelsur.agricola.model.CampoModel;
 import com.softdelsur.agricola.model.CoordenadaModel;
 import com.softdelsur.agricola.model.DomicilioModel;
@@ -33,9 +38,11 @@ import com.softdelsur.agricola.service.EstadoCuartelService;
 import com.softdelsur.agricola.service.EstadoProveedorService;
 import com.softdelsur.agricola.service.EstadoSubCuartelService;
 import com.softdelsur.agricola.service.LocalidadService;
+import com.softdelsur.agricola.service.PeriodoVariedadService;
 import com.softdelsur.agricola.service.ProveedorService;
 import com.softdelsur.agricola.service.SubCuartelService;
 import com.softdelsur.agricola.service.TipoCampoService;
+import com.softdelsur.agricola.service.VariedadService;
 
 @RestController
 @RequestMapping("/crearInstancias")
@@ -88,6 +95,15 @@ public class Pruebas {
 	@Autowired
 	@Qualifier("estadoSubCuartelServiceImpl")
 	EstadoSubCuartelService estadoSubCuartelService;
+	
+	@Autowired
+	@Qualifier("periodoVariedadServiceImpl")
+	PeriodoVariedadService periodoVariedadService;
+	
+	@Autowired
+	@Qualifier("variedadServiceImpl")
+	VariedadService variedadService;
+	
 	
 	@RequestMapping("/campo")
 	public String crear() {
@@ -277,6 +293,33 @@ public class Pruebas {
 		cuartel2.setEstadoCuartel(estadoCuartelActivo);
 		
 		cuartel2 = cuartelService.addCuartel(cuartel2);
+//variedad
+		
+		Variedad variedad1 = new Variedad();
+		variedad1.setNombre("Merlot");
+		variedad1.setColorVariedad("#BF00FF");
+		variedad1 = variedadService.addVariedad(variedad1);
+		
+
+		Variedad variedad2 = new Variedad();
+		variedad2.setNombre("Sauvignon");
+		variedad2.setColorVariedad("#3ADF00");
+		variedad2 = variedadService.addVariedad(variedad2);
+		
+//periodoVariedad
+		
+		PeriodoVariedad periodoVariedad1 = new PeriodoVariedad();
+		periodoVariedad1.setFechaInicioPeriodo(Date.valueOf(LocalDate.now()));
+		periodoVariedad1.setFechaFinPeriodo(null);
+		periodoVariedad1.setVariedad(variedad1);
+		periodoVariedad1 = periodoVariedadService.addPeriodoVariedad(periodoVariedad1);
+		
+
+		PeriodoVariedad periodoVariedad2 = new PeriodoVariedad();
+		periodoVariedad2.setFechaInicioPeriodo(Date.valueOf(LocalDate.now()));
+		periodoVariedad2.setFechaFinPeriodo(null);
+		periodoVariedad2.setVariedad(variedad2);
+		periodoVariedad2 = periodoVariedadService.addPeriodoVariedad(periodoVariedad2);
 		
 //estado sub Cuartel
 		
@@ -286,7 +329,7 @@ public class Pruebas {
 		EstadoSubCuartel estadoSubCuartelInactivo = new EstadoSubCuartel("Inactivo");
 		estadoSubCuartelInactivo = estadoSubCuartelService.addEstadoSubCuartel(estadoSubCuartelInactivo);
 		
-		
+//sub Cuartel		
 		
 		SubCuartel subCuartel1 = new SubCuartel();
 		subCuartel1.setDescripcion("subCuartel 1");
@@ -294,10 +337,13 @@ public class Pruebas {
 		subCuartel1.setEstado(estadoSubCuartelActivo);
 		subCuartel1.setCodigo(56);
 		subCuartel1.setCuartel(cuartel2);
+		subCuartel1.getPeriodosVariedad().add(periodoVariedad1);
+		
 		subCuartel1.setAtributosSubCuartel(null);
 		subCuartel1.setCaracteristicas(null);
-		subCuartel1.setPeriodosVariedad(null);
 		
+		
+
 			Coordenada coordenadaSubCuartel1 = new Coordenada(1, -32.88085994991795, -68.85533322222898);
 			coordenadaSubCuartel1 = coordenadaService.addCorrdenada(coordenadaSubCuartel1);
 			Coordenada coordenadaSubCuartel2 = new Coordenada(3, -32.87998946150223,-68.85301688903809);
@@ -323,9 +369,12 @@ public class Pruebas {
 			subCuartel2.setEstado(estadoSubCuartelActivo);
 			subCuartel2.setCodigo(7);
 			subCuartel2.setCuartel(cuartel2);
+			subCuartel2.getPeriodosVariedad().add(periodoVariedad2);
 			subCuartel2.setAtributosSubCuartel(null);
 			subCuartel2.setCaracteristicas(null);
-			subCuartel2.setPeriodosVariedad(null);
+			
+			
+	
 			
 				Coordenada coordenadaSubCuartel11 = new Coordenada(1, -32.87852180068769, -68.85473240740964);
 				coordenadaSubCuartel11 = coordenadaService.addCorrdenada(coordenadaSubCuartel11);

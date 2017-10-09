@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.softdelsur.agricola.entity.PeriodoVariedad;
 import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.model.SubCuartelModel;
 
@@ -52,7 +53,16 @@ public class SubCuartelConverter {
 		subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
 		subCuartelModel.setEstado(subCuartel.getEstado().getDescripcion());
 		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(subCuartel.getAtributosSubCuartel()));
-		subCuartelModel.setPeriodosVariedad(periodoVariedadConverter.convertListPeriodoVariedadToListPeriodoVariedadModel(subCuartel.getPeriodosVariedad()));
+		for (PeriodoVariedad periodo: subCuartel.getPeriodosVariedad()) {
+			
+			if(periodo.getFechaFinPeriodo() == null) {
+				subCuartelModel.setVariedad(periodo.getVariedad().getNombre());
+				subCuartelModel.setColorVariedad(periodo.getVariedad().getColorVariedad());
+			}
+			
+		}
+		subCuartelModel.setNombreCampo(subCuartel.getCuartel().getDescripcion());
+		
 		subCuartelModel.setCoordenadaList(coordenadaConverter.convertListEntityToListModel(subCuartel.getCoordenadaList()));
 		return subCuartelModel;
 	}
