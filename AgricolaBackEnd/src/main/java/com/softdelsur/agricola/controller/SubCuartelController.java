@@ -5,13 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.converter.SubCuartelConverter;
 import com.softdelsur.agricola.entity.Cuartel;
+import com.softdelsur.agricola.entity.EstadoCuartel;
 import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.model.SubCuartelModel;
 import com.softdelsur.agricola.service.CuartelService;
@@ -54,7 +58,7 @@ public class SubCuartelController {
 		cuartel = cuartelService.findCuartelById(idCuartel);
 		if (cuartel != null) {
 			List<SubCuartel> subCuartelList = null;
-			subCuartelList = subCuartelService.buscarPorCuartel(cuartel);
+			subCuartelList = subCuartelService.buscarSubCuartelesActivosPorCuartel(cuartel);
 			if (subCuartelList != null) {
 				subCuartelModelList = subCuartelConverter.convertListSubCuartelToListSubCuartelModel(subCuartelList);
 
@@ -62,5 +66,36 @@ public class SubCuartelController {
 		}
 		return subCuartelModelList;
 	}
+	
+	@CrossOrigin
+	@PostMapping("/save")
+	public void guardarSubCuartel(@RequestBody SubCuartelModel subCuartelModel) {
+		
+		subCuartelService.addSubCuartel(subCuartelConverter.convertSubCuartelModelToSubCuartel(subCuartelModel));
+		
+	}
+	
+	
+	@CrossOrigin
+	@DeleteMapping("/remove/{idSubCuartel}")
+	public boolean eliminarCuartel(@PathVariable("idSubCuartel") String idSubCuartel) {
+		boolean rta = false;
+		
+		
+		SubCuartel subCuartel = null;
+		subCuartel = subCuartelService.buscarPorId(idSubCuartel);
+		
+		System.out.println("sub cuartel "+subCuartel.getDescripcion());
+		
+		if(subCuartel != null) {
+		
+			subCuartel = subCuartelService.eliminarSubCuartel(subCuartel);
+		rta = true;
+		}
+		
+		return rta;
+				
+	}
+	
 
 }

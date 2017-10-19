@@ -21,4 +21,16 @@ public class EstadoSubCuartelServiceImpl implements EstadoSubCuartelService {
 		return estadoSubCuartelRepository.save(estadoSubCuartel);
 	}
 
+	@Override
+	public EstadoSubCuartel buscarEstadoActivo() {
+		
+		return estadoSubCuartelRepository.findByDescripcion("Activo");
+	}
+
+	@Override
+	public EstadoSubCuartel buscarEstadoInactivo() {
+		// TODO Auto-generated method stub
+		return estadoSubCuartelRepository.findByDescripcion("Inactivo");
+	}
+
 }

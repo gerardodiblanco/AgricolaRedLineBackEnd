@@ -3,50 +3,37 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.OneToMany;
 
-import com.softdelsur.agricola.entity.AtributoSubCuartel;
-import com.softdelsur.agricola.entity.Caracteristica;
-import com.softdelsur.agricola.entity.EstadoSubCuartel;
-import com.softdelsur.agricola.entity.PeriodoVariedad;
 
 public class SubCuartelModel {
-    private String idSubCuartel;
+	private String idSubCuartel;
 	private int codigo;
 	private String descripcion;
 	private float hectarea;
 	private String estado;
 	private String nombreCampo;
-
+	private String nombreCuartel;
+	private String idCuartel;
 	private List<AtributoSubCuartelModel> atributosSubCuartel = new ArrayList<AtributoSubCuartelModel>();
-	
 	private String variedad;
 	private String colorVariedad;
-	
+	private String idVariedad;
+
 	private List<CaracteristicaModel> caracteristicas = new ArrayList<CaracteristicaModel>();
-	
+
 	private List<CoordenadaModel> coordenadaList = new ArrayList<CoordenadaModel>();
 
 	public SubCuartelModel() {
 		super();
 	}
-	
-
-
 
 	public List<CoordenadaModel> getCoordenadaList() {
 		return coordenadaList;
 	}
 
-
-
-
 	public void setCoordenadaList(List<CoordenadaModel> coordenadaList) {
 		this.coordenadaList = coordenadaList;
 	}
-
-
-
 
 	public String getIdSubCuartel() {
 		return idSubCuartel;
@@ -104,21 +91,13 @@ public class SubCuartelModel {
 		this.atributosSubCuartel = atributosSubCuartel;
 	}
 
-
-
 	public String getVariedad() {
 		return variedad;
 	}
 
-
-
-
 	public void setVariedad(String variedad) {
 		this.variedad = variedad;
 	}
-
-
-
 
 	public List<CaracteristicaModel> getCaracteristicas() {
 		return caracteristicas;
@@ -128,22 +107,39 @@ public class SubCuartelModel {
 		this.caracteristicas = caracteristicas;
 	}
 
-
-
-
 	public String getColorVariedad() {
 		return colorVariedad;
 	}
 
-
-
-
 	public void setColorVariedad(String colorVariedad) {
 		this.colorVariedad = colorVariedad;
 	}
+
+	public String getNombreCuartel() {
+		return nombreCuartel;
+	}
+
+	public void setNombreCuartel(String nombreCuartel) {
+		this.nombreCuartel = nombreCuartel;
+	}
+
+	public String getIdCuartel() {
+		return idCuartel;
+	}
+
+	public void setIdCuartel(String idCuartel) {
+		this.idCuartel = idCuartel;
+	}
+
+	public String getIdVariedad() {
+		return idVariedad;
+	}
+
+	public void setIdVariedad(String idVariedad) {
+		this.idVariedad = idVariedad;
+	}
+	
 	
 	
 
-
-	
 }

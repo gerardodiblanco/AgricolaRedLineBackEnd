@@ -28,4 +28,10 @@
 <fullyQualifiedTypeName name="com.softdelsur.agricola.entity.Domicilio"/>
 <fullyQualifiedTypeName name="com.softdelsur.agricola.model.DomicilioModel"/>
 <fullyQualifiedTypeName name="com.softdelsur.agricola.model.LocalidadModel"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
+<fullyQualifiedTypeName name="springfox.documentation.spring.web.plugins.Docket"/>
+<fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.SpringBootApplication"/>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.ComponentScan"/>
 </qualifiedTypeNameHistroy>

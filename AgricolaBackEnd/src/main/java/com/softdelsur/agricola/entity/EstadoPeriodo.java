@@ -72,6 +72,7 @@ public class EstadoPeriodo {
 			return false;
 		return true;
 	}
+	
 
 
 }

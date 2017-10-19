@@ -1,5 +1,7 @@
 package com.softdelsur.agricola.converter;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,12 @@ import org.springframework.stereotype.Component;
 
 import com.softdelsur.agricola.entity.PeriodoVariedad;
 import com.softdelsur.agricola.entity.SubCuartel;
+import com.softdelsur.agricola.entity.Variedad;
 import com.softdelsur.agricola.model.SubCuartelModel;
+import com.softdelsur.agricola.service.EstadoSubCuartelService;
+import com.softdelsur.agricola.service.PeriodoVariedadService;
+import com.softdelsur.agricola.service.SubCuartelService;
+import com.softdelsur.agricola.service.VariedadService;
 
 @Component("subCuartelConverter")
 public class SubCuartelConverter {
@@ -32,18 +39,93 @@ public class SubCuartelConverter {
 	@Qualifier("coordenadaConverter")
 	CoordenadaConverter coordenadaConverter;
 	
+	@Autowired
+	@Qualifier("subCuartelServiceImpl")
+	SubCuartelService subCuartelService;
+	
+	@Autowired
+	@Qualifier("estadoSubCuartelServiceImpl")
+	EstadoSubCuartelService estadoSubCuartelService;
+	
+	@Autowired
+	@Qualifier("variedadServiceImpl")
+	VariedadService variedadService;
+	
+	@Autowired
+	@Qualifier("periodoVariedadServiceImpl")
+	PeriodoVariedadService periodoVariedadService;
+	
 	public SubCuartel convertSubCuartelModelToSubCuartel(SubCuartelModel subCuartelModel){
-		SubCuartel subCuartel = new SubCuartel();
-		subCuartel.setIdSubCuartel(subCuartelModel.getIdSubCuartel());
+		SubCuartel subCuartel = null;
+		
+		if(subCuartelModel.getIdSubCuartel().equals(null)) {
+			subCuartel = new SubCuartel();
+			subCuartel = subCuartelService.addSubCuartel(subCuartel);
+			
+		}else {
+		subCuartel = subCuartelService.buscarPorId(subCuartelModel.getIdSubCuartel());
+		if(subCuartel == null) {
+			subCuartel = new SubCuartel();
+			subCuartel = subCuartelService.addSubCuartel(subCuartel);
+		}
+		}
+		
+		
 		subCuartel.setCodigo(subCuartelModel.getCodigo());
 		subCuartel.setDescripcion(subCuartelModel.getDescripcion());
 		subCuartel.setHectarea(subCuartelModel.getHectarea());
 		subCuartel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaModelToListCaracteristica(subCuartelModel.getCaracteristicas()));
-		subCuartel.setEstado(estadoSubCuartelConverter.convertEstadoSubCuartelModelToEstadoSubCuartel(subCuartelModel.getEstado()));
+		
+		subCuartel.setCoordenadaList(coordenadaConverter.convertListModelToListEntity(subCuartelModel.getCoordenadaList()));
+		
+		subCuartel.setEstado(estadoSubCuartelService.buscarEstadoActivo());
 		subCuartel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelModelToListAtributoSubCuartel(subCuartelModel.getAtributosSubCuartel()));
-		subCuartel.setPeriodosVariedad(periodoVariedadConverter.convertListPeriodoVariedadModelToListPeriodoVariedad(subCuartelModel.getPeriodosVariedad()));
+		
+		Variedad variedad = variedadService.findVariedadById(subCuartelModel.getIdVariedad());
+		
+		if(subCuartel.getPeriodosVariedad().isEmpty()) {
+			PeriodoVariedad periodoVariedad = new PeriodoVariedad();
+			periodoVariedad.setFechaInicioPeriodo(Date.valueOf(LocalDate.now()));
+			periodoVariedad.setFechaFinPeriodo(null);
+			periodoVariedad = periodoVariedadService.addPeriodoVariedad(periodoVariedad);
+			periodoVariedad.setVariedad(variedad);
+			
+			subCuartel.getPeriodosVariedad().add(periodoVariedad);
+			
+		}else {
+		
+		for(PeriodoVariedad periodo: subCuartel.getPeriodosVariedad()) {
+			if(periodo.getFechaFinPeriodo() == null) {
+				if(periodo.getVariedad().equals(variedad)) {
+					
+				}else {
+					periodo.setFechaFinPeriodo(Date.valueOf(LocalDate.now()));
+					
+					PeriodoVariedad periodoVariedad = new PeriodoVariedad();
+					periodoVariedad.setFechaInicioPeriodo(Date.valueOf(LocalDate.now()));
+					periodoVariedad.setFechaFinPeriodo(null);
+					periodoVariedad = periodoVariedadService.addPeriodoVariedad(periodoVariedad);
+					periodoVariedad.setVariedad(variedad);
+				}
+			  }
+				
+			}
+			
+		}
+			
+		
 		return subCuartel;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public SubCuartelModel convertSubCuartelToSubCuartelModel(SubCuartel subCuartel){
 		SubCuartelModel subCuartelModel = new SubCuartelModel();
 		subCuartelModel.setIdSubCuartel(subCuartel.getIdSubCuartel());
@@ -53,15 +135,19 @@ public class SubCuartelConverter {
 		subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
 		subCuartelModel.setEstado(subCuartel.getEstado().getDescripcion());
 		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(subCuartel.getAtributosSubCuartel()));
+		subCuartelModel.setIdCuartel(subCuartel.getCuartel().getIdCuartel());
+		subCuartelModel.setNombreCuartel(subCuartel.getCuartel().getDescripcion());
+		
 		for (PeriodoVariedad periodo: subCuartel.getPeriodosVariedad()) {
 			
 			if(periodo.getFechaFinPeriodo() == null) {
 				subCuartelModel.setVariedad(periodo.getVariedad().getNombre());
 				subCuartelModel.setColorVariedad(periodo.getVariedad().getColorVariedad());
+				subCuartelModel.setIdVariedad(periodo.getVariedad().getId());
 			}
 			
 		}
-		subCuartelModel.setNombreCampo(subCuartel.getCuartel().getDescripcion());
+		subCuartelModel.setNombreCampo(subCuartel.getCuartel().getCampo().getNombre());
 		
 		subCuartelModel.setCoordenadaList(coordenadaConverter.convertListEntityToListModel(subCuartel.getCoordenadaList()));
 		return subCuartelModel;

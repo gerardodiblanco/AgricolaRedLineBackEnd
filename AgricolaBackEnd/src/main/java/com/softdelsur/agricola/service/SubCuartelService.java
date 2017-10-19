@@ -10,5 +10,6 @@ public interface SubCuartelService {
 	SubCuartel addSubCuartel(SubCuartel subCuartel);
 	SubCuartel buscarPorId(String id);
 	
-	List<SubCuartel> buscarPorCuartel(Cuartel cuartel);
+	List<SubCuartel> buscarSubCuartelesActivosPorCuartel(Cuartel cuartel);
+	SubCuartel eliminarSubCuartel(SubCuartel subCuartel);
 }

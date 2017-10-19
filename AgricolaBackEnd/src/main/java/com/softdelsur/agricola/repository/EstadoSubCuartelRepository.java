@@ -7,5 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.softdelsur.agricola.entity.EstadoSubCuartel;
 
 public interface EstadoSubCuartelRepository  extends JpaRepository<EstadoSubCuartel, Serializable>{
+	
+	EstadoSubCuartel findByDescripcion(String nombre);
 
 }

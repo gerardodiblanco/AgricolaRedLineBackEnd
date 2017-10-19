@@ -56,6 +56,9 @@
 		<item value="288" key="size.y"/>
 		<item value="424" key="size.x"/>
 	</section>
+	<section name="NewPackageWizardPage">
+		<item value="false" key="create_package_info_java"/>
+	</section>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="AddGetterSetterDialog">

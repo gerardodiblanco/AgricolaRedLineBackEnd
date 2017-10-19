@@ -1,5 +1,7 @@
 package com.softdelsur.agricola.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,18 @@ public class VariedadServiceImpl implements VariedadService{
 	public Variedad addVariedad(Variedad variedad) {
 		
 		return variedadRepository.save(variedad);
+	}
+
+	@Override
+	public Variedad findVariedadById(String id) {
+		
+		return variedadRepository.findById(id);
+	}
+
+	@Override
+	public List<Variedad> findVariedades() {
+		
+		return variedadRepository.findAll();
 	}
 
 }
