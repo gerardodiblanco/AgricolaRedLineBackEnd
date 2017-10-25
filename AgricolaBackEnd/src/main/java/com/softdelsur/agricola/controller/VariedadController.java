@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,12 +32,17 @@ public class VariedadController {
 	@GetMapping("/all")
 	public List<VariedadModel> buscarVariedades(){
 		
-		return variedadConverter.convertListVariedadToListVariedadModel(variedadService.findVariedades());
-		
-		
-		 
+		return variedadConverter.convertListVariedadToListVariedadModel(variedadService.findVariedadesActivas());
 		
 		
 	}
+	
+	@CrossOrigin
+	@DeleteMapping("/remove/{idVariedad}")
+	public void eliminarVariedad(@PathVariable("idVariedad") String idVariedad) {
+		variedadService.eliminarVariedad(idVariedad);
+		
+	}
 
+	
 }

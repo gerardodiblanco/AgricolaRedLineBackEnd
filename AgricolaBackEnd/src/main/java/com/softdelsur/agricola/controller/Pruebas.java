@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.softdelsur.agricola.entity.Atributo;
+import com.softdelsur.agricola.entity.AtributoOpcion;
 import com.softdelsur.agricola.entity.Campo;
 import com.softdelsur.agricola.entity.Coordenada;
 import com.softdelsur.agricola.entity.Cuartel;
@@ -30,6 +32,8 @@ import com.softdelsur.agricola.model.EstadoProveedorModel;
 import com.softdelsur.agricola.model.LocalidadModel;
 import com.softdelsur.agricola.model.ProveedorModelABMCampo;
 import com.softdelsur.agricola.model.TipoCampoModel;
+import com.softdelsur.agricola.service.AtributoOpcionService;
+import com.softdelsur.agricola.service.AtributoService;
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.CoordenadaService;
 import com.softdelsur.agricola.service.CuartelService;
@@ -104,6 +108,14 @@ public class Pruebas {
 	@Autowired
 	@Qualifier("variedadServiceImpl")
 	VariedadService variedadService;
+	
+	@Autowired
+	@Qualifier("atributoServiceImpl")
+	AtributoService atributoService;
+	
+	@Autowired
+	@Qualifier("atributoOpcionServiceImpl")
+	AtributoOpcionService atributoOpcionService;
 	
 	
 	@GetMapping("/campo")
@@ -299,12 +311,14 @@ public class Pruebas {
 		Variedad variedad1 = new Variedad();
 		variedad1.setNombre("Merlot");
 		variedad1.setColorVariedad("#BF00FF");
+		variedad1.setEstado(true);
 		variedad1 = variedadService.addVariedad(variedad1);
 		
 
 		Variedad variedad2 = new Variedad();
 		variedad2.setNombre("Sauvignon");
 		variedad2.setColorVariedad("#3ADF00");
+		variedad2.setEstado(true);
 		variedad2 = variedadService.addVariedad(variedad2);
 		
 //periodoVariedad
@@ -392,6 +406,19 @@ public class Pruebas {
 				subCuartel2.getCoordenadaList().add(coordenadaSubCuartel44);
 				
 				subCuartel2 = subCuartelService.addSubCuartel(subCuartel2);
+				
+			
+			Atributo atributoProtecAntiGranizo = new Atributo("proteccion anti granizo");
+			atributoProtecAntiGranizo.setEstado(true);
+		
+			atributoProtecAntiGranizo = atributoService.addAtributo(atributoProtecAntiGranizo);
+			AtributoOpcion atributoOpcionSI = new AtributoOpcion("SI",atributoProtecAntiGranizo);
+			atributoOpcionSI.setEstado(true);
+			AtributoOpcion atributoOpcionNO = new AtributoOpcion("NO",atributoProtecAntiGranizo);
+			atributoOpcionNO.setEstado(true);
+			atributoOpcionNO = atributoOpcionService.addAtributoOpcion(atributoOpcionNO);
+			atributoOpcionSI = atributoOpcionService.addAtributoOpcion(atributoOpcionSI);
+			
 		
 		
 		return "hecho";

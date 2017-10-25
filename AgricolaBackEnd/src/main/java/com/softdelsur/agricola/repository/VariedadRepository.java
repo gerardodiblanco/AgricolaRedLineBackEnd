@@ -12,6 +12,7 @@ import com.softdelsur.agricola.entity.Variedad;
 public interface VariedadRepository extends JpaRepository<Variedad, Serializable>{
 	
 	Variedad findById(String id);
+	List<Variedad> findByEstado(boolean estado);
 	
 
 }

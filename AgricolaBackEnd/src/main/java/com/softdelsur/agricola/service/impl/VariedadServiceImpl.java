@@ -30,9 +30,18 @@ public class VariedadServiceImpl implements VariedadService{
 	}
 
 	@Override
-	public List<Variedad> findVariedades() {
+	public List<Variedad> findVariedadesActivas() {
 		
-		return variedadRepository.findAll();
+		return variedadRepository.findByEstado(true);
+	}
+
+	@Override
+	public Variedad eliminarVariedad(String id) {
+	
+		 Variedad variedad = variedadRepository.findById(id);
+		 variedad.setEstado(false);
+		 variedad =  variedadRepository.save(variedad);
+		 return variedad;
 	}
 
 }
