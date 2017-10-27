@@ -35,10 +35,11 @@ public class AtributoOpcionController {
 	
 
 	@CrossOrigin
-	@GetMapping("/allActivos")
-	public List<AtributoOpcionModel> buscarAtributoOpcion(){
+	@GetMapping("/allActivos/{idAtributo}")
+	public List<AtributoOpcionModel> buscarAtributoOpcion(@PathVariable("idAtributo") String idAtributo){
+		System.out.println(idAtributo);
 		return atributoOpcionConverter.convertListAtributoOpcionToListAtributoOpcionModel(
-				atributoOpcionService.findAtributoOpcionActivos());
+				atributoOpcionService.findAtributoOpcionActivos(idAtributo));
 	}
 	
 	@CrossOrigin
