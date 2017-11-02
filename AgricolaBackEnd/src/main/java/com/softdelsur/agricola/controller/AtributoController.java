@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.converter.AtributoConverter;
+import com.softdelsur.agricola.model.AtributoConOpcionesModel;
 import com.softdelsur.agricola.model.AtributoModel;
 import com.softdelsur.agricola.service.AtributoService;
 
@@ -56,6 +57,11 @@ public class AtributoController {
 	}
 
 	
+	@CrossOrigin
+	@GetMapping("/allActivosConOpciones")
+	public List<AtributoConOpcionesModel> buscarAtributosConOpciones(){
+		return atributoService.findAtributosActivosConOpciones();
+	}
 	
 
 }

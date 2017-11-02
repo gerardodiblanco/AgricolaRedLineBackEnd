@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.softdelsur.agricola.converter.AtributoConverter;
 import com.softdelsur.agricola.entity.Atributo;
+import com.softdelsur.agricola.model.AtributoConOpcionesModel;
 import com.softdelsur.agricola.repository.AtributoRepository;
 import com.softdelsur.agricola.service.AtributoService;
 
@@ -16,6 +18,10 @@ public class AtributoServiceImpl implements AtributoService{
 	@Autowired
 	 @Qualifier("atributoRepository")
 	 AtributoRepository atributoRepository;
+	
+	@Autowired
+	 @Qualifier("atributoConverter")
+	 AtributoConverter atributoConverter;
 
 	@Override
 	public Atributo findAtributoById(String id) {
@@ -44,6 +50,13 @@ public class AtributoServiceImpl implements AtributoService{
 		atributo = addAtributo(atributo);
 	}
 		return addAtributo(atributo);
+	}
+
+	@Override
+	public List<AtributoConOpcionesModel> findAtributosActivosConOpciones() {
+		// TODO Auto-generated method stub
+		return atributoConverter.convertListAtributoToListAtributoConOpcionesModel(
+				atributoRepository.findAtributosByEstado(true));
 	}
 
 }

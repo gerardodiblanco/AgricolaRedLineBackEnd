@@ -57,9 +57,11 @@ public class SubCuartelController {
 		Cuartel cuartel = null;
 		cuartel = cuartelService.findCuartelById(idCuartel);
 		if (cuartel != null) {
+			System.out.println("cuartel encontrado");
 			List<SubCuartel> subCuartelList = null;
 			subCuartelList = subCuartelService.buscarSubCuartelesActivosPorCuartel(cuartel);
 			if (subCuartelList != null) {
+				System.out.println("sub cuartel encontrado");
 				subCuartelModelList = subCuartelConverter.convertListSubCuartelToListSubCuartelModel(subCuartelList);
 
 			}

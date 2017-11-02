@@ -79,7 +79,7 @@ public class SubCuartelConverter {
 		subCuartel.setCoordenadaList(coordenadaConverter.convertListModelToListEntity(subCuartelModel.getCoordenadaList()));
 		
 		subCuartel.setEstado(estadoSubCuartelService.buscarEstadoActivo());
-		subCuartel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelModelToListAtributoSubCuartel(subCuartelModel.getAtributosSubCuartel()));
+	//	subCuartel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelModelToListAtributoSubCuartel(subCuartelModel.getAtributosSubCuartel()));
 		
 		Variedad variedad = variedadService.findVariedadById(subCuartelModel.getIdVariedad());
 		
@@ -132,9 +132,11 @@ public class SubCuartelConverter {
 		subCuartelModel.setCodigo(subCuartel.getCodigo());
 		subCuartelModel.setDescripcion(subCuartel.getDescripcion());
 		subCuartelModel.setHectarea(subCuartel.getHectarea());
-		subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
+//		subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
 		subCuartelModel.setEstado(subCuartel.getEstado().getDescripcion());
-		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(subCuartel.getAtributosSubCuartel()));
+		System.out.println("antes de llamar al converter de atributo sub cuartel");
+		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(subCuartel.getAtributoSubCuartelList()));
+	System.out.println("despues del converter de atrubuto sc");
 		subCuartelModel.setIdCuartel(subCuartel.getCuartel().getIdCuartel());
 		subCuartelModel.setNombreCuartel(subCuartel.getCuartel().getDescripcion());
 		
@@ -163,6 +165,7 @@ public class SubCuartelConverter {
 	public List<SubCuartelModel> convertListSubCuartelToListSubCuartelModel(List<SubCuartel> listSubCuartel){
 		List<SubCuartelModel> subCuartelModelList = new ArrayList<SubCuartelModel>();
 		for (SubCuartel subCuartel : listSubCuartel) {
+			System.out.println("dentro del converterList-> sub cuartel = "+subCuartel.getDescripcion());
 			subCuartelModelList.add(convertSubCuartelToSubCuartelModel(subCuartel));
 		}
 		return subCuartelModelList;

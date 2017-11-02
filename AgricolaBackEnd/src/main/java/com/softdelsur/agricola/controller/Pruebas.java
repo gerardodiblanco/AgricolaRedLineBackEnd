@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.entity.Atributo;
 import com.softdelsur.agricola.entity.AtributoOpcion;
+import com.softdelsur.agricola.entity.AtributoSubCuartel;
 import com.softdelsur.agricola.entity.Campo;
 import com.softdelsur.agricola.entity.Coordenada;
 import com.softdelsur.agricola.entity.Cuartel;
@@ -34,6 +35,7 @@ import com.softdelsur.agricola.model.ProveedorModelABMCampo;
 import com.softdelsur.agricola.model.TipoCampoModel;
 import com.softdelsur.agricola.service.AtributoOpcionService;
 import com.softdelsur.agricola.service.AtributoService;
+import com.softdelsur.agricola.service.AtributoSubCuartelService;
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.CoordenadaService;
 import com.softdelsur.agricola.service.CuartelService;
@@ -116,6 +118,10 @@ public class Pruebas {
 	@Autowired
 	@Qualifier("atributoOpcionServiceImpl")
 	AtributoOpcionService atributoOpcionService;
+	
+	@Autowired
+	@Qualifier("atributoSubCuartelServiceImpl")
+	AtributoSubCuartelService atributoSubCuartelService;
 	
 	
 	@GetMapping("/campo")
@@ -344,6 +350,24 @@ public class Pruebas {
 		EstadoSubCuartel estadoSubCuartelInactivo = new EstadoSubCuartel("Inactivo");
 		estadoSubCuartelInactivo = estadoSubCuartelService.addEstadoSubCuartel(estadoSubCuartelInactivo);
 		
+		
+		
+		
+//Atributo	
+		
+		Atributo atributoProtecAntiGranizo = new Atributo("Proteccion anti granizo");
+		atributoProtecAntiGranizo.setEstado(true);
+	
+		atributoProtecAntiGranizo = atributoService.addAtributo(atributoProtecAntiGranizo);
+		AtributoOpcion atributoOpcionSI = new AtributoOpcion("SI",atributoProtecAntiGranizo);
+		atributoOpcionSI.setEstado(true);
+		AtributoOpcion atributoOpcionNO = new AtributoOpcion("NO",atributoProtecAntiGranizo);
+		atributoOpcionNO.setEstado(true);
+		atributoOpcionNO = atributoOpcionService.addAtributoOpcion(atributoOpcionNO);
+		atributoOpcionSI = atributoOpcionService.addAtributoOpcion(atributoOpcionSI);
+		
+	
+		
 //sub Cuartel		
 		
 		SubCuartel subCuartel1 = new SubCuartel();
@@ -354,8 +378,10 @@ public class Pruebas {
 		subCuartel1.setCuartel(cuartel2);
 		subCuartel1.getPeriodosVariedad().add(periodoVariedad1);
 		
-		subCuartel1.setAtributosSubCuartel(null);
-		subCuartel1.setCaracteristicas(null);
+		AtributoSubCuartel atributoSubCuartel1 = new AtributoSubCuartel(atributoOpcionSI);
+		atributoSubCuartel1 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel1);
+		subCuartel1.getAtributoSubCuartelList().add(atributoSubCuartel1);	
+
 		
 		
 
@@ -376,8 +402,6 @@ public class Pruebas {
 			subCuartel1 = subCuartelService.addSubCuartel(subCuartel1);
 			
 			
-			
-			
 			SubCuartel subCuartel2 = new SubCuartel();
 			subCuartel2.setDescripcion("subCuartel 2");
 			subCuartel2.setHectarea(34);
@@ -385,10 +409,11 @@ public class Pruebas {
 			subCuartel2.setCodigo(7);
 			subCuartel2.setCuartel(cuartel2);
 			subCuartel2.getPeriodosVariedad().add(periodoVariedad2);
-			subCuartel2.setAtributosSubCuartel(null);
-			subCuartel2.setCaracteristicas(null);
 			
 			
+			AtributoSubCuartel atributoSubCuartel2 = new AtributoSubCuartel(atributoOpcionNO);
+			atributoSubCuartel2 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel2);
+			subCuartel2.getAtributoSubCuartelList().add(atributoSubCuartel2);	
 	
 			
 				Coordenada coordenadaSubCuartel11 = new Coordenada(1, -32.87852180068769, -68.85473240740964);
@@ -408,18 +433,6 @@ public class Pruebas {
 				subCuartel2 = subCuartelService.addSubCuartel(subCuartel2);
 				
 			
-			Atributo atributoProtecAntiGranizo = new Atributo("proteccion anti granizo");
-			atributoProtecAntiGranizo.setEstado(true);
-		
-			atributoProtecAntiGranizo = atributoService.addAtributo(atributoProtecAntiGranizo);
-			AtributoOpcion atributoOpcionSI = new AtributoOpcion("SI",atributoProtecAntiGranizo);
-			atributoOpcionSI.setEstado(true);
-			AtributoOpcion atributoOpcionNO = new AtributoOpcion("NO",atributoProtecAntiGranizo);
-			atributoOpcionNO.setEstado(true);
-			atributoOpcionNO = atributoOpcionService.addAtributoOpcion(atributoOpcionNO);
-			atributoOpcionSI = atributoOpcionService.addAtributoOpcion(atributoOpcionSI);
-			
-		
 		
 		return "hecho";
 		

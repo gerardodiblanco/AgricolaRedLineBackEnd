@@ -3,6 +3,7 @@ package com.softdelsur.agricola.service;
 import java.util.List;
 
 import com.softdelsur.agricola.entity.Atributo;
+import com.softdelsur.agricola.model.AtributoConOpcionesModel;
 
 public interface AtributoService {
 	
@@ -11,5 +12,6 @@ public interface AtributoService {
 	
 	List<Atributo> findAtributosActivos();
 	Atributo eliminarAtributo(String id);
-
+	
+	List<AtributoConOpcionesModel> findAtributosActivosConOpciones(); 
 }
