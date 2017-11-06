@@ -8,8 +8,9 @@ public class AtributoSubCuartelModel {
 	
 	private String idAtributoSubCuartel;
 	private String idAtributo;
-	private String nombreAtributo;
 	private String idOpcion;
+	private String idSubCuartel;
+	private String nombreAtributo;
 	private String nombreOpcion;
 	private Timestamp fechaInicioAsignacion;
 	private List<AtributoOpcionModel> atributoOpcionModelList = new ArrayList<>(); 
@@ -73,6 +74,16 @@ public class AtributoSubCuartelModel {
 
 	public void setAtributoOpcionModelList(List<AtributoOpcionModel> atributoOpcionModelList) {
 		this.atributoOpcionModelList = atributoOpcionModelList;
+	}
+
+
+	public String getIdSubCuartel() {
+		return idSubCuartel;
+	}
+
+
+	public void setIdSubCuartel(String idSubCuartel) {
+		this.idSubCuartel = idSubCuartel;
 	}
 	
 	

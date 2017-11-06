@@ -35,16 +35,20 @@ public class AtributoSubCuartel {
 	    @ManyToOne(cascade = CascadeType.REFRESH)
 	    private AtributoOpcion opcion;
 	    
+	    @ManyToOne(cascade = CascadeType.REFRESH)
+	    private SubCuartel subCuartel;
+	    
 	    
 		public AtributoSubCuartel() {
 			super();
 		}
 
 
-		public AtributoSubCuartel(AtributoOpcion opcion) {
+		public AtributoSubCuartel(AtributoOpcion opcion, SubCuartel subCuartel) {
 			this.fechaIncioVigencia = Timestamp.valueOf(LocalDateTime.now());
 			this.fechaFinVigencia = null;
 			this.opcion = opcion;
+			this.subCuartel = subCuartel;
 		
 	}
 		
@@ -76,6 +80,16 @@ public class AtributoSubCuartel {
 
 		public void setOpcion(AtributoOpcion opcion) {
 			this.opcion = opcion;
+		}
+
+
+		public SubCuartel getSubCuartel() {
+			return subCuartel;
+		}
+
+
+		public void setSubCuartel(SubCuartel subCuartel) {
+			this.subCuartel = subCuartel;
 		}
 
 

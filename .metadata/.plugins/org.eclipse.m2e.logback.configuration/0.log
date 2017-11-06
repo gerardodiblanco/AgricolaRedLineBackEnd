@@ -5439,3 +5439,179 @@ org.eclipse.core.runtime.CoreException: Variable references non-existent resourc
 2017-11-02 11:37:40,617 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2017-11-02 11:37:40,618 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-11-02 11:37:40,618 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-02 12:46:32,024 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-02 12:46:32,045 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-02 12:46:32,067 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-02 12:46:32,071 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-02 12:46:32,071 [Worker-12] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-02 12:46:32,948 [Worker-11] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2017-11-03 09:46:27,600 [Worker-450] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 09:46:27,666 [Worker-450] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 09:46:27,684 [Worker-450] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 09:46:27,685 [Worker-450] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 09:46:27,685 [Worker-450] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 09:50:11,731 [Worker-458] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 09:50:11,731 [Worker-458] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 09:50:11,732 [Worker-458] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 09:50:11,733 [Worker-458] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 09:50:11,734 [Worker-458] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 10:50:04,111 [Worker-486] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 10:50:04,139 [Worker-486] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 10:50:04,152 [Worker-486] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 10:50:04,154 [Worker-486] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 10:50:04,154 [Worker-486] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 10:55:52,126 [Worker-491] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 10:55:52,127 [Worker-491] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 10:55:52,127 [Worker-491] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 10:55:52,129 [Worker-491] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 10:55:52,129 [Worker-491] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 10:58:01,992 [Worker-484] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 10:58:01,993 [Worker-484] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 10:58:01,993 [Worker-484] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 10:58:01,995 [Worker-484] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 10:58:01,995 [Worker-484] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:16:31,325 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:16:31,326 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:16:31,327 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:16:31,329 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:16:31,329 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:18:41,364 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:18:41,364 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:18:41,365 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:18:41,366 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:18:41,366 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:34:43,291 [Worker-503] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:34:43,292 [Worker-503] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:34:43,292 [Worker-503] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:34:43,294 [Worker-503] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:34:43,294 [Worker-503] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:35:46,156 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:35:46,157 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:35:46,157 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:35:46,159 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:35:46,159 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:37:34,680 [Worker-505] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:37:34,680 [Worker-505] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:37:34,681 [Worker-505] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:37:34,682 [Worker-505] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:37:34,682 [Worker-505] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:41:33,418 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:41:33,418 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:41:33,419 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:41:33,420 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:41:33,420 [Worker-502] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:42:53,408 [Worker-504] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:42:53,408 [Worker-504] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:42:53,409 [Worker-504] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:42:53,410 [Worker-504] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:42:53,410 [Worker-504] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:44:26,671 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:44:26,672 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:44:26,673 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:44:26,676 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:44:26,676 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:45:51,722 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:45:51,723 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:45:51,723 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:45:51,725 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:45:51,725 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:48:45,400 [Worker-509] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:48:45,400 [Worker-509] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:48:45,401 [Worker-509] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:48:45,403 [Worker-509] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:48:45,403 [Worker-509] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:50:55,539 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:50:55,539 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:50:55,540 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:50:55,541 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:50:55,541 [Worker-508] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 11:51:53,617 [Worker-511] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:51:53,617 [Worker-511] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 11:51:53,618 [Worker-511] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 11:51:53,622 [Worker-511] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 11:51:53,622 [Worker-511] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 12:00:04,008 [Worker-510] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 12:00:04,008 [Worker-510] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 12:00:04,009 [Worker-510] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 12:00:04,010 [Worker-510] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 12:00:04,010 [Worker-510] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-03 12:06:39,269 [Worker-513] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 12:06:39,269 [Worker-513] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-03 12:06:39,269 [Worker-513] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-03 12:06:39,271 [Worker-513] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-03 12:06:39,271 [Worker-513] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:14:19,280 [Worker-1468] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:14:19,293 [Worker-1468] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:14:19,307 [Worker-1468] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:14:19,308 [Worker-1468] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:14:19,308 [Worker-1468] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:21:40,733 [Worker-1471] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:21:40,733 [Worker-1471] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:21:40,734 [Worker-1471] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:21:40,735 [Worker-1471] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:21:40,735 [Worker-1471] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:28:14,286 [Worker-1476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:28:14,286 [Worker-1476] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:28:14,287 [Worker-1476] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:28:14,288 [Worker-1476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:28:14,288 [Worker-1476] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:35:53,343 [Worker-1479] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:35:53,344 [Worker-1479] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:35:53,345 [Worker-1479] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:35:53,349 [Worker-1479] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:35:53,349 [Worker-1479] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:40:04,971 [Worker-1480] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:40:04,971 [Worker-1480] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:40:04,972 [Worker-1480] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:40:04,973 [Worker-1480] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:40:04,973 [Worker-1480] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:45:14,753 [Worker-1484] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:45:14,754 [Worker-1484] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:45:14,754 [Worker-1484] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:45:14,756 [Worker-1484] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:45:14,756 [Worker-1484] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:49:33,358 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:49:33,358 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:49:33,359 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:49:33,359 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:49:33,359 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:51:13,732 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:51:13,732 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:51:13,733 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:51:13,735 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:51:13,735 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 11:57:57,139 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:57:57,139 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 11:57:57,140 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 11:57:57,141 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 11:57:57,141 [Worker-1487] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 12:00:33,967 [Worker-1491] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:00:33,967 [Worker-1491] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 12:00:33,968 [Worker-1491] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 12:00:33,969 [Worker-1491] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:00:33,969 [Worker-1491] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 12:05:47,044 [Worker-1489] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:05:47,044 [Worker-1489] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 12:05:47,045 [Worker-1489] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 12:05:47,045 [Worker-1489] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:05:47,045 [Worker-1489] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 12:09:17,856 [Worker-1488] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:09:17,856 [Worker-1488] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 12:09:17,857 [Worker-1488] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 12:09:17,861 [Worker-1488] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:09:17,861 [Worker-1488] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 12:12:18,821 [Worker-1503] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:12:18,822 [Worker-1503] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 12:12:18,824 [Worker-1503] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 12:12:18,827 [Worker-1503] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:12:18,827 [Worker-1503] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 12:14:56,715 [Worker-1499] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:14:56,716 [Worker-1499] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 12:14:56,716 [Worker-1499] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 12:14:56,718 [Worker-1499] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:14:56,718 [Worker-1499] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources
+2017-11-06 12:17:03,851 [Worker-1506] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:17:03,852 [Worker-1506] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2017-11-06 12:17:03,853 [Worker-1506] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-11-06 12:17:03,857 [Worker-1506] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-11-06 12:17:03,857 [Worker-1506] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/gdiblanco/eclipse-workspace/AgricolaBackEnd/src/test/resources

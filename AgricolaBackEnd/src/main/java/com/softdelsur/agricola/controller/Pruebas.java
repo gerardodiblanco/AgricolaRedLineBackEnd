@@ -378,9 +378,9 @@ public class Pruebas {
 		subCuartel1.setCuartel(cuartel2);
 		subCuartel1.getPeriodosVariedad().add(periodoVariedad1);
 		
-		AtributoSubCuartel atributoSubCuartel1 = new AtributoSubCuartel(atributoOpcionSI);
-		atributoSubCuartel1 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel1);
-		subCuartel1.getAtributoSubCuartelList().add(atributoSubCuartel1);	
+		//AtributoSubCuartel atributoSubCuartel1 = new AtributoSubCuartel(atributoOpcionSI);
+		//atributoSubCuartel1 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel1);
+		// subCuartel1.getAtributoSubCuartelList().add(atributoSubCuartel1);	
 
 		
 		
@@ -411,10 +411,7 @@ public class Pruebas {
 			subCuartel2.getPeriodosVariedad().add(periodoVariedad2);
 			
 			
-			AtributoSubCuartel atributoSubCuartel2 = new AtributoSubCuartel(atributoOpcionNO);
-			atributoSubCuartel2 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel2);
-			subCuartel2.getAtributoSubCuartelList().add(atributoSubCuartel2);	
-	
+			
 			
 				Coordenada coordenadaSubCuartel11 = new Coordenada(1, -32.87852180068769, -68.85473240740964);
 				coordenadaSubCuartel11 = coordenadaService.addCorrdenada(coordenadaSubCuartel11);
@@ -431,6 +428,9 @@ public class Pruebas {
 				subCuartel2.getCoordenadaList().add(coordenadaSubCuartel44);
 				
 				subCuartel2 = subCuartelService.addSubCuartel(subCuartel2);
+				AtributoSubCuartel atributoSubCuartel2 = new AtributoSubCuartel(atributoOpcionNO,subCuartel2);
+				atributoSubCuartel2 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel2);
+				
 				
 			
 		

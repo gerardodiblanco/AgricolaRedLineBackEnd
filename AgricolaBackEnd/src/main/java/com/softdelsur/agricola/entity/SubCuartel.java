@@ -46,9 +46,6 @@ public class SubCuartel {
 	@OneToMany(cascade = CascadeType.REFRESH )
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
 	
-	@JoinColumn(name = "id_subcuartel")
-	@OneToMany(cascade = CascadeType.REFRESH)
-	private List<AtributoSubCuartel> atributoSubCuartelList = new ArrayList<AtributoSubCuartel>();
 	
 	public SubCuartel() {
 		super();
@@ -164,23 +161,10 @@ public class SubCuartel {
 
 
 
-	public List<AtributoSubCuartel> getAtributoSubCuartelList() {
-		return atributoSubCuartelList;
-	}
-
-
-
-	public void setAtributoSubCuartelList(List<AtributoSubCuartel> atributoSubCuartelList) {
-		this.atributoSubCuartelList = atributoSubCuartelList;
-	}
-
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((atributoSubCuartelList == null) ? 0 : atributoSubCuartelList.hashCode());
 		result = prime * result + ((caracteristicas == null) ? 0 : caracteristicas.hashCode());
 		result = prime * result + codigo;
 		result = prime * result + ((coordenadaList == null) ? 0 : coordenadaList.hashCode());
@@ -193,6 +177,8 @@ public class SubCuartel {
 		return result;
 	}
 
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -202,11 +188,6 @@ public class SubCuartel {
 		if (getClass() != obj.getClass())
 			return false;
 		SubCuartel other = (SubCuartel) obj;
-		if (atributoSubCuartelList == null) {
-			if (other.atributoSubCuartelList != null)
-				return false;
-		} else if (!atributoSubCuartelList.equals(other.atributoSubCuartelList))
-			return false;
 		if (caracteristicas == null) {
 			if (other.caracteristicas != null)
 				return false;
@@ -249,6 +230,6 @@ public class SubCuartel {
 		return true;
 	}
 
-		
+
 	
 }

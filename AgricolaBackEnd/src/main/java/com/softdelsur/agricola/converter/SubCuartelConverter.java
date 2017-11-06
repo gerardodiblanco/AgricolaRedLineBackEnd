@@ -1,7 +1,9 @@
 package com.softdelsur.agricola.converter;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +11,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.softdelsur.agricola.entity.AtributoSubCuartel;
 import com.softdelsur.agricola.entity.PeriodoVariedad;
 import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.entity.Variedad;
 import com.softdelsur.agricola.model.SubCuartelModel;
+import com.softdelsur.agricola.service.AtributoSubCuartelService;
 import com.softdelsur.agricola.service.EstadoSubCuartelService;
 import com.softdelsur.agricola.service.PeriodoVariedadService;
 import com.softdelsur.agricola.service.SubCuartelService;
 import com.softdelsur.agricola.service.VariedadService;
+
+import net.bytebuddy.description.type.TypeDescription.Generic.Visitor.ForRawType;
 
 @Component("subCuartelConverter")
 public class SubCuartelConverter {
@@ -55,6 +61,10 @@ public class SubCuartelConverter {
 	@Qualifier("periodoVariedadServiceImpl")
 	PeriodoVariedadService periodoVariedadService;
 	
+	@Autowired
+	@Qualifier("atributoSubCuartelServiceImpl")
+	AtributoSubCuartelService atributoSubCuartelService;
+	
 	public SubCuartel convertSubCuartelModelToSubCuartel(SubCuartelModel subCuartelModel){
 		SubCuartel subCuartel = null;
 		
@@ -79,7 +89,7 @@ public class SubCuartelConverter {
 		subCuartel.setCoordenadaList(coordenadaConverter.convertListModelToListEntity(subCuartelModel.getCoordenadaList()));
 		
 		subCuartel.setEstado(estadoSubCuartelService.buscarEstadoActivo());
-	//	subCuartel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelModelToListAtributoSubCuartel(subCuartelModel.getAtributosSubCuartel()));
+		
 		
 		Variedad variedad = variedadService.findVariedadById(subCuartelModel.getIdVariedad());
 		
@@ -112,6 +122,44 @@ public class SubCuartelConverter {
 			}
 			
 		}
+		
+		List<AtributoSubCuartel> atributoSubCuartelListNuevos = atributoSubCuartelConverter.convertListAtributoSubCuartelModelToListAtributoSubCuartel(
+						subCuartelModel.getAtributosSubCuartel());
+		
+		// dar de baja los atributos eliminados 
+		
+		List<AtributoSubCuartel> atributoSubCuartelListAll = atributoSubCuartelService.findAtributosSubCuartelesBySubCuartel(subCuartel);
+		
+		System.out.println("TAMAÑO NUEVOS " +atributoSubCuartelListNuevos.size());
+		System.out.println("TAMAÑO viejos " +atributoSubCuartelListAll.size());
+		
+		for (AtributoSubCuartel atributoSubCuartelTodo : atributoSubCuartelListAll) {
+			System.out.println("atributo viejo "+atributoSubCuartelTodo.getOpcion().getAtributo().getNombreAtributo());
+		
+				boolean eliminar = true;
+			for (AtributoSubCuartel atributoSubCuartelNuevo: atributoSubCuartelListNuevos) {
+				System.out.println("atributo nuevo "+atributoSubCuartelNuevo.getOpcion().getAtributo().getNombreAtributo());
+				
+				if (atributoSubCuartelTodo.getOpcion().getAtributo().getId().equals(atributoSubCuartelNuevo.getOpcion().getAtributo().getId())) {
+					eliminar = false;
+					System.out.println("          eliminar FALSE");
+					
+				}
+			
+			}
+			if(eliminar) {
+				System.out.println("ELIMINADO "+atributoSubCuartelTodo.getOpcion().getAtributo().getNombreAtributo());
+				atributoSubCuartelTodo.setFechaFinVigencia(Timestamp.valueOf(LocalDateTime.now()));
+				atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartelTodo);
+			}
+			
+			
+			
+		}
+		
+		
+		
+		subCuartel = subCuartelService.addSubCuartel(subCuartel);
 			
 		
 		return subCuartel;
@@ -135,7 +183,9 @@ public class SubCuartelConverter {
 //		subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
 		subCuartelModel.setEstado(subCuartel.getEstado().getDescripcion());
 		System.out.println("antes de llamar al converter de atributo sub cuartel");
-		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(subCuartel.getAtributoSubCuartelList()));
+		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(
+				atributoSubCuartelService.findAtributosSubCuartelesBySubCuartel(subCuartel)
+				));
 	System.out.println("despues del converter de atrubuto sc");
 		subCuartelModel.setIdCuartel(subCuartel.getCuartel().getIdCuartel());
 		subCuartelModel.setNombreCuartel(subCuartel.getCuartel().getDescripcion());
@@ -158,7 +208,7 @@ public class SubCuartelConverter {
 	public List<SubCuartel> convertListSubCuartelModelToListSubCuartel(List<SubCuartelModel> listSubCuartelModel){
 		List<SubCuartel> subCuartelList = new ArrayList<SubCuartel>();
 		for (SubCuartelModel subCuartelModel : listSubCuartelModel) {
-			subCuartelList.add(convertSubCuartelModelToSubCuartel(subCuartelModel));
+		//	subCuartelList.add(convertSubCuartelModelToSubCuartel(subCuartelModel));
 		}
 		return subCuartelList;
 	}
