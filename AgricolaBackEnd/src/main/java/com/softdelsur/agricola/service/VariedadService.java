@@ -11,6 +11,7 @@ public interface VariedadService {
 
 	Variedad addVariedad(Variedad variedad);
 	Variedad findVariedadById(String id);
+	Variedad findVariedadByNombre(String nombre);
 	
 	List<Variedad> findVariedadesActivas();
 	

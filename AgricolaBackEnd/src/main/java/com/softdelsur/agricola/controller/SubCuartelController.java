@@ -72,6 +72,7 @@ public class SubCuartelController {
 	@CrossOrigin
 	@PostMapping("/save")
 	public void guardarSubCuartel(@RequestBody SubCuartelModel subCuartelModel) {
+		System.out.println("SAVE");
 		
 		subCuartelService.addSubCuartel(subCuartelConverter.convertSubCuartelModelToSubCuartel(subCuartelModel));
 		

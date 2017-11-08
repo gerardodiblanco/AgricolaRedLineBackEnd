@@ -37,10 +37,6 @@ public class SubCuartel {
 	
 	@JoinColumn(name = "id_subcuartel")
 	@OneToMany(cascade = CascadeType.REFRESH)
-	public List<PeriodoVariedad> periodosVariedad  = new ArrayList<PeriodoVariedad>();
-	
-	@JoinColumn(name = "id_subcuartel")
-	@OneToMany(cascade = CascadeType.REFRESH)
 	public List<Caracteristica> caracteristicas  = new ArrayList<Caracteristica>();
 	
 	@OneToMany(cascade = CascadeType.REFRESH )
@@ -125,16 +121,6 @@ public class SubCuartel {
 
 
 
-	public List<PeriodoVariedad> getPeriodosVariedad() {
-		return periodosVariedad;
-	}
-
-
-
-	public void setPeriodosVariedad(List<PeriodoVariedad> periodosVariedad) {
-		this.periodosVariedad = periodosVariedad;
-	}
-
 
 
 	public List<Caracteristica> getCaracteristicas() {
@@ -173,7 +159,6 @@ public class SubCuartel {
 		result = prime * result + ((estado == null) ? 0 : estado.hashCode());
 		result = prime * result + Float.floatToIntBits(hectarea);
 		result = prime * result + ((idSubCuartel == null) ? 0 : idSubCuartel.hashCode());
-		result = prime * result + ((periodosVariedad == null) ? 0 : periodosVariedad.hashCode());
 		return result;
 	}
 
@@ -222,14 +207,13 @@ public class SubCuartel {
 				return false;
 		} else if (!idSubCuartel.equals(other.idSubCuartel))
 			return false;
-		if (periodosVariedad == null) {
-			if (other.periodosVariedad != null)
-				return false;
-		} else if (!periodosVariedad.equals(other.periodosVariedad))
-			return false;
 		return true;
 	}
 
 
+
+	
+	
+	
 	
 }

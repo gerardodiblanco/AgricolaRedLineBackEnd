@@ -1,6 +1,7 @@
 package com.softdelsur.agricola.entity;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -30,8 +31,19 @@ public class PeriodoVariedad {
 	    @ManyToOne(cascade = CascadeType.REFRESH)
 	   private Variedad variedad;
 	    
-		public PeriodoVariedad() {
-			super();
+	    @JoinColumn
+	    @ManyToOne(cascade = CascadeType.REFRESH)
+	    private SubCuartel subCuartel;
+	    
+	    public PeriodoVariedad() {
+	    }
+	    
+		public PeriodoVariedad(SubCuartel subCuartel, Variedad variedad) {
+			this.subCuartel = subCuartel;
+			this.variedad = variedad;
+			this.fechaInicioPeriodo = Date.valueOf(LocalDate.now());
+			this.fechaFinPeriodo = null;
+
 		}
 		public String getId() {
 			return id;
@@ -57,6 +69,12 @@ public class PeriodoVariedad {
 		public void setVariedad(Variedad variedad) {
 			this.variedad = variedad;
 		}
+		public SubCuartel getSubCuartel() {
+			return subCuartel;
+		}
+		public void setSubCuartel(SubCuartel subCuartel) {
+			this.subCuartel = subCuartel;
+		}
 		@Override
 		public int hashCode() {
 			final int prime = 31;
@@ -64,6 +82,7 @@ public class PeriodoVariedad {
 			result = prime * result + ((fechaFinPeriodo == null) ? 0 : fechaFinPeriodo.hashCode());
 			result = prime * result + ((fechaInicioPeriodo == null) ? 0 : fechaInicioPeriodo.hashCode());
 			result = prime * result + ((id == null) ? 0 : id.hashCode());
+			result = prime * result + ((subCuartel == null) ? 0 : subCuartel.hashCode());
 			result = prime * result + ((variedad == null) ? 0 : variedad.hashCode());
 			return result;
 		}
@@ -91,6 +110,11 @@ public class PeriodoVariedad {
 					return false;
 			} else if (!id.equals(other.id))
 				return false;
+			if (subCuartel == null) {
+				if (other.subCuartel != null)
+					return false;
+			} else if (!subCuartel.equals(other.subCuartel))
+				return false;
 			if (variedad == null) {
 				if (other.variedad != null)
 					return false;
@@ -99,6 +123,8 @@ public class PeriodoVariedad {
 			return true;
 		}
 
+
+		
 	
 		
 		

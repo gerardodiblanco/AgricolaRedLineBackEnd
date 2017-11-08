@@ -44,4 +44,10 @@ public class VariedadServiceImpl implements VariedadService{
 		 return variedad;
 	}
 
+	@Override
+	public Variedad findVariedadByNombre(String nombre) {
+		
+		return variedadRepository.findByNombreAndEstado(nombre, true);
+	}
+
 }

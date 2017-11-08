@@ -113,7 +113,7 @@ public class AtributoSubCuartelConverter {
 				}
 			}
 		}
-	}
+	}else {System.out.println("sub cuartel NULL id == NULL");}
 				
 		return atributoSubCuartel;
 				

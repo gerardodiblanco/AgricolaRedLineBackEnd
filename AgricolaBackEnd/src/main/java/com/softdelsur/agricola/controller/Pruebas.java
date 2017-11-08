@@ -327,21 +327,7 @@ public class Pruebas {
 		variedad2.setEstado(true);
 		variedad2 = variedadService.addVariedad(variedad2);
 		
-//periodoVariedad
-		
-		PeriodoVariedad periodoVariedad1 = new PeriodoVariedad();
-		periodoVariedad1.setFechaInicioPeriodo(Date.valueOf(LocalDate.now()));
-		periodoVariedad1.setFechaFinPeriodo(null);
-		periodoVariedad1.setVariedad(variedad1);
-		periodoVariedad1 = periodoVariedadService.addPeriodoVariedad(periodoVariedad1);
-		
 
-		PeriodoVariedad periodoVariedad2 = new PeriodoVariedad();
-		periodoVariedad2.setFechaInicioPeriodo(Date.valueOf(LocalDate.now()));
-		periodoVariedad2.setFechaFinPeriodo(null);
-		periodoVariedad2.setVariedad(variedad2);
-		periodoVariedad2 = periodoVariedadService.addPeriodoVariedad(periodoVariedad2);
-		
 //estado sub Cuartel
 		
 		EstadoSubCuartel estadoSubCuartelActivo = new EstadoSubCuartel("Activo");
@@ -376,7 +362,6 @@ public class Pruebas {
 		subCuartel1.setEstado(estadoSubCuartelActivo);
 		subCuartel1.setCodigo(56);
 		subCuartel1.setCuartel(cuartel2);
-		subCuartel1.getPeriodosVariedad().add(periodoVariedad1);
 		
 		//AtributoSubCuartel atributoSubCuartel1 = new AtributoSubCuartel(atributoOpcionSI);
 		//atributoSubCuartel1 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel1);
@@ -408,7 +393,6 @@ public class Pruebas {
 			subCuartel2.setEstado(estadoSubCuartelActivo);
 			subCuartel2.setCodigo(7);
 			subCuartel2.setCuartel(cuartel2);
-			subCuartel2.getPeriodosVariedad().add(periodoVariedad2);
 			
 			
 			
@@ -430,6 +414,19 @@ public class Pruebas {
 				subCuartel2 = subCuartelService.addSubCuartel(subCuartel2);
 				AtributoSubCuartel atributoSubCuartel2 = new AtributoSubCuartel(atributoOpcionNO,subCuartel2);
 				atributoSubCuartel2 = atributoSubCuartelService.addAtributoSubCuartel(atributoSubCuartel2);
+				
+				
+				
+				//periodoVariedad
+				
+				PeriodoVariedad periodoVariedad1 = new PeriodoVariedad(subCuartel1, variedad1);
+				periodoVariedad1 = periodoVariedadService.addPeriodoVariedad(periodoVariedad1);
+				
+
+				PeriodoVariedad periodoVariedad2 = new PeriodoVariedad(subCuartel2, variedad2);
+				periodoVariedad2 = periodoVariedadService.addPeriodoVariedad(periodoVariedad2);
+				
+				
 				
 				
 			
