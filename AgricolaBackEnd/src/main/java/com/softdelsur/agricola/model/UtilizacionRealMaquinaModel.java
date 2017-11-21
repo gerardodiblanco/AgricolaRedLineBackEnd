@@ -7,7 +7,7 @@ public class UtilizacionRealMaquinaModel {
 private int cantHoras;
 private int consumo;
 
-public MaquinaModel maquina;
+public MaquinariaModel maquina;
 
 public UtilizacionRealMaquinaModel() {
 	super();
@@ -37,11 +37,11 @@ public void setConsumo(int consumo) {
 	this.consumo = consumo;
 }
 
-public MaquinaModel getMaquina() {
+public MaquinariaModel getMaquina() {
 	return maquina;
 }
 
-public void setMaquina(MaquinaModel maquina) {
+public void setMaquina(MaquinariaModel maquina) {
 	this.maquina = maquina;
 }
 

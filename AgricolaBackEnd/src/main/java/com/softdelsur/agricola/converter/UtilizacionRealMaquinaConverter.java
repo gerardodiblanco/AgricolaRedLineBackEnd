@@ -14,8 +14,8 @@ import com.softdelsur.agricola.model.UtilizacionRealMaquinaModel;
 public class UtilizacionRealMaquinaConverter {
 	
 	@Autowired 
-	@Qualifier("maquinaConverter")
-	MaquinaConverter maquinaConverter;
+	@Qualifier("maquinariaConverter")
+	MaquinariaConverter maquinaConverter;
 	
 	public UtilizacionRealMaquina convertModelToEntity(UtilizacionRealMaquinaModel utilizacionRealMaquinaModel){
 		UtilizacionRealMaquina utilizacionRealMaquina = new UtilizacionRealMaquina();

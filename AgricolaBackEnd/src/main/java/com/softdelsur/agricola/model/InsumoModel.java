@@ -10,7 +10,7 @@ public class InsumoModel {
 	private int codigo;
 	private String descripcion;
 	
-	public UnidadMedidaModel unidadMedida;
+	public String unidadMedida;
 
 	public InsumoModel() {
 		super();
@@ -40,11 +40,11 @@ public class InsumoModel {
 		this.descripcion = descripcion;
 	}
 
-	public UnidadMedidaModel getUnidadMedida() {
+	public String getUnidadMedida() {
 		return unidadMedida;
 	}
 
-	public void setUnidadMedida(UnidadMedidaModel unidadMedida) {
+	public void setUnidadMedida(String unidadMedida) {
 		this.unidadMedida = unidadMedida;
 	}
 	

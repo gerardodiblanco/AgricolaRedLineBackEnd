@@ -20,11 +20,16 @@ import com.softdelsur.agricola.entity.EstadoCampo;
 import com.softdelsur.agricola.entity.EstadoCuartel;
 import com.softdelsur.agricola.entity.EstadoProveedor;
 import com.softdelsur.agricola.entity.EstadoSubCuartel;
+import com.softdelsur.agricola.entity.Insumo;
 import com.softdelsur.agricola.entity.Localidad;
+import com.softdelsur.agricola.entity.Maquinaria;
 import com.softdelsur.agricola.entity.PeriodoVariedad;
 import com.softdelsur.agricola.entity.Proveedor;
 import com.softdelsur.agricola.entity.SubCuartel;
+import com.softdelsur.agricola.entity.Tarea;
 import com.softdelsur.agricola.entity.TipoCampo;
+import com.softdelsur.agricola.entity.Trato;
+import com.softdelsur.agricola.entity.UnidadMedida;
 import com.softdelsur.agricola.entity.Variedad;
 import com.softdelsur.agricola.model.CampoModel;
 import com.softdelsur.agricola.model.CoordenadaModel;
@@ -45,10 +50,13 @@ import com.softdelsur.agricola.service.EstadoCuartelService;
 import com.softdelsur.agricola.service.EstadoProveedorService;
 import com.softdelsur.agricola.service.EstadoSubCuartelService;
 import com.softdelsur.agricola.service.LocalidadService;
+import com.softdelsur.agricola.service.MaquinariaService;
 import com.softdelsur.agricola.service.PeriodoVariedadService;
 import com.softdelsur.agricola.service.ProveedorService;
 import com.softdelsur.agricola.service.SubCuartelService;
+import com.softdelsur.agricola.service.TareaService;
 import com.softdelsur.agricola.service.TipoCampoService;
+import com.softdelsur.agricola.service.TratoService;
 import com.softdelsur.agricola.service.VariedadService;
 
 @RestController
@@ -122,6 +130,19 @@ public class Pruebas {
 	@Autowired
 	@Qualifier("atributoSubCuartelServiceImpl")
 	AtributoSubCuartelService atributoSubCuartelService;
+	
+	@Autowired
+	@Qualifier("tratoServiceImpl")
+	TratoService tratoService;
+	
+	@Autowired
+	@Qualifier("tareaServiceImpl")
+	TareaService tareaService;
+	
+	@Autowired
+	@Qualifier("maquinariaServiceImpl")
+	MaquinariaService maquinariaService;
+	
 	
 	
 	@GetMapping("/campo")
@@ -427,6 +448,28 @@ public class Pruebas {
 				periodoVariedad2 = periodoVariedadService.addPeriodoVariedad(periodoVariedad2);
 				
 				
+				Trato trato = new Trato();
+				trato.setCodigo(123);
+				
+				trato.setFechaAlta(Date.valueOf(LocalDate.now()));
+				trato.setFechaBaja(null);
+				trato.setImporte(1000);
+				trato.setUnMinima(1);
+				trato.setNombre("Trato A 1000");
+				trato = tratoService.addTrato(trato);
+				
+				Tarea tarea = new Tarea();
+				tarea.setCodigo(4566);
+				tarea.setDescripcion("APLICACION FITOSANITARIOS");
+				tarea.setFechaAlta(Date.valueOf(LocalDate.now()));
+				tarea.setFechaBaja(null);
+				tarea = tareaService.addTarea(tarea);
+				
+				Maquinaria maquinaria = new Maquinaria();
+				maquinaria.setEstadoMaquinaria(true);
+				maquinaria.setCodigo(123456);
+				maquinaria.setDescripcion("TRACTOR");
+				maquinaria = maquinariaService.addMaquinaria(maquinaria);
 				
 				
 			

@@ -22,7 +22,7 @@ public class UtilizacionRealMaquina {
 	private int cantHoras;
 	private int consumo;
 	@ManyToOne
-	public Maquina maquina;
+	public Maquinaria maquina;
 	public UtilizacionRealMaquina() {
 		super();
 	}
@@ -44,10 +44,10 @@ public class UtilizacionRealMaquina {
 	public void setConsumo(int consumo) {
 		this.consumo = consumo;
 	}
-	public Maquina getMaquina() {
+	public Maquinaria getMaquina() {
 		return maquina;
 	}
-	public void setMaquina(Maquina maquina) {
+	public void setMaquina(Maquinaria maquina) {
 		this.maquina = maquina;
 	}
 	@Override

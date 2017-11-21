@@ -1,11 +1,16 @@
 	package com.softdelsur.agricola.converter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.softdelsur.agricola.entity.Insumo;
+import com.softdelsur.agricola.entity.UnidadMedida;
 import com.softdelsur.agricola.model.InsumoModel;
+import com.softdelsur.agricola.service.InsumoService;
 
 @Component("insumoConverter")
 public class InsumoConverter {
@@ -14,13 +19,38 @@ public class InsumoConverter {
 	@Qualifier("unidadMedidaConverter")
 	UnidadMedidaConverter unidadMedidaConverter;
 	
+	
+	
+	@Autowired
+	@Qualifier("insumoServiceImpl")
+	InsumoService insumoService;
+	
 	public Insumo convertInsumoModelToInsumo(InsumoModel insumoModel){
-		Insumo insumo = new Insumo();
+		Insumo insumo = null;
+		
+		if(insumoModel.getIdInsumo() == null) {
+			insumo = new Insumo();
+			insumo.setEstado(true);
+			
+		}else {
+			insumo = insumoService.findInsumoById(insumoModel.getIdInsumo());
+			if(insumo == null) {
+				insumo = new Insumo();
+				insumo.setEstado(true);
+			}
+		}
 		insumo.setIdInsumo(insumoModel.getIdInsumo());
 		insumo.setCodigo(insumoModel.getCodigo());
 		insumo.setDescripcion(insumoModel.getDescripcion());
-		insumo.setUnidadMedida(unidadMedidaConverter.convertUnidadMedidaModelToUnidadMedida(insumoModel.getUnidadMedida()));
 		
+		// falta la unidad de medida
+		/*
+		UnidadMedida unidadMedida = null;
+		unidadMedida = new UnidadMedida();
+		unidadMedida.setNombreUM("kg");
+		
+		insumo.setUnidadMedida(unidadMedidaConverter.convertUnidadMedidaModelToUnidadMedida(insumoModel.getUnidadMedida()));
+		*/
 		return insumo;
 		
 	}
@@ -29,10 +59,20 @@ public class InsumoConverter {
 		insumoModel.setIdInsumo(insumo.getIdInsumo());
 		insumoModel.setCodigo(insumo.getCodigo());
 		insumoModel.setDescripcion(insumo.getDescripcion());
-		insumoModel.setUnidadMedida(unidadMedidaConverter.convertUnidadMedidaToUnidadMedidaModel(insumo.getUnidadMedida()));
+	//	insumoModel.setUnidadMedida(insumo.getUnidadMedida().getNombreUM());
 		
 		return insumoModel;
 		
 	}
+	
+	public List<InsumoModel> convertListInsumoToListInsumoModel(List<Insumo> insumoList){
+		List<InsumoModel> insumoModelList = new ArrayList<>();
+		
+		for(Insumo insumo:insumoList) {
+			insumoModelList.add(convertInsumoToInsumoModel(insumo));
+		}
+		return insumoModelList;
+	}
+	
 
 }

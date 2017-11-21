@@ -1,41 +1,37 @@
 package com.softdelsur.agricola.entity;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.mysql.fabric.xmlrpc.base.Array;
-
-
 @Entity
-@Table(name = "tareas")
-public class Tarea {
+@Table(name = "tratos")
+public class Trato {
 
-	   private static final long serialVersionUID = 1L;
+	 private static final long serialVersionUID = 1L;
 
 	    @Id
 	    @Column(name= "id", unique = true, nullable = false)
 	    @GenericGenerator(name = "uuid", strategy = "uuid2")
 	    @GeneratedValue(generator = "uuid")
+	    
 	    private String id;
-		private int codigo;
-		private String descripcion;
-		private Date fechaAlta;
-		private Date fechaBaja;
-		
-		public Tarea() {
-			super();
+	    private String nombre;
+	    private Integer codigo;
+	    private float importe;
+	    private float unMinima;
+	    private Date fechaAlta;
+	    private Date fechaBaja;
+	    
+
+		public Trato() {
+			
 		}
 
 		public String getId() {
@@ -46,23 +42,37 @@ public class Tarea {
 			this.id = id;
 		}
 
-		public int getCodigo() {
+		public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+		public Integer getCodigo() {
 			return codigo;
 		}
 
-		public void setCodigo(int codigo) {
+		public void setCodigo(Integer codigo) {
 			this.codigo = codigo;
 		}
 
-		public String getDescripcion() {
-			return descripcion;
+		public float getImporte() {
+			return importe;
 		}
 
-		public void setDescripcion(String descripcion) {
-			this.descripcion = descripcion;
+		public void setImporte(float importe) {
+			this.importe = importe;
 		}
-		
-		
+
+		public float getUnMinima() {
+			return unMinima;
+		}
+
+		public void setUnMinima(float unMinima) {
+			this.unMinima = unMinima;
+		}
 
 		public Date getFechaAlta() {
 			return fechaAlta;
@@ -84,11 +94,13 @@ public class Tarea {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + codigo;
-			result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
+			result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 			result = prime * result + ((fechaAlta == null) ? 0 : fechaAlta.hashCode());
 			result = prime * result + ((fechaBaja == null) ? 0 : fechaBaja.hashCode());
 			result = prime * result + ((id == null) ? 0 : id.hashCode());
+			result = prime * result + Float.floatToIntBits(importe);
+			result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+			result = prime * result + Float.floatToIntBits(unMinima);
 			return result;
 		}
 
@@ -100,13 +112,11 @@ public class Tarea {
 				return false;
 			if (getClass() != obj.getClass())
 				return false;
-			Tarea other = (Tarea) obj;
-			if (codigo != other.codigo)
-				return false;
-			if (descripcion == null) {
-				if (other.descripcion != null)
+			Trato other = (Trato) obj;
+			if (codigo == null) {
+				if (other.codigo != null)
 					return false;
-			} else if (!descripcion.equals(other.descripcion))
+			} else if (!codigo.equals(other.codigo))
 				return false;
 			if (fechaAlta == null) {
 				if (other.fechaAlta != null)
@@ -123,9 +133,20 @@ public class Tarea {
 					return false;
 			} else if (!id.equals(other.id))
 				return false;
+			if (Float.floatToIntBits(importe) != Float.floatToIntBits(other.importe))
+				return false;
+			if (nombre == null) {
+				if (other.nombre != null)
+					return false;
+			} else if (!nombre.equals(other.nombre))
+				return false;
+			if (Float.floatToIntBits(unMinima) != Float.floatToIntBits(other.unMinima))
+				return false;
 			return true;
 		}
 
-	
-		
+
+
+	    
+	    
 }

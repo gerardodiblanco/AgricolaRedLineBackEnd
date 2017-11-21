@@ -9,18 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import com.softdelsur.agricola.entity.TareaMaquina;
+import com.softdelsur.agricola.entity.TareaMaquinaria;
 import com.softdelsur.agricola.model.TareaMaquinaModel;
 
 @Component("tareaMaquinaConverter")
 public class TareaMaquinaConverter {
 	
 	@Autowired
-	@Qualifier("maquinaConverter")
-	MaquinaConverter maquinaConverter;
+	@Qualifier("maquinariaConverter")
+	MaquinariaConverter maquinaConverter;
 	
-	public TareaMaquina convertTareaMaquinaModelToTareaMaquina(TareaMaquinaModel tareaMaquinaModel){
-		TareaMaquina tareaMaquina = new TareaMaquina();
+	public TareaMaquinaria convertTareaMaquinaModelToTareaMaquina(TareaMaquinaModel tareaMaquinaModel){
+		TareaMaquinaria tareaMaquina = new TareaMaquinaria();
 		tareaMaquina.setId(tareaMaquinaModel.getId());
 		tareaMaquina.setConsumo(tareaMaquinaModel.getConsumo());
 		tareaMaquina.setHorasTrabajo(tareaMaquinaModel.getHorasTrabajo());
@@ -28,7 +28,7 @@ public class TareaMaquinaConverter {
 		
 		return tareaMaquina;
 	}
-	public TareaMaquinaModel convertTareaMaquinaToTareaMaquinaModel(TareaMaquina tareaMaquina){
+	public TareaMaquinaModel convertTareaMaquinaToTareaMaquinaModel(TareaMaquinaria tareaMaquina){
 		TareaMaquinaModel tareaMaquinaModel = new TareaMaquinaModel();
 		tareaMaquinaModel.setId(tareaMaquina.getId());
 		tareaMaquinaModel.setConsumo(tareaMaquina.getConsumo());
@@ -38,9 +38,9 @@ public class TareaMaquinaConverter {
 		return tareaMaquinaModel;
 	}
 	
-	public List<TareaMaquina> convertListModelToEntidad(List<TareaMaquinaModel> tareaMaquinaModelList){
+	public List<TareaMaquinaria> convertListModelToEntidad(List<TareaMaquinaModel> tareaMaquinaModelList){
 
-	List<TareaMaquina> tareaMaquinaList = new ArrayList<TareaMaquina>();
+	List<TareaMaquinaria> tareaMaquinaList = new ArrayList<TareaMaquinaria>();
 		for(TareaMaquinaModel tareaMaquinaModel: tareaMaquinaModelList){
 			tareaMaquinaList.add(convertTareaMaquinaModelToTareaMaquina(tareaMaquinaModel));
 		}
@@ -48,10 +48,10 @@ public class TareaMaquinaConverter {
 		
 	}
 	
-	public List<TareaMaquinaModel> convertListEntidadToModel(List<TareaMaquina> tareaMaquinaList){
+	public List<TareaMaquinaModel> convertListEntidadToModel(List<TareaMaquinaria> tareaMaquinaList){
 
 	List<TareaMaquinaModel> tareaMaquinaModelList = new ArrayList<TareaMaquinaModel>();
-		for(TareaMaquina tareaMaquina: tareaMaquinaList){
+		for(TareaMaquinaria tareaMaquina: tareaMaquinaList){
 			tareaMaquinaModelList.add(convertTareaMaquinaToTareaMaquinaModel(tareaMaquina));
 		}
 	return tareaMaquinaModelList;

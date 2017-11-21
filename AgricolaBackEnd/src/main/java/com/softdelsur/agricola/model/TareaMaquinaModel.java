@@ -7,7 +7,7 @@ public class TareaMaquinaModel {
 	private float consumo;
 	private int horasTrabajo;
 
-	private MaquinaModel maquina;
+	private MaquinariaModel maquina;
 
 	public TareaMaquinaModel() {
 		super();
@@ -37,11 +37,11 @@ public class TareaMaquinaModel {
 		this.horasTrabajo = horasTrabajo;
 	}
 
-	public MaquinaModel getMaquina() {
+	public MaquinariaModel getMaquina() {
 		return maquina;
 	}
 
-	public void setMaquina(MaquinaModel maquina) {
+	public void setMaquina(MaquinariaModel maquina) {
 		this.maquina = maquina;
 	}
 	

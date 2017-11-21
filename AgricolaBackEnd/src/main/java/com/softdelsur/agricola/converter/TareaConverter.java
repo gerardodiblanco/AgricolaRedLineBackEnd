@@ -16,21 +16,12 @@ import com.softdelsur.agricola.model.TareaModel;
 @Component("tareaConverter")
 public class TareaConverter {
 	
-	@Autowired
-	@Qualifier("tareaInsumoConverter")
-	TareaInsumoConverter tareaInsumoConverter;
-	
-	@Autowired
-	@Qualifier("tareaMaquinaConverter")
-	TareaMaquinaConverter tareaMaquinaConverter;
 	
 	public Tarea convertTareaModelToTarea(TareaModel tareaModel){
 		Tarea tarea = new Tarea();
 		tarea.setId(tareaModel.getId());
 		tarea.setCodigo(tareaModel.getCodigo());
 		tarea.setDescripcion(tareaModel.getDescripcion());
-		tarea.setInsumosTarea(tareaInsumoConverter.convertListModelToEntidad(tareaModel.getInsumosTarea()));
-		tarea.setMaquinasTarea(tareaMaquinaConverter.convertListModelToEntidad(tareaModel.getMaquinasTarea()));
 		
 		return tarea;
 	}
@@ -39,8 +30,6 @@ public class TareaConverter {
 		tareaModel.setId(tarea.getId());
 		tareaModel.setCodigo(tarea.getCodigo());
 		tareaModel.setDescripcion(tarea.getDescripcion());
-		tareaModel.setInsumosTarea(tareaInsumoConverter.convertLisEntidadToModel(tarea.getInsumosTarea()));
-		tareaModel.setMaquinasTarea(tareaMaquinaConverter.convertListEntidadToModel(tarea.getMaquinasTarea()));
 		
 		return tareaModel;
 	}

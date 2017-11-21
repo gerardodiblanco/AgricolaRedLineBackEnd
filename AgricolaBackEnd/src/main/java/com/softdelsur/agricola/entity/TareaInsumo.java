@@ -1,10 +1,14 @@
 package com.softdelsur.agricola.entity;
 
+import java.sql.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -20,10 +24,18 @@ public class TareaInsumo {
 	    @GenericGenerator(name = "uuid", strategy = "uuid2")
 	    @GeneratedValue(generator = "uuid")
 	    private String id;
-		private float cantConsumida;
-		@ManyToOne
+		
+	    private Date fechaAlta;
+	    private Date fechaBaja;
+	    
+	    @OneToOne(cascade = CascadeType.REFRESH)
+	    private Tarea tarea;
+	    
+	    @OneToOne(cascade = CascadeType.REFRESH)
 		private Insumo insumo;
-		public TareaInsumo() {
+		
+	    
+	    public TareaInsumo() {
 			super();
 		}
 
@@ -35,26 +47,51 @@ public class TareaInsumo {
 			this.id = id;
 		}
 
-		public float getCantConsumida() {
-			return cantConsumida;
-		}
-		public void setCantConsumida(float cantConsumida) {
-			this.cantConsumida = cantConsumida;
-		}
 		public Insumo getInsumo() {
 			return insumo;
 		}
 		public void setInsumo(Insumo insumo) {
 			this.insumo = insumo;
 		}
+
+		public Date getFechaAlta() {
+			return fechaAlta;
+		}
+
+		public void setFechaAlta(Date fechaAlta) {
+			this.fechaAlta = fechaAlta;
+		}
+
+		public Date getFechaBaja() {
+			return fechaBaja;
+		}
+
+		public void setFechaBaja(Date fechaBaja) {
+			this.fechaBaja = fechaBaja;
+		}
+
+		public Tarea getTarea() {
+			return tarea;
+		}
+
+		public void setTarea(Tarea tarea) {
+			this.tarea = tarea;
+		}
+		
+		
+
 		@Override
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + Float.floatToIntBits(cantConsumida);
+			result = prime * result + ((fechaAlta == null) ? 0 : fechaAlta.hashCode());
+			result = prime * result + ((fechaBaja == null) ? 0 : fechaBaja.hashCode());
+			result = prime * result + ((id == null) ? 0 : id.hashCode());
 			result = prime * result + ((insumo == null) ? 0 : insumo.hashCode());
+			result = prime * result + ((tarea == null) ? 0 : tarea.hashCode());
 			return result;
 		}
+
 		@Override
 		public boolean equals(Object obj) {
 			if (this == obj)
@@ -64,12 +101,30 @@ public class TareaInsumo {
 			if (getClass() != obj.getClass())
 				return false;
 			TareaInsumo other = (TareaInsumo) obj;
-			if (Float.floatToIntBits(cantConsumida) != Float.floatToIntBits(other.cantConsumida))
+			if (fechaAlta == null) {
+				if (other.fechaAlta != null)
+					return false;
+			} else if (!fechaAlta.equals(other.fechaAlta))
+				return false;
+			if (fechaBaja == null) {
+				if (other.fechaBaja != null)
+					return false;
+			} else if (!fechaBaja.equals(other.fechaBaja))
+				return false;
+			if (id == null) {
+				if (other.id != null)
+					return false;
+			} else if (!id.equals(other.id))
 				return false;
 			if (insumo == null) {
 				if (other.insumo != null)
 					return false;
 			} else if (!insumo.equals(other.insumo))
+				return false;
+			if (tarea == null) {
+				if (other.tarea != null)
+					return false;
+			} else if (!tarea.equals(other.tarea))
 				return false;
 			return true;
 		}

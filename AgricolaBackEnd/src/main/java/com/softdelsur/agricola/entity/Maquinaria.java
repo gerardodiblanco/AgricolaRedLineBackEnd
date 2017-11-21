@@ -4,39 +4,33 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
-@Table(name = "insumos")
-public class Insumo {
+@Table(name = "maquinarias")
+public class Maquinaria {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name= "id", unique = true, nullable = false)
+    @Column(name= "id_maquina", unique = true, nullable = false)
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     @GeneratedValue(generator = "uuid")
-    private String idInsumo;
-    
+    private String id;
 	private int codigo;
 	private String descripcion;
-	private boolean estado;
+	private boolean estadoMaquinaria;
 	
-	
-	@ManyToOne
-	public UnidadMedida unidadMedida;
-	
-	
-	public Insumo() {
+	public Maquinaria() {
 		super();
 	}
-	public String getIdInsumo() {
-		return idInsumo;
+	public String getIdMaquina() {
+		return id;
 	}
-	public void setIdInsumo(String idInsumo) {
-		this.idInsumo = idInsumo;
+	public void setIdMaquina(String idMaquina) {
+		this.id = idMaquina;
 	}
 	public int getCodigo() {
 		return codigo;
@@ -50,27 +44,32 @@ public class Insumo {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public UnidadMedida getUnidadMedida() {
-		return unidadMedida;
+	
+	
+	public String getId() {
+		return id;
 	}
-	public void setUnidadMedida(UnidadMedida unidadMedida) {
-		this.unidadMedida = unidadMedida;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public boolean isEstado() {
-		return estado;
+	public boolean isEstadoMaquinaria() {
+		return estadoMaquinaria;
 	}
-	public void setEstado(boolean estado) {
-		this.estado = estado;
+	public void setEstadoMaquinaria(boolean estadoMaquinaria) {
+		this.estadoMaquinaria = estadoMaquinaria;
 	}
+	
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + codigo;
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
-		result = prime * result + (estado ? 1231 : 1237);
-		result = prime * result + ((idInsumo == null) ? 0 : idInsumo.hashCode());
-		result = prime * result + ((unidadMedida == null) ? 0 : unidadMedida.hashCode());
+		result = prime * result + (estadoMaquinaria ? 1231 : 1237);
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 	@Override
@@ -81,7 +80,7 @@ public class Insumo {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Insumo other = (Insumo) obj;
+		Maquinaria other = (Maquinaria) obj;
 		if (codigo != other.codigo)
 			return false;
 		if (descripcion == null) {
@@ -89,20 +88,16 @@ public class Insumo {
 				return false;
 		} else if (!descripcion.equals(other.descripcion))
 			return false;
-		if (estado != other.estado)
+		if (estadoMaquinaria != other.estadoMaquinaria)
 			return false;
-		if (idInsumo == null) {
-			if (other.idInsumo != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!idInsumo.equals(other.idInsumo))
-			return false;
-		if (unidadMedida == null) {
-			if (other.unidadMedida != null)
-				return false;
-		} else if (!unidadMedida.equals(other.unidadMedida))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
-		
 	
+		
+
 }
