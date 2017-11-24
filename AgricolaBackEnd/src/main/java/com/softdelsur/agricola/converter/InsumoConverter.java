@@ -28,18 +28,18 @@ public class InsumoConverter {
 	public Insumo convertInsumoModelToInsumo(InsumoModel insumoModel){
 		Insumo insumo = null;
 		
-		if(insumoModel.getIdInsumo() == null) {
+		if(insumoModel.getId() == null) {
 			insumo = new Insumo();
 			insumo.setEstado(true);
 			
 		}else {
-			insumo = insumoService.findInsumoById(insumoModel.getIdInsumo());
+			insumo = insumoService.findInsumoById(insumoModel.getId());
 			if(insumo == null) {
 				insumo = new Insumo();
 				insumo.setEstado(true);
 			}
 		}
-		insumo.setIdInsumo(insumoModel.getIdInsumo());
+		insumo.setIdInsumo(insumoModel.getId());
 		insumo.setCodigo(insumoModel.getCodigo());
 		insumo.setDescripcion(insumoModel.getDescripcion());
 		
@@ -56,7 +56,7 @@ public class InsumoConverter {
 	}
 	public InsumoModel convertInsumoToInsumoModel(Insumo insumo){
 		InsumoModel insumoModel = new InsumoModel();
-		insumoModel.setIdInsumo(insumo.getIdInsumo());
+		insumoModel.setId(insumo.getIdInsumo());
 		insumoModel.setCodigo(insumo.getCodigo());
 		insumoModel.setDescripcion(insumo.getDescripcion());
 	//	insumoModel.setUnidadMedida(insumo.getUnidadMedida().getNombreUM());

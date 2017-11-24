@@ -2,6 +2,8 @@ package com.softdelsur.agricola.controller;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,8 +33,16 @@ public class TareaController {
 
 	@CrossOrigin
 	@GetMapping("/all")
-	public List<TareaModel> buscarTarea(){
+	public List<TareaModel> buscarTareas(){
 		return tareaConverter.convertListTareaToTareaListModel(tareaService.findTareasActivas());
+		
+	}
+	
+	@CrossOrigin
+	@GetMapping("/findTarea/{idTarea}")
+	public TareaModel buscarTarea(@PathVariable("idTarea") String idTarea){
+		System.out.println("id tarea "+idTarea);
+		return tareaConverter.convertTareaToTareaModel(tareaService.findTareaById(idTarea));
 		
 	}
 	

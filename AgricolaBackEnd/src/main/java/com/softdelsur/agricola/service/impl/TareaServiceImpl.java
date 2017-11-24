@@ -43,4 +43,10 @@ public class TareaServiceImpl implements TareaService{
 		return tareaRespository.findTareasByFechaBaja(null);
 	}
 
+	@Override
+	public Tarea findTareaById(String id) {
+		// TODO Auto-generated method stub
+		return tareaRespository.findTareaById(id);
+	}
+
 }

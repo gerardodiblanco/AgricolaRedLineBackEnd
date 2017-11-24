@@ -10,6 +10,10 @@ public class TareaModel {
     private String id;
 	private int codigo;
 	private String descripcion;
+	private List<InsumoModel> insumos = new ArrayList<>();
+	private List<TratoModel> tratos = new ArrayList<>();
+	private List<MaquinariaModel> maquinarias = new ArrayList<>();
+	
 
 	public TareaModel() {
 		super();
@@ -37,6 +41,32 @@ public class TareaModel {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+
+
+	public List<InsumoModel> getInsumos() {
+		return insumos;
+	}
+
+	public void setInsumos(List<InsumoModel> insumos) {
+		this.insumos = insumos;
+	}
+
+	public List<TratoModel> getTratos() {
+		return tratos;
+	}
+
+	public void setTratos(List<TratoModel> tratos) {
+		this.tratos = tratos;
+	}
+
+	public List<MaquinariaModel> getMaquinarias() {
+		return maquinarias;
+	}
+
+	public void setMaquinarias(List<MaquinariaModel> maquinarias) {
+		this.maquinarias = maquinarias;
 	}
 
 		

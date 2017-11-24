@@ -34,7 +34,7 @@ public class InsumoServiceImpl implements InsumoService{
 	@Override
 	public Insumo findInsumoById(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return insumoRepository.findInsumoByIdInsumo(id);
 	}
 
 	@Override

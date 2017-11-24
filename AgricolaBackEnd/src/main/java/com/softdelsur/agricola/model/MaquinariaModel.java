@@ -1,12 +1,37 @@
 package com.softdelsur.agricola.model;
 
 public class MaquinariaModel {
+	
     private String id;
 	private int codigo;
 	private String descripcion;
+	 private boolean checkbox;
+	
 	public MaquinariaModel() {
 		super();
 	}
+	
+	
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	public boolean isCheckbox() {
+		return checkbox;
+	}
+
+
+	public void setCheckbox(boolean checkbox) {
+		this.checkbox = checkbox;
+	}
+
+
 	public String getIdMaquina() {
 		return id;
 	}

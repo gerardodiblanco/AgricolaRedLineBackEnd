@@ -9,4 +9,6 @@ public interface TareaService {
 	Tarea removeTarea(String id);
 	Tarea addTarea(Tarea tarea);
 	List<Tarea> findTareasActivas();
+	
+	Tarea findTareaById(String id);
 }

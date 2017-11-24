@@ -1,6 +1,7 @@
 package com.softdelsur.agricola.entity;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -38,6 +39,18 @@ public class TareaInsumo {
 	    public TareaInsumo() {
 			super();
 		}
+	    
+	    
+
+		public TareaInsumo(Tarea tarea, Insumo insumo) {
+			super();
+			this.tarea = tarea;
+			this.insumo = insumo;
+			this.setFechaAlta(Date.valueOf(LocalDate.now()));
+			this.setFechaBaja(null);
+		}
+
+
 
 		public String getId() {
 			return id;

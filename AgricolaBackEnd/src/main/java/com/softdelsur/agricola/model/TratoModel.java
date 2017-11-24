@@ -10,11 +10,26 @@ public class TratoModel {
 	    private float importe;
 	    private float unMinima;
 	    private Date fechaAlta;
+	    private boolean checkbox;
 	    
 	    
 		public TratoModel() {
 			
 		}
+		
+		
+
+		public boolean isCheckbox() {
+			return checkbox;
+		}
+
+
+
+		public void setCheckbox(boolean checkbox) {
+			this.checkbox = checkbox;
+		}
+
+
 
 		public String getId() {
 			return id;

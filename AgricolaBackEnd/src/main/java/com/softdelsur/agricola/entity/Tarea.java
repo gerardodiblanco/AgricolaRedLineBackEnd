@@ -35,8 +35,9 @@ public class Tarea {
 		private Date fechaBaja;
 		
 		public Tarea() {
-			super();
+		
 		}
+		
 
 		public String getId() {
 			return id;

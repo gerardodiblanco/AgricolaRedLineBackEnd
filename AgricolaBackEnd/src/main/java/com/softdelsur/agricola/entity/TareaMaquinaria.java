@@ -1,6 +1,7 @@
 package com.softdelsur.agricola.entity;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -30,7 +31,7 @@ public class TareaMaquinaria {
     private Date fechaBaja;
     
     @OneToOne(cascade = CascadeType.REFRESH)
-    private Tarea Tarea;
+    private Tarea tarea;
     
     @OneToOne(cascade = CascadeType.REFRESH)
 	private Maquinaria maquina;
@@ -38,6 +39,17 @@ public class TareaMaquinaria {
     public TareaMaquinaria() {
 		super();
 	}
+    
+    
+	public TareaMaquinaria(Tarea tarea, Maquinaria maquina) {
+		super();
+		this.tarea = tarea;
+		this.maquina = maquina;
+		this.setFechaAlta(Date.valueOf(LocalDate.now()));
+		this.setFechaBaja(null);
+	}
+
+
 	public String getId() {
 		return id;
 	}
@@ -63,16 +75,16 @@ public class TareaMaquinaria {
 		this.fechaBaja = fechaBaja;
 	}
 	public Tarea getTarea() {
-		return Tarea;
+		return tarea;
 	}
 	public void setTarea(Tarea tarea) {
-		Tarea = tarea;
+		tarea = tarea;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Tarea == null) ? 0 : Tarea.hashCode());
+		result = prime * result + ((tarea == null) ? 0 : tarea.hashCode());
 		result = prime * result + ((fechaAlta == null) ? 0 : fechaAlta.hashCode());
 		result = prime * result + ((fechaBaja == null) ? 0 : fechaBaja.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
@@ -88,10 +100,10 @@ public class TareaMaquinaria {
 		if (getClass() != obj.getClass())
 			return false;
 		TareaMaquinaria other = (TareaMaquinaria) obj;
-		if (Tarea == null) {
-			if (other.Tarea != null)
+		if (tarea == null) {
+			if (other.tarea != null)
 				return false;
-		} else if (!Tarea.equals(other.Tarea))
+		} else if (!tarea.equals(other.tarea))
 			return false;
 		if (fechaAlta == null) {
 			if (other.fechaAlta != null)

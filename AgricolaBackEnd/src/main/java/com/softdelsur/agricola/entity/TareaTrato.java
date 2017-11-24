@@ -1,6 +1,7 @@
 package com.softdelsur.agricola.entity;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "tareaTratp")
+@Table(name = "tareaTrato")
 public class TareaTrato {
 
 	  private static final long serialVersionUID = 1L;
@@ -28,10 +29,26 @@ public class TareaTrato {
 	    private Date fechaBaja;
 	    
 	    @OneToOne(cascade = CascadeType.REFRESH)
-	    private Tarea Tarea;
+	    private Tarea tarea;
 	    
 	    @OneToOne(cascade = CascadeType.REFRESH)
 	    private Trato trato;
+	    
+	    
+
+		public TareaTrato() {
+			super();
+		}
+		
+
+		public TareaTrato(Tarea tarea, Trato trato) {
+			
+			this.tarea = tarea;
+			this.trato = trato;
+			this.setFechaAlta(Date.valueOf(LocalDate.now()));
+			this.setFechaBaja(null);
+		}
+
 
 		public String getId() {
 			return id;
@@ -58,11 +75,13 @@ public class TareaTrato {
 		}
 
 		public Tarea getTarea() {
-			return Tarea;
+			return tarea;
 		}
 
+		
+
 		public void setTarea(Tarea tarea) {
-			Tarea = tarea;
+			this.tarea = tarea;
 		}
 
 		public Trato getTrato() {
@@ -81,10 +100,10 @@ public class TareaTrato {
 		public int hashCode() {
 			final int prime = 31;
 			int result = 1;
-			result = prime * result + ((Tarea == null) ? 0 : Tarea.hashCode());
 			result = prime * result + ((fechaAlta == null) ? 0 : fechaAlta.hashCode());
 			result = prime * result + ((fechaBaja == null) ? 0 : fechaBaja.hashCode());
 			result = prime * result + ((id == null) ? 0 : id.hashCode());
+			result = prime * result + ((tarea == null) ? 0 : tarea.hashCode());
 			result = prime * result + ((trato == null) ? 0 : trato.hashCode());
 			return result;
 		}
@@ -98,11 +117,6 @@ public class TareaTrato {
 			if (getClass() != obj.getClass())
 				return false;
 			TareaTrato other = (TareaTrato) obj;
-			if (Tarea == null) {
-				if (other.Tarea != null)
-					return false;
-			} else if (!Tarea.equals(other.Tarea))
-				return false;
 			if (fechaAlta == null) {
 				if (other.fechaAlta != null)
 					return false;
@@ -118,6 +132,11 @@ public class TareaTrato {
 					return false;
 			} else if (!id.equals(other.id))
 				return false;
+			if (tarea == null) {
+				if (other.tarea != null)
+					return false;
+			} else if (!tarea.equals(other.tarea))
+				return false;
 			if (trato == null) {
 				if (other.trato != null)
 					return false;
@@ -125,6 +144,8 @@ public class TareaTrato {
 				return false;
 			return true;
 		}
-	    
-	    
+		
+		
+
+			    
 }
