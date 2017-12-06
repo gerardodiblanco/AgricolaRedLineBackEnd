@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.converter.SubCuartelConverter;
 import com.softdelsur.agricola.entity.Cuartel;
-import com.softdelsur.agricola.entity.EstadoCuartel;
 import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.model.SubCuartelModel;
 import com.softdelsur.agricola.service.CuartelService;
@@ -68,37 +67,34 @@ public class SubCuartelController {
 		}
 		return subCuartelModelList;
 	}
-	
+
 	@CrossOrigin
 	@PostMapping("/save")
 	public void guardarSubCuartel(@RequestBody SubCuartelModel subCuartelModel) {
 		System.out.println("SAVE");
-		
+
 		subCuartelService.addSubCuartel(subCuartelConverter.convertSubCuartelModelToSubCuartel(subCuartelModel));
-		
+
 	}
-	
-	
+
 	@CrossOrigin
 	@DeleteMapping("/remove/{idSubCuartel}")
 	public boolean eliminarCuartel(@PathVariable("idSubCuartel") String idSubCuartel) {
 		boolean rta = false;
-		
-		
+
 		SubCuartel subCuartel = null;
 		subCuartel = subCuartelService.buscarPorId(idSubCuartel);
-		
-		System.out.println("sub cuartel "+subCuartel.getDescripcion());
-		
-		if(subCuartel != null) {
-		
+
+		System.out.println("sub cuartel " + subCuartel.getDescripcion());
+
+		if (subCuartel != null) {
+
 			subCuartel = subCuartelService.eliminarSubCuartel(subCuartel);
-		rta = true;
+			rta = true;
 		}
-		
+
 		return rta;
-				
+
 	}
-	
 
 }

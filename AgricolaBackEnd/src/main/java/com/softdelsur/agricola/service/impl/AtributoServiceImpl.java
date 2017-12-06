@@ -13,15 +13,15 @@ import com.softdelsur.agricola.repository.AtributoRepository;
 import com.softdelsur.agricola.service.AtributoService;
 
 @Service("atributoServiceImpl")
-public class AtributoServiceImpl implements AtributoService{
-	
+public class AtributoServiceImpl implements AtributoService {
+
 	@Autowired
-	 @Qualifier("atributoRepository")
-	 AtributoRepository atributoRepository;
-	
+	@Qualifier("atributoRepository")
+	AtributoRepository atributoRepository;
+
 	@Autowired
-	 @Qualifier("atributoConverter")
-	 AtributoConverter atributoConverter;
+	@Qualifier("atributoConverter")
+	AtributoConverter atributoConverter;
 
 	@Override
 	public Atributo findAtributoById(String id) {
@@ -43,20 +43,20 @@ public class AtributoServiceImpl implements AtributoService{
 
 	@Override
 	public Atributo eliminarAtributo(String id) {
-	Atributo atributo = null;
-	atributo = atributoRepository.findAtributoById(id);
-	if (atributo != null) {
-		atributo.setEstado(false);
-		atributo = addAtributo(atributo);
-	}
+		Atributo atributo = null;
+		atributo = atributoRepository.findAtributoById(id);
+		if (atributo != null) {
+			atributo.setEstado(false);
+			atributo = addAtributo(atributo);
+		}
 		return addAtributo(atributo);
 	}
 
 	@Override
 	public List<AtributoConOpcionesModel> findAtributosActivosConOpciones() {
 		// TODO Auto-generated method stub
-		return atributoConverter.convertListAtributoToListAtributoConOpcionesModel(
-				atributoRepository.findAtributosByEstado(true));
+		return atributoConverter
+				.convertListAtributoToListAtributoConOpcionesModel(atributoRepository.findAtributosByEstado(true));
 	}
 
 }

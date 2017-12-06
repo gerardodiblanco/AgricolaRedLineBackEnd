@@ -1,12 +1,10 @@
 package com.softdelsur.agricola.model;
 
-import javax.persistence.Column;
-
 public class RubroModel {
-    private String idRubro;
-   	private String descripcion;
-  	private String nombreRubro;
-  	
+	private String idRubro;
+	private String descripcion;
+	private String nombreRubro;
+
 	public RubroModel() {
 		super();
 	}
@@ -40,6 +38,5 @@ public class RubroModel {
 	public void setNombreRubro(String nombreRubro) {
 		this.nombreRubro = nombreRubro;
 	}
-  	
-  	
+
 }

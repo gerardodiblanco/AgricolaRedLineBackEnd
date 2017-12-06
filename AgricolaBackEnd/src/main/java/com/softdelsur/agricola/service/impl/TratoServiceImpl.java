@@ -13,12 +13,12 @@ import com.softdelsur.agricola.repository.TratoRepository;
 import com.softdelsur.agricola.service.TratoService;
 
 @Service("tratoServiceImpl")
-public class TratoServiceImpl implements TratoService{
+public class TratoServiceImpl implements TratoService {
 
 	@Autowired
 	@Qualifier("tratoRepository")
 	TratoRepository tratoRepository;
-	
+
 	@Override
 	public List<Trato> findTratosActivos() {
 		// TODO Auto-generated method stub
@@ -27,7 +27,7 @@ public class TratoServiceImpl implements TratoService{
 
 	@Override
 	public Trato addTrato(Trato trato) {
-		
+
 		return tratoRepository.save(trato);
 	}
 
@@ -41,15 +41,12 @@ public class TratoServiceImpl implements TratoService{
 	public Trato removeTrato(String id) {
 		Trato trato = null;
 		trato = tratoRepository.findTratoById(id);
-		
-		if(trato != null) {
-		trato.setFechaBaja(Date.valueOf(LocalDate.now()));
-		trato = addTrato(trato);
+
+		if (trato != null) {
+			trato.setFechaBaja(Date.valueOf(LocalDate.now()));
+			trato = addTrato(trato);
 		}
 		return trato;
 	}
-	
-	
-	
 
 }

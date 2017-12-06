@@ -1,52 +1,47 @@
 package com.softdelsur.agricola.model;
 
-import javax.persistence.Column;
-import javax.persistence.ManyToOne;
-
-import com.softdelsur.agricola.entity.TipoCaracteristica;
-
 public class CaracteristicaModel {
-    private String idCaracteristica;
-private int codigo;
+	private String idCaracteristica;
+	private int codigo;
 
-private int numeroCaracteristica;
+	private int numeroCaracteristica;
 
-public TipoCaracteristicaModel tipoCaracteristica;
+	public TipoCaracteristicaModel tipoCaracteristica;
 
-public CaracteristicaModel() {
-	super();
-}
+	public CaracteristicaModel() {
+		super();
+	}
 
-public String getIdCaracteristica() {
-	return idCaracteristica;
-}
+	public String getIdCaracteristica() {
+		return idCaracteristica;
+	}
 
-public void setIdCaracteristica(String idCaracteristica) {
-	this.idCaracteristica = idCaracteristica;
-}
+	public void setIdCaracteristica(String idCaracteristica) {
+		this.idCaracteristica = idCaracteristica;
+	}
 
-public int getCodigo() {
-	return codigo;
-}
+	public int getCodigo() {
+		return codigo;
+	}
 
-public void setCodigo(int codigo) {
-	this.codigo = codigo;
-}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 
-public int getNumeroCaracteristica() {
-	return numeroCaracteristica;
-}
+	public int getNumeroCaracteristica() {
+		return numeroCaracteristica;
+	}
 
-public void setNumeroCaracteristica(int numeroCaracteristica) {
-	this.numeroCaracteristica = numeroCaracteristica;
-}
+	public void setNumeroCaracteristica(int numeroCaracteristica) {
+		this.numeroCaracteristica = numeroCaracteristica;
+	}
 
-public TipoCaracteristicaModel getTipoCaracteristica() {
-	return tipoCaracteristica;
-}
+	public TipoCaracteristicaModel getTipoCaracteristica() {
+		return tipoCaracteristica;
+	}
 
-public void setTipoCaracteristica(TipoCaracteristicaModel tipoCaracteristica) {
-	this.tipoCaracteristica = tipoCaracteristica;
-}
+	public void setTipoCaracteristica(TipoCaracteristicaModel tipoCaracteristica) {
+		this.tipoCaracteristica = tipoCaracteristica;
+	}
 
 }

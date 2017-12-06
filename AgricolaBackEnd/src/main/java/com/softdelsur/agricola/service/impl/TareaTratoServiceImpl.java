@@ -17,7 +17,7 @@ public class TareaTratoServiceImpl implements TareaTratoService {
 	@Autowired
 	@Qualifier("tareaTratoRepository")
 	TareaTratoRepository tareaTratoReposirtory;
-	
+
 	@Override
 	public List<TareaTrato> findTareaTratoByTarea(Tarea tarea) {
 		// TODO Auto-generated method stub

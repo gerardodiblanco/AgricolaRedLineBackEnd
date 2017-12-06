@@ -14,31 +14,30 @@ import com.softdelsur.agricola.service.LocalidadService;
 
 @Service("localidadServiceImpl")
 public class LocalidadServiceImpl implements LocalidadService {
-	
+
 	@Autowired
 	@Qualifier("localidadRepository")
 	LocalidadRepository localidadRepository;
-	
+
 	@Autowired
 	@Qualifier("localidadConverter")
 	LocalidadConverter localidadConverter;
 
 	@Override
 	public Localidad addLocalidad(Localidad localidad) {
-		
-		
+
 		return localidadRepository.save(localidad);
 	}
 
 	@Override
 	public Localidad findByNombreLocalidad(String nombre) {
-		
+
 		return localidadRepository.findByNombre(nombre);
 	}
 
 	@Override
 	public List<LocalidadModel> findLocalidadesAll() {
-		
+
 		return localidadConverter.convertListLocalidadToListLocalidadModel(localidadRepository.findAll());
 	}
 

@@ -12,19 +12,19 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "rubros")
 public class Rubro {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name= "id_rubro", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String idRubro;
-    @Column(name = "descripcion")
+	@Id
+	@Column(name = "id_rubro", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idRubro;
+	@Column(name = "descripcion")
 	private String descripcion;
-    @Column(name = "nombre")
+	@Column(name = "nombre")
 	private String nombreRubro;
 
-	public Rubro(){
+	public Rubro() {
 
 	}
 
@@ -88,7 +88,5 @@ public class Rubro {
 			return false;
 		return true;
 	}
-
-
 
 }

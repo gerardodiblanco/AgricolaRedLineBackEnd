@@ -25,7 +25,6 @@ import com.softdelsur.agricola.service.PeriodoVariedadService;
 import com.softdelsur.agricola.service.SubCuartelService;
 import com.softdelsur.agricola.service.VariedadService;
 
-
 @Component("subCuartelConverter")
 public class SubCuartelConverter {
 	@Autowired
@@ -34,43 +33,43 @@ public class SubCuartelConverter {
 	@Autowired
 	@Qualifier("estadoSubCuartelConverter")
 	EstadoSubCuartelConverter estadoSubCuartelConverter;
-	
+
 	@Autowired
 	@Qualifier("atributoSubCuartelConverter")
 	AtributoSubCuartelConverter atributoSubCuartelConverter;
-	
+
 	@Autowired
 	@Qualifier("periodoVariedadConverter")
 	PeriodoVariedadConverter periodoVariedadConverter;
-	
+
 	@Autowired
 	@Qualifier("coordenadaConverter")
 	CoordenadaConverter coordenadaConverter;
-	
+
 	@Autowired
 	@Qualifier("subCuartelServiceImpl")
 	SubCuartelService subCuartelService;
-	
+
 	@Autowired
 	@Qualifier("estadoSubCuartelServiceImpl")
 	EstadoSubCuartelService estadoSubCuartelService;
-	
+
 	@Autowired
 	@Qualifier("variedadServiceImpl")
 	VariedadService variedadService;
-	
+
 	@Autowired
 	@Qualifier("periodoVariedadServiceImpl")
 	PeriodoVariedadService periodoVariedadService;
-	
+
 	@Autowired
 	@Qualifier("atributoSubCuartelServiceImpl")
 	AtributoSubCuartelService atributoSubCuartelService;
-	
+
 	@Autowired
 	@Qualifier("cuartelServiceImpl")
 	CuartelService cuartelService;
-	
+
 	public SubCuartel convertSubCuartelModelToSubCuartel(SubCuartelModel subCuartelModel) {
 		SubCuartel subCuartel = null;
 		System.out.println("converter");
@@ -79,13 +78,13 @@ public class SubCuartelConverter {
 		cuartel = cuartelService.findCuartelById(subCuartelModel.getIdCuartel());
 		if (cuartel != null) {
 
-			if (subCuartelModel.getIdSubCuartel() == null) {
+			if (subCuartelModel.getId() == null) {
 				System.out.println("id es NULL -> NUEVO sub cuartel");
 				subCuartel = new SubCuartel();
 				subCuartel = subCuartelService.addSubCuartel(subCuartel);
 
 			} else {
-				subCuartel = subCuartelService.buscarPorId(subCuartelModel.getIdSubCuartel());
+				subCuartel = subCuartelService.buscarPorId(subCuartelModel.getId());
 				System.out.println("id no nulo -> buscando en la base el sub cuartel");
 				if (subCuartel == null) {
 					System.out.println("sub cuartel no encontrado en la base");
@@ -110,40 +109,40 @@ public class SubCuartelConverter {
 			System.out.println("buscando variedad");
 			Variedad variedad = variedadService.findVariedadByNombre(subCuartelModel.getVariedad());
 			System.out.println("periodo variedad");
-			
+
 			PeriodoVariedad periodoVariedadVigente = null;
 			periodoVariedadVigente = periodoVariedadService.findPeriodoBariedadVigenteBySubCuartel(subCuartel);
-			
+
 			if (periodoVariedadVigente == null) {
 				System.out.println("periodo varidad vigente == null");
-				PeriodoVariedad periodoVariedadNuevo = new PeriodoVariedad(subCuartel,variedad);
+				PeriodoVariedad periodoVariedadNuevo = new PeriodoVariedad(subCuartel, variedad);
 				periodoVariedadNuevo = periodoVariedadService.addPeriodoVariedad(periodoVariedadNuevo);
-								
+
 			} else {
-System.out.println("Variedad vigente  " +periodoVariedadVigente.getVariedad().getNombre());
-System.out.println("Variedad proveniente del DTO "+ variedad.getNombre());
+				System.out.println("Variedad vigente  " + periodoVariedadVigente.getVariedad().getNombre());
+				System.out.println("Variedad proveniente del DTO " + variedad.getNombre());
 				if (periodoVariedadVigente.getVariedad().getId().equals(variedad.getId())) {
 					System.out.println("no se modifico la variedad ");
-				}else {
+				} else {
 					System.out.println("periodo variedad modificada");
 					periodoVariedadVigente.setFechaFinPeriodo(Date.valueOf(LocalDate.now()));
 					periodoVariedadVigente = periodoVariedadService.addPeriodoVariedad(periodoVariedadVigente);
-					PeriodoVariedad periodoVariedadNuevo = new PeriodoVariedad(subCuartel,variedad);
-					periodoVariedadNuevo = periodoVariedadService.addPeriodoVariedad(periodoVariedadNuevo);	
+					PeriodoVariedad periodoVariedadNuevo = new PeriodoVariedad(subCuartel, variedad);
+					periodoVariedadNuevo = periodoVariedadService.addPeriodoVariedad(periodoVariedadNuevo);
 				}
 			}
-			
-			// setear id del sub cuartel a los atributos sub cuartel 
-			
-			for(AtributoSubCuartelModel atributoSubCuartelModel:subCuartelModel.getAtributosSubCuartel()) {
+
+			// setear id del sub cuartel a los atributos sub cuartel
+
+			for (AtributoSubCuartelModel atributoSubCuartelModel : subCuartelModel.getAtributosSubCuartel()) {
 				atributoSubCuartelModel.setIdSubCuartel(subCuartel.getIdSubCuartel());
 			}
-			
+
 			System.out.println("seteando atributos");
 			List<AtributoSubCuartel> atributoSubCuartelListNuevos = atributoSubCuartelConverter
 					.convertListAtributoSubCuartelModelToListAtributoSubCuartel(
 							subCuartelModel.getAtributosSubCuartel());
-	
+
 			// dar de baja los atributos eliminados
 
 			List<AtributoSubCuartel> atributoSubCuartelListAll = atributoSubCuartelService
@@ -179,52 +178,50 @@ System.out.println("Variedad proveniente del DTO "+ variedad.getNombre());
 		}
 		return subCuartel;
 	}
-	
-	
-	
-	
-	public SubCuartelModel convertSubCuartelToSubCuartelModel(SubCuartel subCuartel){
+
+	public SubCuartelModel convertSubCuartelToSubCuartelModel(SubCuartel subCuartel) {
 		SubCuartelModel subCuartelModel = new SubCuartelModel();
-		subCuartelModel.setIdSubCuartel(subCuartel.getIdSubCuartel());
+		subCuartelModel.setId(subCuartel.getIdSubCuartel());
 		subCuartelModel.setCodigo(subCuartel.getCodigo());
 		subCuartelModel.setDescripcion(subCuartel.getDescripcion());
 		subCuartelModel.setHectarea(subCuartel.getHectarea());
-//		subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
+		// subCuartelModel.setCaracteristicas(caracteristicaConverter.convertListCaracteristicaToListCaracteristicaModel(subCuartel.getCaracteristicas()));
 		subCuartelModel.setEstado(subCuartel.getEstado().getDescripcion());
 		System.out.println("antes de llamar al converter de atributo sub cuartel");
-		subCuartelModel.setAtributosSubCuartel(atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(
-				atributoSubCuartelService.findAtributosSubCuartelesBySubCuartel(subCuartel)
-				));
-	System.out.println("despues del converter de atrubuto sc");
+		subCuartelModel.setAtributosSubCuartel(
+				atributoSubCuartelConverter.convertListAtributoSubCuartelToListAtributoSubCuartelModel(
+						atributoSubCuartelService.findAtributosSubCuartelesBySubCuartel(subCuartel)));
+		System.out.println("despues del converter de atrubuto sc");
 		subCuartelModel.setIdCuartel(subCuartel.getCuartel().getIdCuartel());
 		subCuartelModel.setNombreCuartel(subCuartel.getCuartel().getDescripcion());
-		
+
 		PeriodoVariedad periodoVariedad = null;
-			periodoVariedad = periodoVariedadService.findPeriodoBariedadVigenteBySubCuartel(subCuartel);
-			if(periodoVariedad != null) {
-				subCuartelModel.setVariedad(periodoVariedad.getVariedad().getNombre());
-				subCuartelModel.setColorVariedad(periodoVariedad.getVariedad().getColorVariedad());
-				subCuartelModel.setIdVariedad(periodoVariedad.getVariedad().getId());
-			}
-			
-		
+		periodoVariedad = periodoVariedadService.findPeriodoBariedadVigenteBySubCuartel(subCuartel);
+		if (periodoVariedad != null) {
+			subCuartelModel.setVariedad(periodoVariedad.getVariedad().getNombre());
+			subCuartelModel.setColorVariedad(periodoVariedad.getVariedad().getColorVariedad());
+			subCuartelModel.setIdVariedad(periodoVariedad.getVariedad().getId());
+		}
+
 		subCuartelModel.setNombreCampo(subCuartel.getCuartel().getCampo().getNombre());
-		
-		subCuartelModel.setCoordenadaList(coordenadaConverter.convertListEntityToListModel(subCuartel.getCoordenadaList()));
+
+		subCuartelModel
+				.setCoordenadaList(coordenadaConverter.convertListEntityToListModel(subCuartel.getCoordenadaList()));
 		return subCuartelModel;
 	}
-	
-	public List<SubCuartel> convertListSubCuartelModelToListSubCuartel(List<SubCuartelModel> listSubCuartelModel){
+
+	public List<SubCuartel> convertListSubCuartelModelToListSubCuartel(List<SubCuartelModel> listSubCuartelModel) {
 		List<SubCuartel> subCuartelList = new ArrayList<SubCuartel>();
 		for (SubCuartelModel subCuartelModel : listSubCuartelModel) {
-		//	subCuartelList.add(convertSubCuartelModelToSubCuartel(subCuartelModel));
+			 subCuartelList.add(convertSubCuartelModelToSubCuartel(subCuartelModel));
 		}
 		return subCuartelList;
 	}
-	public List<SubCuartelModel> convertListSubCuartelToListSubCuartelModel(List<SubCuartel> listSubCuartel){
+
+	public List<SubCuartelModel> convertListSubCuartelToListSubCuartelModel(List<SubCuartel> listSubCuartel) {
 		List<SubCuartelModel> subCuartelModelList = new ArrayList<SubCuartelModel>();
 		for (SubCuartel subCuartel : listSubCuartel) {
-			System.out.println("dentro del converterList-> sub cuartel = "+subCuartel.getDescripcion());
+			System.out.println("dentro del converterList-> sub cuartel = " + subCuartel.getDescripcion());
 			subCuartelModelList.add(convertSubCuartelToSubCuartelModel(subCuartel));
 		}
 		return subCuartelModelList;

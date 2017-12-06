@@ -15,18 +15,17 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
 @Table(name = "subCuartel")
 public class SubCuartel {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name= "id", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String idSubCuartel;
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idSubCuartel;
 	private int codigo;
 	private String descripcion;
 	private float hectarea;
@@ -34,118 +33,81 @@ public class SubCuartel {
 	private Cuartel cuartel;
 	@ManyToOne
 	private EstadoSubCuartel estado;
-	
+
 	@JoinColumn(name = "id_subcuartel")
 	@OneToMany(cascade = CascadeType.REFRESH)
-	public List<Caracteristica> caracteristicas  = new ArrayList<Caracteristica>();
-	
-	@OneToMany(cascade = CascadeType.REFRESH )
+	public List<Caracteristica> caracteristicas = new ArrayList<Caracteristica>();
+
+	@OneToMany(cascade = CascadeType.REFRESH)
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
-	
-	
+
 	public SubCuartel() {
 		super();
 	}
-	
-	
 
 	public String getIdSubCuartel() {
 		return idSubCuartel;
 	}
 
-
-
 	public void setIdSubCuartel(String idSubCuartel) {
 		this.idSubCuartel = idSubCuartel;
 	}
-
-
 
 	public int getCodigo() {
 		return codigo;
 	}
 
-
-
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
-
-
 
 	public String getDescripcion() {
 		return descripcion;
 	}
 
-
-
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
-
 
 	public float getHectarea() {
 		return hectarea;
 	}
 
-
-
 	public void setHectarea(float hectarea) {
 		this.hectarea = hectarea;
 	}
-
-
 
 	public Cuartel getCuartel() {
 		return cuartel;
 	}
 
-
-
 	public void setCuartel(Cuartel cuartel) {
 		this.cuartel = cuartel;
 	}
-
-
 
 	public EstadoSubCuartel getEstado() {
 		return estado;
 	}
 
-
-
 	public void setEstado(EstadoSubCuartel estado) {
 		this.estado = estado;
 	}
-
-
-
-
 
 	public List<Caracteristica> getCaracteristicas() {
 		return caracteristicas;
 	}
 
-
-
 	public void setCaracteristicas(List<Caracteristica> caracteristicas) {
 		this.caracteristicas = caracteristicas;
 	}
-
-
 
 	public List<Coordenada> getCoordenadaList() {
 		return coordenadaList;
 	}
 
-
-
 	public void setCoordenadaList(List<Coordenada> coordenadaList) {
 		this.coordenadaList = coordenadaList;
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -161,8 +123,6 @@ public class SubCuartel {
 		result = prime * result + ((idSubCuartel == null) ? 0 : idSubCuartel.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -210,10 +170,4 @@ public class SubCuartel {
 		return true;
 	}
 
-
-
-	
-	
-	
-	
 }

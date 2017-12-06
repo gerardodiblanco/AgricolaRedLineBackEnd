@@ -13,19 +13,18 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "detalleParteDiario")
 public class DetalleParteDiario {
 
+	private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String id;
 
-    @Id
-    @Column(name= "id", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String id;
-    
 	private int cantidad;
 	@ManyToOne
 	public PersonalTarea personalTarea;
-	
+
 	public DetalleParteDiario() {
 		super();
 	}
@@ -81,6 +80,5 @@ public class DetalleParteDiario {
 			return false;
 		return true;
 	}
-	
-	
+
 }

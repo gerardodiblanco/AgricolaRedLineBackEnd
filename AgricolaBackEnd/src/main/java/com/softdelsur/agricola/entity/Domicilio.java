@@ -10,18 +10,17 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
 @Table(name = "domicilios")
 public class Domicilio {
-	
-    private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name= "id_domicilio", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String idDomicilio;
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name = "id_domicilio", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idDomicilio;
 	private String calle;
 	private int dto;
 	private int numero;
@@ -29,9 +28,11 @@ public class Domicilio {
 	private int piso;
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private Localidad localidad;
+
 	public Domicilio() {
 		super();
 	}
+
 	public Domicilio(String calle, int dto, int numero, String otro, int piso, Localidad localidad) {
 		super();
 		this.calle = calle;
@@ -41,6 +42,7 @@ public class Domicilio {
 		this.piso = piso;
 		this.localidad = localidad;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -53,49 +55,63 @@ public class Domicilio {
 		result = prime * result + piso;
 		return result;
 	}
-	
+
 	public String getIdDomicilio() {
 		return idDomicilio;
 	}
+
 	public void setIdDomicilio(String idDomicilio) {
 		this.idDomicilio = idDomicilio;
 	}
+
 	public String getCalle() {
 		return calle;
 	}
+
 	public void setCalle(String calle) {
 		this.calle = calle;
 	}
+
 	public int getDto() {
 		return dto;
 	}
+
 	public void setDto(int dto) {
 		this.dto = dto;
 	}
+
 	public int getNumero() {
 		return numero;
 	}
+
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+
 	public String getOtro() {
 		return otro;
 	}
+
 	public void setOtro(String otro) {
 		this.otro = otro;
 	}
+
 	public int getPiso() {
 		return piso;
 	}
+
 	public void setPiso(int piso) {
 		this.piso = piso;
 	}
+
 	public Localidad getLocalidad() {
 		return localidad;
 	}
+
 	public void setLocalidad(Localidad localidad) {
 		this.localidad = localidad;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -128,6 +144,5 @@ public class Domicilio {
 			return false;
 		return true;
 	}
-	
 
 }

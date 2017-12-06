@@ -1,12 +1,10 @@
 package com.softdelsur.agricola.model;
 
-import javax.persistence.Column;
-
 public class TipoCaracteristicaModel {
 
-    private String idTipoCaracteristica;
+	private String idTipoCaracteristica;
 	private int codigo;
-	
+
 	private String nombreCaracteristica;
 
 	public TipoCaracteristicaModel() {
@@ -36,5 +34,5 @@ public class TipoCaracteristicaModel {
 	public void setNombreCaracteristica(String nombreCaracteristica) {
 		this.nombreCaracteristica = nombreCaracteristica;
 	}
-	
+
 }

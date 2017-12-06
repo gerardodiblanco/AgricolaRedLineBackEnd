@@ -12,4 +12,6 @@ public interface SubCuartelService {
 	
 	List<SubCuartel> buscarSubCuartelesActivosPorCuartel(Cuartel cuartel);
 	SubCuartel eliminarSubCuartel(SubCuartel subCuartel);
+	
+	List<SubCuartel> buscarSubCuartelesActivos();
 }

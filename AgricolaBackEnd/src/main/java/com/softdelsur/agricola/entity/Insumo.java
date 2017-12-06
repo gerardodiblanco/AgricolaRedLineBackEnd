@@ -8,60 +8,70 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "insumos")
 public class Insumo {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name= "id", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String idInsumo;
-    
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idInsumo;
+
 	private int codigo;
 	private String descripcion;
 	private boolean estado;
-	
-	
+
 	@ManyToOne
 	public UnidadMedida unidadMedida;
-	
-	
+
 	public Insumo() {
 		super();
 	}
+
 	public String getIdInsumo() {
 		return idInsumo;
 	}
+
 	public void setIdInsumo(String idInsumo) {
 		this.idInsumo = idInsumo;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
 	public UnidadMedida getUnidadMedida() {
 		return unidadMedida;
 	}
+
 	public void setUnidadMedida(UnidadMedida unidadMedida) {
 		this.unidadMedida = unidadMedida;
 	}
+
 	public boolean isEstado() {
 		return estado;
 	}
+
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -73,6 +83,7 @@ public class Insumo {
 		result = prime * result + ((unidadMedida == null) ? 0 : unidadMedida.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -103,6 +114,5 @@ public class Insumo {
 			return false;
 		return true;
 	}
-		
-	
+
 }

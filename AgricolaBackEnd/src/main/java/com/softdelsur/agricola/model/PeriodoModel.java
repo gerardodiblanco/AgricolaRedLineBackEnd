@@ -2,97 +2,90 @@ package com.softdelsur.agricola.model;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.ManyToOne;
-
-import com.softdelsur.agricola.entity.EstadoPeriodo;
-import com.softdelsur.agricola.entity.Rubro;
-
 public class PeriodoModel {
-    private String idPeriodo;
-  
-private String Descripcion;
-    
-private Date FechaDesde;
-    
-private Date FechaHasta;
-    
-private Date PeriodoAnio;
- 
-private RubroModel rubro;
-    
-private EstadoPeriodoModel estado;
+	private String idPeriodo;
 
-public PeriodoModel() {
-	super();
-}
+	private String Descripcion;
 
-public PeriodoModel(String descripcion, Date fechaDesde, Date fechaHasta, Date periodoAnio, RubroModel rubro,
-		EstadoPeriodoModel estado) {
-	super();
-	Descripcion = descripcion;
-	FechaDesde = fechaDesde;
-	FechaHasta = fechaHasta;
-	PeriodoAnio = periodoAnio;
-	this.rubro = rubro;
-	this.estado = estado;
-}
+	private Date FechaDesde;
 
-public String getIdPeriodo() {
-	return idPeriodo;
-}
+	private Date FechaHasta;
 
-public void setIdPeriodo(String idPeriodo) {
-	this.idPeriodo = idPeriodo;
-}
+	private Date PeriodoAnio;
 
-public String getDescripcion() {
-	return Descripcion;
-}
+	private RubroModel rubro;
 
-public void setDescripcion(String descripcion) {
-	Descripcion = descripcion;
-}
+	private EstadoPeriodoModel estado;
 
-public Date getFechaDesde() {
-	return FechaDesde;
-}
+	public PeriodoModel() {
+		super();
+	}
 
-public void setFechaDesde(Date fechaDesde) {
-	FechaDesde = fechaDesde;
-}
+	public PeriodoModel(String descripcion, Date fechaDesde, Date fechaHasta, Date periodoAnio, RubroModel rubro,
+			EstadoPeriodoModel estado) {
+		super();
+		Descripcion = descripcion;
+		FechaDesde = fechaDesde;
+		FechaHasta = fechaHasta;
+		PeriodoAnio = periodoAnio;
+		this.rubro = rubro;
+		this.estado = estado;
+	}
 
-public Date getFechaHasta() {
-	return FechaHasta;
-}
+	public String getIdPeriodo() {
+		return idPeriodo;
+	}
 
-public void setFechaHasta(Date fechaHasta) {
-	FechaHasta = fechaHasta;
-}
+	public void setIdPeriodo(String idPeriodo) {
+		this.idPeriodo = idPeriodo;
+	}
 
-public Date getPeriodoAnio() {
-	return PeriodoAnio;
-}
+	public String getDescripcion() {
+		return Descripcion;
+	}
 
-public void setPeriodoAnio(Date periodoAnio) {
-	PeriodoAnio = periodoAnio;
-}
+	public void setDescripcion(String descripcion) {
+		Descripcion = descripcion;
+	}
 
-public RubroModel getRubro() {
-	return rubro;
-}
+	public Date getFechaDesde() {
+		return FechaDesde;
+	}
 
-public void setRubro(RubroModel rubro) {
-	this.rubro = rubro;
-}
+	public void setFechaDesde(Date fechaDesde) {
+		FechaDesde = fechaDesde;
+	}
 
-public EstadoPeriodoModel getEstado() {
-	return estado;
-}
+	public Date getFechaHasta() {
+		return FechaHasta;
+	}
 
-public void setEstado(EstadoPeriodoModel estado) {
-	this.estado = estado;
-}
+	public void setFechaHasta(Date fechaHasta) {
+		FechaHasta = fechaHasta;
+	}
 
+	public Date getPeriodoAnio() {
+		return PeriodoAnio;
+	}
+
+	public void setPeriodoAnio(Date periodoAnio) {
+		PeriodoAnio = periodoAnio;
+	}
+
+	public RubroModel getRubro() {
+		return rubro;
+	}
+
+	public void setRubro(RubroModel rubro) {
+		this.rubro = rubro;
+	}
+
+	public EstadoPeriodoModel getEstado() {
+		return estado;
+	}
+
+	public void setEstado(EstadoPeriodoModel estado) {
+		this.estado = estado;
+	}
 
 }

@@ -15,4 +15,6 @@ public interface SubCuartelRepository  extends JpaRepository<SubCuartel, Seriali
 
 	SubCuartel findByIdSubCuartel(String id);
 	List<SubCuartel> findByCuartelAndEstado(Cuartel cuartel,EstadoSubCuartel estadoSubCuartel);
+	
+	List<SubCuartel> findByEstado(EstadoSubCuartel estadoSubCuartel);
 }

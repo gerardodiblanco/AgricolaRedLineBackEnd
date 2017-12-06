@@ -12,14 +12,13 @@ public class PeriodoConverter {
 	@Autowired
 	@Qualifier("estadoPeriodoConverter")
 	EstadoPeriodoConverter estadoPeriodoConverter;
-	
+
 	@Autowired
 	@Qualifier("rubroConverter")
 	RubroConverter rubroConverter;
-	
-	public Periodo convertPeriodoModelToPeriodo(PeriodoModel periodoModel){
 
-		
+	public Periodo convertPeriodoModelToPeriodo(PeriodoModel periodoModel) {
+
 		Periodo periodo = new Periodo();
 		periodo.setIdPeriodo(periodoModel.getIdPeriodo());
 		periodo.setDescripcion(periodo.getDescripcion());
@@ -30,7 +29,8 @@ public class PeriodoConverter {
 		periodo.setRubro(rubroConverter.convertRubroModelToRubro(periodoModel.getRubro()));
 		return periodo;
 	}
-	public PeriodoModel convertPeriodoToPeriodoModel(Periodo periodo){
+
+	public PeriodoModel convertPeriodoToPeriodoModel(Periodo periodo) {
 		PeriodoModel periodoModel = new PeriodoModel();
 		periodoModel.setIdPeriodo(periodo.getIdPeriodo());
 		periodoModel.setDescripcion(periodo.getDescripcion());
@@ -39,7 +39,7 @@ public class PeriodoConverter {
 		periodoModel.setFechaHasta(periodo.getFechaHasta());
 		periodoModel.setPeriodoAnio(periodo.getPeriodoAnio());
 		periodoModel.setRubro(rubroConverter.convetRubroToRubroModel(periodo.getRubro()));
-		
+
 		return periodoModel;
 	}
 }

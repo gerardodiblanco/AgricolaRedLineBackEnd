@@ -18,39 +18,42 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "cuartel")
 public class Cuartel {
-	  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id_cuartel", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String idCuartel;
+	@Id
+	@Column(name = "id_cuartel", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idCuartel;
 	private int codigo;
 	private String descripcion;
 	private float hectarea;
-	
-	
+
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private Campo campo;
-	
-	@OneToMany(cascade = CascadeType.REFRESH )
+
+	@OneToMany(cascade = CascadeType.REFRESH)
 	private List<Coordenada> coordenadaList = new ArrayList<Coordenada>();
-	
+
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private EstadoCuartel estadoCuartel;
-	
+
 	public Cuartel() {
-		
+
 	}
+
 	public String getIdCuartel() {
 		return idCuartel;
 	}
+
 	public void setIdCuartel(String idCuartel) {
 		this.idCuartel = idCuartel;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
@@ -58,12 +61,15 @@ public class Cuartel {
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
 	public float getHectarea() {
 		return hectarea;
 	}
+
 	public void setHectarea(float hectarea) {
 		this.hectarea = hectarea;
 	}
@@ -71,26 +77,28 @@ public class Cuartel {
 	public Campo getCampo() {
 		return campo;
 	}
+
 	public void setCampo(Campo campo) {
 		this.campo = campo;
 	}
-	
-	
+
 	public List<Coordenada> getCoordenadaList() {
 		return coordenadaList;
 	}
+
 	public void setCoordenadaList(List<Coordenada> coordenadaList) {
 		this.coordenadaList = coordenadaList;
 
 	}
-	
-	
+
 	public EstadoCuartel getEstadoCuartel() {
 		return estadoCuartel;
 	}
+
 	public void setEstadoCuartel(EstadoCuartel estadoCuartel) {
 		this.estadoCuartel = estadoCuartel;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -104,6 +112,7 @@ public class Cuartel {
 		result = prime * result + ((idCuartel == null) ? 0 : idCuartel.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -145,7 +154,4 @@ public class Cuartel {
 		return true;
 	}
 
-
-	
-
-	}
+}

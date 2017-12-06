@@ -17,44 +17,45 @@ public class MaquinariaConverter {
 	@Autowired
 	@Qualifier("maquinariaServiceImpl")
 	MaquinariaService maquinariaService;
-	
+
 	public Maquinaria convertMaquinaModelToMaquina(MaquinariaModel maquinariaModel) {
 		Maquinaria maquinaria = null;
 
 		if (maquinariaModel.getIdMaquina() == null) {
 			maquinaria = new Maquinaria();
 			maquinaria.setEstadoMaquinaria(true);
-		//	maquinaria = maquinariaService.addMaquinaria(maquinaria);
+			// maquinaria = maquinariaService.addMaquinaria(maquinaria);
 		} else {
 			maquinaria = maquinariaService.findMaquinariaById(maquinariaModel.getIdMaquina());
 
 			if (maquinaria == null) {
 				maquinaria = new Maquinaria();
 				maquinaria.setEstadoMaquinaria(true);
-			//	maquinaria = maquinariaService.addMaquinaria(maquinaria);
+				// maquinaria = maquinariaService.addMaquinaria(maquinaria);
 			}
 		}
 		maquinaria.setIdMaquina(maquinariaModel.getIdMaquina());
 		maquinaria.setCodigo(maquinariaModel.getCodigo());
 		maquinaria.setDescripcion(maquinariaModel.getDescripcion());
 
-		System.out.println(" maquinaria "+maquinaria.getId());
-		System.out.println("descripcion "+maquinaria.getDescripcion());
+		System.out.println(" maquinaria " + maquinaria.getId());
+		System.out.println("descripcion " + maquinaria.getDescripcion());
 		return maquinaria;
 	}
-	public MaquinariaModel convertMaquinaToMaquinaModel(Maquinaria maquinaria){
+
+	public MaquinariaModel convertMaquinaToMaquinaModel(Maquinaria maquinaria) {
 		MaquinariaModel maquinariaModel = new MaquinariaModel();
 		maquinariaModel.setIdMaquina(maquinaria.getIdMaquina());
 		maquinariaModel.setCodigo(maquinaria.getCodigo());
 		maquinariaModel.setDescripcion(maquinaria.getDescripcion());
-		
+
 		return maquinariaModel;
 	}
-	
-	public List<MaquinariaModel> convertListMaquinariaToListMaquinariaModel(List<Maquinaria> maquinariaList){
+
+	public List<MaquinariaModel> convertListMaquinariaToListMaquinariaModel(List<Maquinaria> maquinariaList) {
 		List<MaquinariaModel> maquinariaModelList = new ArrayList<>();
-		
-		for(Maquinaria maquinaria:maquinariaList) {
+
+		for (Maquinaria maquinaria : maquinariaList) {
 			maquinariaModelList.add(convertMaquinaToMaquinaModel(maquinaria));
 		}
 		return maquinariaModelList;

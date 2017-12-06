@@ -10,14 +10,15 @@ import com.softdelsur.agricola.model.TipoCampoModel;
 
 @Component("tipoCampoConverter")
 public class TipoCampoConverter {
-	public TipoCampo convertTipoCampoModelToTipoCampo(TipoCampoModel tipoCampoModel){
+	public TipoCampo convertTipoCampoModelToTipoCampo(TipoCampoModel tipoCampoModel) {
 		TipoCampo tipoCampo = new TipoCampo();
 		tipoCampo.setIdTipo(tipoCampoModel.getIdTipo());
 		tipoCampo.setCodigo(tipoCampoModel.getCodigo());
 		tipoCampo.setNombre(tipoCampoModel.getNombre());
 		return tipoCampo;
 	}
-	public TipoCampoModel convertTipoCampoToTipoCampoModel(TipoCampo tipoCampo){
+
+	public TipoCampoModel convertTipoCampoToTipoCampoModel(TipoCampo tipoCampo) {
 		TipoCampoModel tipoCampoModel = new TipoCampoModel();
 		tipoCampoModel.setIdTipo(tipoCampo.getIdTipo());
 		tipoCampoModel.setCodigo(tipoCampo.getCodigo());
@@ -25,10 +26,10 @@ public class TipoCampoConverter {
 		return tipoCampoModel;
 	}
 
-	public List<TipoCampoModel> convertListTipoCampoToTipoCampoModel(List<TipoCampo> tipoCampoList){
+	public List<TipoCampoModel> convertListTipoCampoToTipoCampoModel(List<TipoCampo> tipoCampoList) {
 		List<TipoCampoModel> tipoCampoModelList = new ArrayList<TipoCampoModel>();
-		
-		for(TipoCampo tipoCampo: tipoCampoList) {
+
+		for (TipoCampo tipoCampo : tipoCampoList) {
 			tipoCampoModelList.add(convertTipoCampoToTipoCampoModel(tipoCampo));
 		}
 		return tipoCampoModelList;

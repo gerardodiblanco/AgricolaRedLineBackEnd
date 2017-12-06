@@ -13,7 +13,7 @@ import com.softdelsur.agricola.service.AtributoSubCuartelService;
 
 @Service("atributoSubCuartelServiceImpl")
 public class AtributoSubCuartelServiceImpl implements AtributoSubCuartelService {
-	
+
 	@Autowired
 	@Qualifier("atributoSubCuartelRepository")
 	AtributoSubCuartelRepository atributoSubCuartelRepository;
@@ -26,14 +26,14 @@ public class AtributoSubCuartelServiceImpl implements AtributoSubCuartelService 
 
 	@Override
 	public AtributoSubCuartel findAtributoSubCuartelById(String id) {
-		
+
 		return atributoSubCuartelRepository.findAtributoSubCuartelById(id);
 	}
 
 	@Override
 	public List<AtributoSubCuartel> findAtributosSubCuartelesBySubCuartel(SubCuartel subCuartel) {
-		
-		return atributoSubCuartelRepository.findAtributosSubCuartelesBySubCuartelAndFechaFinVigencia(subCuartel,null);
+
+		return atributoSubCuartelRepository.findAtributosSubCuartelesBySubCuartelAndFechaFinVigencia(subCuartel, null);
 	}
 
 }

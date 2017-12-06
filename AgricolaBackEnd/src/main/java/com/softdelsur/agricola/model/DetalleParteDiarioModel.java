@@ -1,14 +1,10 @@
 package com.softdelsur.agricola.model;
 
-import javax.persistence.ManyToOne;
-
-import com.softdelsur.agricola.entity.PersonalTarea;
-
 public class DetalleParteDiarioModel {
-    private String id;
-    
+	private String id;
+
 	private int cantidad;
-	
+
 	public PersonalTareaModel personalTarea;
 
 	public DetalleParteDiarioModel() {
@@ -38,6 +34,5 @@ public class DetalleParteDiarioModel {
 	public void setPersonalTarea(PersonalTareaModel personalTarea) {
 		this.personalTarea = personalTarea;
 	}
-	
-	
+
 }

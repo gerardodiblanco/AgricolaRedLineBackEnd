@@ -12,18 +12,20 @@ public class DomicilioConverter {
 	@Autowired
 	@Qualifier("localidadConverter")
 	LocalidadConverter localidadConverter;
-	public Domicilio convertDomicilioModelToDomicilio(DomicilioModel domicilioModel){
-	Domicilio domicilio = new Domicilio();
-	domicilio.setIdDomicilio(domicilioModel.getIdDomicilio());
-	domicilio.setCalle(domicilioModel.getCalle());
-	domicilio.setDto(domicilioModel.getDto());
-	domicilio.setNumero(domicilioModel.getNumero());
-	domicilio.setOtro(domicilioModel.getOtro());
-	domicilio.setPiso(domicilioModel.getPiso());
-	domicilio.setLocalidad(localidadConverter.convertLocalidadModelToLocalidad(domicilioModel.getLocalidad()));
-	return domicilio;
+
+	public Domicilio convertDomicilioModelToDomicilio(DomicilioModel domicilioModel) {
+		Domicilio domicilio = new Domicilio();
+		domicilio.setIdDomicilio(domicilioModel.getIdDomicilio());
+		domicilio.setCalle(domicilioModel.getCalle());
+		domicilio.setDto(domicilioModel.getDto());
+		domicilio.setNumero(domicilioModel.getNumero());
+		domicilio.setOtro(domicilioModel.getOtro());
+		domicilio.setPiso(domicilioModel.getPiso());
+		domicilio.setLocalidad(localidadConverter.convertLocalidadModelToLocalidad(domicilioModel.getLocalidad()));
+		return domicilio;
 	}
-	public DomicilioModel convertDomicilioToDomicilioModel(Domicilio domicilio){
+
+	public DomicilioModel convertDomicilioToDomicilioModel(Domicilio domicilio) {
 		DomicilioModel domicilioModel = new DomicilioModel();
 		domicilioModel.setIdDomicilio(domicilio.getIdDomicilio());
 		domicilioModel.setCalle(domicilio.getCalle());

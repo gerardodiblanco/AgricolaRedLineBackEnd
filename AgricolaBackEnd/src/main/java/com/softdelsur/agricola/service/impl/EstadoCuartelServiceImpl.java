@@ -9,24 +9,22 @@ import com.softdelsur.agricola.repository.EstadoCuartelRepository;
 import com.softdelsur.agricola.service.EstadoCuartelService;
 
 @Service("estadoCuartelServiceImpl")
-public class EstadoCuartelServiceImpl implements EstadoCuartelService{
-	
+public class EstadoCuartelServiceImpl implements EstadoCuartelService {
+
 	@Autowired
 	@Qualifier("estadoCuartelRepository")
 	EstadoCuartelRepository estadoCuartelRespository;
 
 	@Override
 	public EstadoCuartel findEstadoCuartelByNombre(String nombre) {
-		
+
 		return estadoCuartelRespository.findEstadoCuartelByNombre(nombre);
 	}
 
 	@Override
 	public EstadoCuartel addEstadoCuartel(EstadoCuartel estadoCuartel) {
-		
+
 		return estadoCuartelRespository.save(estadoCuartel);
 	}
-	
-	
 
 }

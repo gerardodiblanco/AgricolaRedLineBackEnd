@@ -3,18 +3,6 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-import com.softdelsur.agricola.entity.Coordenada;
-import com.softdelsur.agricola.entity.Domicilio;
-import com.softdelsur.agricola.entity.EstadoCampo;
-import com.softdelsur.agricola.entity.Proveedor;
-import com.softdelsur.agricola.entity.SubCuartel;
-import com.softdelsur.agricola.entity.TipoCampo;
-
 public class CuartelModel {
 	private String idCuartel;
 	private int codigo;
@@ -29,23 +17,20 @@ public class CuartelModel {
 	private String proveedorCampo;
 	private List<CoordenadaModel> coordenadaList = new ArrayList<CoordenadaModel>();
 	private String estadoCampo;
-	
+
 	private String idCampo;
 
 	public CuartelModel() {
 
 	}
-	
 
 	public String getIdCampo() {
 		return idCampo;
 	}
 
-
 	public void setIdCampo(String idCampo) {
 		this.idCampo = idCampo;
 	}
-
 
 	public String getIdCuartel() {
 		return idCuartel;
@@ -150,6 +135,5 @@ public class CuartelModel {
 	public void setEstadoCampo(String estadoCampo) {
 		this.estadoCampo = estadoCampo;
 	}
-
 
 }

@@ -12,45 +12,55 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "caracteristicas")
 public class Caracteristica {
-	  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id_caracteristica", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String idCaracteristica;
+	@Id
+	@Column(name = "id_caracteristica", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idCaracteristica;
 	private int codigo;
 	@Column(name = "numero")
 	private int numeroCaracteristica;
 	@ManyToOne
 	public TipoCaracteristica tipoCaracteristica;
+
 	public Caracteristica() {
 		super();
 	}
+
 	public String getIdCaracteristica() {
 		return idCaracteristica;
 	}
+
 	public void setIdCaracteristica(String idCaracteristica) {
 		this.idCaracteristica = idCaracteristica;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public int getNumeroCaracteristica() {
 		return numeroCaracteristica;
 	}
+
 	public void setNumeroCaracteristica(int numeroCaracteristica) {
 		this.numeroCaracteristica = numeroCaracteristica;
 	}
+
 	public TipoCaracteristica getTipoCaracteristica() {
 		return tipoCaracteristica;
 	}
+
 	public void setTipoCaracteristica(TipoCaracteristica tipoCaracteristica) {
 		this.tipoCaracteristica = tipoCaracteristica;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -60,6 +70,7 @@ public class Caracteristica {
 		result = prime * result + ((tipoCaracteristica == null) ? 0 : tipoCaracteristica.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -80,5 +91,5 @@ public class Caracteristica {
 			return false;
 		return true;
 	}
-	
+
 }

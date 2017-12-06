@@ -10,7 +10,7 @@ import com.softdelsur.agricola.service.EstadoSubCuartelService;
 
 @Service("estadoSubCuartelServiceImpl")
 public class EstadoSubCuartelServiceImpl implements EstadoSubCuartelService {
-	
+
 	@Autowired
 	@Qualifier("estadoSubCuartelRepository")
 	EstadoSubCuartelRepository estadoSubCuartelRepository;
@@ -23,7 +23,7 @@ public class EstadoSubCuartelServiceImpl implements EstadoSubCuartelService {
 
 	@Override
 	public EstadoSubCuartel buscarEstadoActivo() {
-		
+
 		return estadoSubCuartelRepository.findByDescripcion("Activo");
 	}
 

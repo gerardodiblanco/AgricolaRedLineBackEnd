@@ -17,70 +17,65 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "sector_detalle")
 public class SectorDetalle {
-	
-	  private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String id;
-	    
-		private int codigo;
-		private String descripcion;
-		@ManyToOne
-		private SubCuartel subcuartel;
-		@JoinColumn(name = "id_sector_detalle")
-		@OneToMany
-		private List<TareaDetalleSector> tareasDetalle = new ArrayList<TareaDetalleSector>();
-		
-		public SectorDetalle() {
-			super();
-		}
+	private static final long serialVersionUID = 1L;
 
-		public String getId() {
-			return id;
-		}
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String id;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+	private int codigo;
+	private String descripcion;
+	@ManyToOne
+	private SubCuartel subcuartel;
+	@JoinColumn(name = "id_sector_detalle")
+	@OneToMany
+	private List<TareaDetalleSector> tareasDetalle = new ArrayList<TareaDetalleSector>();
 
-		public int getCodigo() {
-			return codigo;
-		}
+	public SectorDetalle() {
+		super();
+	}
 
-		public void setCodigo(int codigo) {
-			this.codigo = codigo;
-		}
+	public String getId() {
+		return id;
+	}
 
-		public String getDescripcion() {
-			return descripcion;
-		}
+	public void setId(String id) {
+		this.id = id;
+	}
 
-		public void setDescripcion(String descripcion) {
-			this.descripcion = descripcion;
-		}
+	public int getCodigo() {
+		return codigo;
+	}
 
-		public SubCuartel getSubcuartel() {
-			return subcuartel;
-		}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 
-		public void setSubcuartel(SubCuartel subcuartel) {
-			this.subcuartel = subcuartel;
-		}
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-		public List<TareaDetalleSector> getTareasDetalle() {
-			return tareasDetalle;
-		}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
-		public void setTareasDetalle(List<TareaDetalleSector> tareasDetalle) {
-			this.tareasDetalle = tareasDetalle;
-		}
+	public SubCuartel getSubcuartel() {
+		return subcuartel;
+	}
 
+	public void setSubcuartel(SubCuartel subcuartel) {
+		this.subcuartel = subcuartel;
+	}
 
+	public List<TareaDetalleSector> getTareasDetalle() {
+		return tareasDetalle;
+	}
 
-		
-
+	public void setTareasDetalle(List<TareaDetalleSector> tareasDetalle) {
+		this.tareasDetalle = tareasDetalle;
+	}
 
 }

@@ -81,12 +81,11 @@ public class CampoConverter {
 
 		campoModel.setTipo(campo.getTipo().getNombre());
 
-		
 		campoModel.setCalle(campo.getDomicilio().getCalle());
 		campoModel.setLocalidad(campo.getDomicilio().getLocalidad().getNombre());
 		campoModel.setNumeroDomicilio(campo.getDomicilio().getNumero());
 
-		 campoModel.setProveedorRazonSocial(campo.getProveedor().getRazonSocial());
+		campoModel.setProveedorRazonSocial(campo.getProveedor().getRazonSocial());
 		campoModel.setCoordenadaList(coordenadaConverter.convertListEntityToListModel(campo.getCoordenadaList()));
 		return campoModel;
 	}

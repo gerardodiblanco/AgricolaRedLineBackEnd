@@ -11,32 +11,33 @@ import com.softdelsur.agricola.entity.TipoCampo;
 import com.softdelsur.agricola.model.TipoCampoModel;
 import com.softdelsur.agricola.repository.TipoCampoRepository;
 import com.softdelsur.agricola.service.TipoCampoService;
+
 @Service("tipoCampoServiceImpl")
 public class TipoCampoServiceImpl implements TipoCampoService {
 
 	@Autowired
 	@Qualifier("tipoCampoRepository")
 	TipoCampoRepository tipoCampoRepository;
-	
+
 	@Autowired
 	@Qualifier("tipoCampoConverter")
 	TipoCampoConverter tipoCampoConverter;
-	
+
 	@Override
 	public TipoCampo addTipoCampo(TipoCampo tipoCampo) {
-		
+
 		return tipoCampoRepository.save(tipoCampo);
 	}
 
 	@Override
 	public List<TipoCampoModel> findAll() {
-		
+
 		return tipoCampoConverter.convertListTipoCampoToTipoCampoModel(tipoCampoRepository.findAll());
 	}
 
 	@Override
 	public TipoCampo findTipoCampoByNombre(String nombre) {
-		
+
 		return tipoCampoRepository.findByNombre(nombre);
 	}
 

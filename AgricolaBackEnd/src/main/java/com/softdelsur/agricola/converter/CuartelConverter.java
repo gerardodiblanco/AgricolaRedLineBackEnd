@@ -26,11 +26,11 @@ public class CuartelConverter {
 	@Autowired
 	@Qualifier("cuartelServiceImpl")
 	CuartelService cuartelService;
-	
+
 	@Autowired
 	@Qualifier("estadoCuartelServiceImpl")
 	EstadoCuartelService estadoCuartelService;
-	
+
 	@Autowired
 	@Qualifier("campoServiceImpl")
 	CampoService campoService;
@@ -43,15 +43,14 @@ public class CuartelConverter {
 			cuartel = new Cuartel();
 			cuartel.setEstadoCuartel(estadoCuartelService.findEstadoCuartelByNombre("Activo"));
 			cuartel.setCampo(campoService.findByIdCampo(cuartelModel.getIdCampo()));
-			
+
 		}
-		
+
 		cuartel.setCodigo(cuartelModel.getCodigo());
 		cuartel.setDescripcion(cuartelModel.getDescripcion());
 		cuartel.setHectarea(cuartelModel.getHectarea());
 		cuartel.setCoordenadaList(coordenadaConverter.convertListModelToListEntity(cuartelModel.getCoordenadaList()));
-		
-		
+
 		return cuartel;
 	}
 

@@ -4,23 +4,16 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-import com.softdelsur.agricola.entity.DetalleParteDiario;
-import com.softdelsur.agricola.entity.EstadoParteDiario;
-import com.softdelsur.agricola.entity.Periodo;
-
 public class ParteDiarioModel {
 
-    private String idParteDiario;
+	private String idParteDiario;
 	private int codigo;
 	private Date Fecha;
-	
+
 	public List<DetalleParteDiarioModel> detallesParteDiario = new ArrayList<DetalleParteDiarioModel>();
-	
+
 	public EstadoParteDiarioModel estadoParteDiario;
-	
+
 	public PeriodoModel periodo;
 
 	public ParteDiarioModel() {
@@ -75,6 +68,4 @@ public class ParteDiarioModel {
 		this.periodo = periodo;
 	}
 
-
-	
 }

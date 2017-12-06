@@ -11,44 +11,49 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "estado_sub_cuartel")
 public class EstadoSubCuartel {
-	   private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id_estado", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String idEstado;
+	@Id
+	@Column(name = "id_estado", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idEstado;
 	private int codigo;
 	private String descripcion;
+
 	public EstadoSubCuartel() {
 		super();
 	}
-	
-	
+
 	public EstadoSubCuartel(String descripcion) {
 		super();
 		this.descripcion = descripcion;
 	}
 
-
 	public String getIdEstado() {
 		return idEstado;
 	}
+
 	public void setIdEstado(String idEstado) {
 		this.idEstado = idEstado;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -57,6 +62,7 @@ public class EstadoSubCuartel {
 		result = prime * result + ((descripcion == null) ? 0 : descripcion.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -75,5 +81,5 @@ public class EstadoSubCuartel {
 			return false;
 		return true;
 	}
-	
+
 }

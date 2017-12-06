@@ -6,7 +6,7 @@ import java.util.List;
 
 
 public class SubCuartelModel {
-	private String idSubCuartel;
+	private String id;
 	private int codigo;
 	private String descripcion;
 	private float hectarea;
@@ -35,12 +35,14 @@ public class SubCuartelModel {
 		this.coordenadaList = coordenadaList;
 	}
 
-	public String getIdSubCuartel() {
-		return idSubCuartel;
+
+
+	public String getId() {
+		return id;
 	}
 
-	public void setIdSubCuartel(String idSubCuartel) {
-		this.idSubCuartel = idSubCuartel;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public int getCodigo() {

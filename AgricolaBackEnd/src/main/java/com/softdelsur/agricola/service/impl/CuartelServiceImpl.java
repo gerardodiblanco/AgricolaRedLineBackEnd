@@ -13,33 +13,33 @@ import com.softdelsur.agricola.repository.CuartelRepository;
 import com.softdelsur.agricola.service.CuartelService;
 
 @Service("cuartelServiceImpl")
-public class CuartelServiceImpl implements CuartelService{
-	
+public class CuartelServiceImpl implements CuartelService {
+
 	@Autowired
 	@Qualifier("cuartelRepository")
 	CuartelRepository cuartelRepository;
 
 	@Override
 	public List<Cuartel> findCuartelesByCampoAndEstadoCuartel(Campo campo, EstadoCuartel estadoCuartel) {
-		
+
 		return cuartelRepository.findByCampoAndEstadoCuartel(campo, estadoCuartel);
 	}
 
 	@Override
 	public Cuartel addCuartel(Cuartel cuartel) {
-		
+
 		return cuartelRepository.save(cuartel);
 	}
 
 	@Override
 	public Cuartel findCuartelById(String id) {
-		
+
 		return cuartelRepository.findByIdCuartel(id);
 	}
 
 	@Override
 	public String eliminarCuartel(String id) {
-		
+
 		return null;
 	}
 

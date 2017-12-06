@@ -19,61 +19,75 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "parteDiario")
 public class ParteDiario {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name= "id_parte_diario", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String idParteDiario;
+	@Id
+	@Column(name = "id_parte_diario", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idParteDiario;
 	private int codigo;
 	private Date Fecha;
 	@JoinColumn(name = "id_parte_diario")
 	@OneToMany
-	public List<DetalleParteDiario> detallesParteDiario  = new ArrayList<DetalleParteDiario>();
+	public List<DetalleParteDiario> detallesParteDiario = new ArrayList<DetalleParteDiario>();
 	@ManyToOne
 	public EstadoParteDiario estadoParteDiario;
 	@ManyToOne
 	public Periodo periodo;
+
 	public ParteDiario() {
 		super();
 	}
+
 	public String getIdParteDiario() {
 		return idParteDiario;
 	}
+
 	public void setIdParteDiario(String idParteDiario) {
 		this.idParteDiario = idParteDiario;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public Date getFecha() {
 		return Fecha;
 	}
+
 	public void setFecha(Date fecha) {
 		Fecha = fecha;
 	}
+
 	public List<DetalleParteDiario> getDetallesParteDiario() {
 		return detallesParteDiario;
 	}
+
 	public void setDetallesParteDiario(List<DetalleParteDiario> detallesParteDiario) {
 		this.detallesParteDiario = detallesParteDiario;
 	}
+
 	public EstadoParteDiario getEstadoParteDiario() {
 		return estadoParteDiario;
 	}
+
 	public void setEstadoParteDiario(EstadoParteDiario estadoParteDiario) {
 		this.estadoParteDiario = estadoParteDiario;
 	}
+
 	public Periodo getPeriodo() {
 		return periodo;
 	}
+
 	public void setPeriodo(Periodo periodo) {
 		this.periodo = periodo;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -84,6 +98,7 @@ public class ParteDiario {
 		result = prime * result + ((periodo == null) ? 0 : periodo.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -112,6 +127,5 @@ public class ParteDiario {
 			return false;
 		return true;
 	}
-	
-	
+
 }

@@ -12,56 +12,61 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "maquinarias")
 public class Maquinaria {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name= "id_maquina", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String id;
+	@Id
+	@Column(name = "id_maquina", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String id;
 	private int codigo;
 	private String descripcion;
 	private boolean estadoMaquinaria;
-	
+
 	public Maquinaria() {
 		super();
 	}
+
 	public String getIdMaquina() {
 		return id;
 	}
+
 	public void setIdMaquina(String idMaquina) {
 		this.id = idMaquina;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
-	
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public boolean isEstadoMaquinaria() {
 		return estadoMaquinaria;
 	}
+
 	public void setEstadoMaquinaria(boolean estadoMaquinaria) {
 		this.estadoMaquinaria = estadoMaquinaria;
 	}
-	
-	
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -72,6 +77,7 @@ public class Maquinaria {
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -97,7 +103,5 @@ public class Maquinaria {
 			return false;
 		return true;
 	}
-	
-		
 
 }

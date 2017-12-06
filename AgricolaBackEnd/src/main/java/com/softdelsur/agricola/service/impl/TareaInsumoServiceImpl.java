@@ -9,13 +9,11 @@ import org.springframework.stereotype.Service;
 import com.softdelsur.agricola.entity.Tarea;
 import com.softdelsur.agricola.entity.TareaInsumo;
 import com.softdelsur.agricola.repository.TareaInsumoRepository;
-import com.softdelsur.agricola.repository.TareaTratoRepository;
 import com.softdelsur.agricola.service.TareaInsumoService;
 
 @Service("tareaInsumoServiceImpl")
 public class TareaInsumoServiceImpl implements TareaInsumoService {
 
-	
 	@Autowired
 	@Qualifier("tareaInsumoRepository")
 	TareaInsumoRepository tareaInsumoReposirtory;

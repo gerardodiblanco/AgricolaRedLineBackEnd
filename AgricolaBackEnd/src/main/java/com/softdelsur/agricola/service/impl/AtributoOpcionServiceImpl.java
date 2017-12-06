@@ -10,21 +10,20 @@ import com.softdelsur.agricola.converter.AtributoOpcionConverter;
 import com.softdelsur.agricola.entity.Atributo;
 import com.softdelsur.agricola.entity.AtributoOpcion;
 import com.softdelsur.agricola.repository.AtributoOpcionRepository;
-import com.softdelsur.agricola.repository.AtributoRepository;
 import com.softdelsur.agricola.service.AtributoOpcionService;
 import com.softdelsur.agricola.service.AtributoService;
 
 @Service("atributoOpcionServiceImpl")
 public class AtributoOpcionServiceImpl implements AtributoOpcionService {
-	
+
 	@Autowired
 	@Qualifier("atributoOpcionRepository")
 	AtributoOpcionRepository atributoOpcionRepository;
-	
+
 	@Autowired
 	@Qualifier("atributoOpcionConverter")
 	AtributoOpcionConverter atributoOpcionConverter;
-	
+
 	@Autowired
 	@Qualifier("atributoServiceImpl")
 	AtributoService atributoService;
@@ -55,7 +54,7 @@ public class AtributoOpcionServiceImpl implements AtributoOpcionService {
 	@Override
 	public List<AtributoOpcion> findAtributoOpcionActivos(String idAtributo) {
 		Atributo atributo = atributoService.findAtributoById(idAtributo);
-		return atributoOpcionRepository.findAtributosByEstadoAndAtributo(true,atributo);
+		return atributoOpcionRepository.findAtributosByEstadoAndAtributo(true, atributo);
 	}
 
 }

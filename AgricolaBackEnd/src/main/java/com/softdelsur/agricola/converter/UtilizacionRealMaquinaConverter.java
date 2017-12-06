@@ -12,40 +12,46 @@ import com.softdelsur.agricola.model.UtilizacionRealMaquinaModel;
 
 @Component("utilizacionRealMaquinaConverter")
 public class UtilizacionRealMaquinaConverter {
-	
-	@Autowired 
+
+	@Autowired
 	@Qualifier("maquinariaConverter")
 	MaquinariaConverter maquinaConverter;
-	
-	public UtilizacionRealMaquina convertModelToEntity(UtilizacionRealMaquinaModel utilizacionRealMaquinaModel){
+
+	public UtilizacionRealMaquina convertModelToEntity(UtilizacionRealMaquinaModel utilizacionRealMaquinaModel) {
 		UtilizacionRealMaquina utilizacionRealMaquina = new UtilizacionRealMaquina();
 		utilizacionRealMaquina.setId(utilizacionRealMaquinaModel.getId());
 		utilizacionRealMaquina.setCantHoras(utilizacionRealMaquinaModel.getCantHoras());
 		utilizacionRealMaquina.setConsumo(utilizacionRealMaquinaModel.getConsumo());
-		utilizacionRealMaquina.setMaquina(maquinaConverter.convertMaquinaModelToMaquina(utilizacionRealMaquinaModel.getMaquina()));
-		
+		utilizacionRealMaquina
+				.setMaquina(maquinaConverter.convertMaquinaModelToMaquina(utilizacionRealMaquinaModel.getMaquina()));
+
 		return utilizacionRealMaquina;
 	}
-	public UtilizacionRealMaquinaModel convertEntityToModel(UtilizacionRealMaquina utilizacionRealMaquina){
+
+	public UtilizacionRealMaquinaModel convertEntityToModel(UtilizacionRealMaquina utilizacionRealMaquina) {
 		UtilizacionRealMaquinaModel utilizacionRealMaquinaModel = new UtilizacionRealMaquinaModel();
 		utilizacionRealMaquinaModel.setId(utilizacionRealMaquina.getId());
 		utilizacionRealMaquinaModel.setCantHoras(utilizacionRealMaquina.getCantHoras());
 		utilizacionRealMaquinaModel.setConsumo(utilizacionRealMaquina.getConsumo());
-		utilizacionRealMaquinaModel.setMaquina(maquinaConverter.convertMaquinaToMaquinaModel(utilizacionRealMaquina.getMaquina()));
-		
+		utilizacionRealMaquinaModel
+				.setMaquina(maquinaConverter.convertMaquinaToMaquinaModel(utilizacionRealMaquina.getMaquina()));
+
 		return utilizacionRealMaquinaModel;
 	}
-	public List<UtilizacionRealMaquina> convertListModelToListEntity(List<UtilizacionRealMaquinaModel> utilizacionRealMaquinaModelList){
+
+	public List<UtilizacionRealMaquina> convertListModelToListEntity(
+			List<UtilizacionRealMaquinaModel> utilizacionRealMaquinaModelList) {
 		List<UtilizacionRealMaquina> utilizacionRealMaquinaList = new ArrayList<UtilizacionRealMaquina>();
-		for(UtilizacionRealMaquinaModel utilizacionRealMaquinaModel: utilizacionRealMaquinaModelList){
+		for (UtilizacionRealMaquinaModel utilizacionRealMaquinaModel : utilizacionRealMaquinaModelList) {
 			utilizacionRealMaquinaList.add(convertModelToEntity(utilizacionRealMaquinaModel));
 		}
 		return utilizacionRealMaquinaList;
 	}
-	
-	public List<UtilizacionRealMaquinaModel> convertListEntityToListModel(List<UtilizacionRealMaquina> utilizacionRealMaquinaList){
+
+	public List<UtilizacionRealMaquinaModel> convertListEntityToListModel(
+			List<UtilizacionRealMaquina> utilizacionRealMaquinaList) {
 		List<UtilizacionRealMaquinaModel> utilizacionRealMaquinaModelList = new ArrayList<UtilizacionRealMaquinaModel>();
-		for(UtilizacionRealMaquina utilizacionRealMaquina: utilizacionRealMaquinaList){
+		for (UtilizacionRealMaquina utilizacionRealMaquina : utilizacionRealMaquinaList) {
 			utilizacionRealMaquinaModelList.add(convertEntityToModel(utilizacionRealMaquina));
 		}
 		return utilizacionRealMaquinaModelList;

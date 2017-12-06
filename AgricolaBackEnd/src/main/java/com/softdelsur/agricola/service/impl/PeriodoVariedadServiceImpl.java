@@ -10,21 +10,21 @@ import com.softdelsur.agricola.repository.PeriodoVariedadRepository;
 import com.softdelsur.agricola.service.PeriodoVariedadService;
 
 @Service("periodoVariedadServiceImpl")
-public class PeriodoVariedadServiceImpl implements PeriodoVariedadService{
-	
+public class PeriodoVariedadServiceImpl implements PeriodoVariedadService {
+
 	@Autowired
 	@Qualifier("periodoVariedadRepository")
 	PeriodoVariedadRepository periodoVariedadRepository;
 
 	@Override
 	public PeriodoVariedad addPeriodoVariedad(PeriodoVariedad periodoVariedad) {
-		
+
 		return periodoVariedadRepository.save(periodoVariedad);
 	}
 
 	@Override
 	public PeriodoVariedad findPeriodoBariedadVigenteBySubCuartel(SubCuartel subCuartel) {
-		
+
 		return periodoVariedadRepository.findBySubCuartelAndFechaFinPeriodo(subCuartel, null);
 	}
 

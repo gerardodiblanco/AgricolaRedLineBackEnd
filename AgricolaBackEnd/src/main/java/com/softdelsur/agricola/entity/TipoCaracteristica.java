@@ -7,47 +7,55 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 @Entity
 @Table(name = "tiposCaracteristica")
 public class TipoCaracteristica {
 	private static final long serialVersionUID = 1L;
 
-    @Id
-    @Column(name= "id_tipo_caracteristica", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String idTipoCaracteristica;
+	@Id
+	@Column(name = "id_tipo_caracteristica", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idTipoCaracteristica;
 	private int codigo;
 	@Column(name = "nombre")
 	private String nombreCaracteristica;
+
 	public TipoCaracteristica() {
 		super();
 	}
+
 	public TipoCaracteristica(int codigo, String nombreCaracteristica) {
 		super();
 		this.codigo = codigo;
 		this.nombreCaracteristica = nombreCaracteristica;
 	}
+
 	public String getIdTipoCaracteristica() {
 		return idTipoCaracteristica;
 	}
+
 	public void setIdTipoCaracteristica(String idTipoCaracteristica) {
 		this.idTipoCaracteristica = idTipoCaracteristica;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getNombreCaracteristica() {
 		return nombreCaracteristica;
 	}
+
 	public void setNombreCaracteristica(String nombreCaracteristica) {
 		this.nombreCaracteristica = nombreCaracteristica;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -56,6 +64,7 @@ public class TipoCaracteristica {
 		result = prime * result + ((nombreCaracteristica == null) ? 0 : nombreCaracteristica.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -74,5 +83,5 @@ public class TipoCaracteristica {
 			return false;
 		return true;
 	}
-	
+
 }

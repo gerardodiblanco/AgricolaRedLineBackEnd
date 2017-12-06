@@ -11,17 +11,17 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "estados_periodo")
 public class EstadoPeriodo {
-	   private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id_estado", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String idEstadoPeriodo;
-	    @Column(name = "nombre_estado")
+	@Id
+	@Column(name = "id_estado", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idEstadoPeriodo;
+	@Column(name = "nombre_estado")
 	private String nombreEstadoPeriodo;
 
-	public EstadoPeriodo(){
+	public EstadoPeriodo() {
 
 	}
 
@@ -29,8 +29,6 @@ public class EstadoPeriodo {
 		super();
 		this.nombreEstadoPeriodo = nombreEstadoPeriodo;
 	}
-
-	
 
 	public String getIdEstadoPeriodo() {
 		return idEstadoPeriodo;
@@ -72,7 +70,5 @@ public class EstadoPeriodo {
 			return false;
 		return true;
 	}
-	
-
 
 }

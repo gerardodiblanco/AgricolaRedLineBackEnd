@@ -13,7 +13,7 @@ import org.hibernate.annotations.GenericGenerator;
 public class Atributo {
 
 
-	 private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
 	    @Id
 	    @Column(name= "id", unique = true, nullable = false)
@@ -100,7 +100,10 @@ public class Atributo {
 				return false;
 			return true;
 		}
-		
+
+
+
+
 
 	    
 	    

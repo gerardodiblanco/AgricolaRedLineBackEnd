@@ -1,44 +1,32 @@
 package com.softdelsur.agricola.model;
 
-import javax.persistence.ManyToOne;
-
-import com.softdelsur.agricola.entity.UnidadMedida;
-
 public class InsumoModel {
-    private String id;
-    
+	private String id;
+
 	private int codigo;
 	private String descripcion;
 	private String unidadMedida;
-	 private boolean checkbox;
-	
+	private boolean checkbox;
 
 	public InsumoModel() {
 		super();
 	}
 
-	
 	public boolean isCheckbox() {
 		return checkbox;
 	}
-
 
 	public void setCheckbox(boolean checkbox) {
 		this.checkbox = checkbox;
 	}
 
-
-
-
 	public String getId() {
 		return id;
 	}
 
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 
 	public int getCodigo() {
 		return codigo;
@@ -63,6 +51,5 @@ public class InsumoModel {
 	public void setUnidadMedida(String unidadMedida) {
 		this.unidadMedida = unidadMedida;
 	}
-	
-	
+
 }

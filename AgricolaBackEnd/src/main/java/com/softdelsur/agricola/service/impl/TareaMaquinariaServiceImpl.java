@@ -9,13 +9,11 @@ import org.springframework.stereotype.Service;
 import com.softdelsur.agricola.entity.Tarea;
 import com.softdelsur.agricola.entity.TareaMaquinaria;
 import com.softdelsur.agricola.repository.TareaMaquinariaRepository;
-import com.softdelsur.agricola.repository.TareaTratoRepository;
 import com.softdelsur.agricola.service.TareaMaquinariaService;
 
 @Service("tareaMaquinariaServiceImpl")
-public class TareaMaquinariaServiceImpl implements TareaMaquinariaService{
+public class TareaMaquinariaServiceImpl implements TareaMaquinariaService {
 
-	
 	@Autowired
 	@Qualifier("tareaMaquinariaRepository")
 	TareaMaquinariaRepository tareaMaquiariaRepository;

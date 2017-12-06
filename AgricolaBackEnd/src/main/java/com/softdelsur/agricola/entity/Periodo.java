@@ -14,27 +14,27 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "periodos")
 public class Periodo {
-	  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id_periodo", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String idPeriodo;
-	    @Column(name = "descripcion")
+	@Id
+	@Column(name = "id_periodo", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idPeriodo;
+	@Column(name = "descripcion")
 	private String Descripcion;
-	    @Column(name = "fecha_desde")
+	@Column(name = "fecha_desde")
 	private Date FechaDesde;
-	    @Column(name = "fecha_hasta")
+	@Column(name = "fecha_hasta")
 	private Date FechaHasta;
-	    @Column(name ="periodo")
+	@Column(name = "periodo")
 	private Date PeriodoAnio;
-	    @ManyToOne
+	@ManyToOne
 	private Rubro rubro;
-	    @ManyToOne
+	@ManyToOne
 	private EstadoPeriodo estado;
 
-	public Periodo(){
+	public Periodo() {
 
 	}
 
@@ -159,7 +159,5 @@ public class Periodo {
 			return false;
 		return true;
 	}
-
-
 
 }

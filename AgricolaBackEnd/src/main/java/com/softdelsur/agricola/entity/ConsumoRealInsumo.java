@@ -13,38 +13,46 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "consumoRealInsumo")
 public class ConsumoRealInsumo {
 
-	  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String id;
-	
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String id;
+
 	private int cantidad;
 	@ManyToOne
 	private Insumo insumo;
+
 	public ConsumoRealInsumo() {
 		super();
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public int getCantidad() {
 		return cantidad;
 	}
+
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+
 	public Insumo getInsumo() {
 		return insumo;
 	}
+
 	public void setInsumo(Insumo insumo) {
 		this.insumo = insumo;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -53,6 +61,7 @@ public class ConsumoRealInsumo {
 		result = prime * result + ((insumo == null) ? 0 : insumo.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -71,7 +80,5 @@ public class ConsumoRealInsumo {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

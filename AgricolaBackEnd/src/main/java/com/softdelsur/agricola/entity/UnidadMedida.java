@@ -11,14 +11,15 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "unidad_medida")
 public class UnidadMedida {
-	  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id_unidad_medida", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String idUnidadMedida;
+	@Id
+	@Column(name = "id_unidad_medida", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idUnidadMedida;
 	private String nombreUM;
+
 	public UnidadMedida() {
 		super();
 	}
@@ -34,9 +35,11 @@ public class UnidadMedida {
 	public String getNombreUM() {
 		return nombreUM;
 	}
+
 	public void setNombreUM(String nombreUM) {
 		this.nombreUM = nombreUM;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -44,6 +47,7 @@ public class UnidadMedida {
 		result = prime * result + ((nombreUM == null) ? 0 : nombreUM.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -60,5 +64,5 @@ public class UnidadMedida {
 			return false;
 		return true;
 	}
-	
+
 }

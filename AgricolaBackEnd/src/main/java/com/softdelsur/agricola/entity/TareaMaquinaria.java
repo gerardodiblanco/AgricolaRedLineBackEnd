@@ -18,29 +18,27 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "tareaMaquinaria")
 public class TareaMaquinaria {
 
+	private static final long serialVersionUID = 1L;
 
-    private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String id;
 
-    @Id
-    @Column(name= "id", unique = true, nullable = false)
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "uuid")
-    private String id;
-	
-    private Date fechaAlta;
-    private Date fechaBaja;
-    
-    @OneToOne(cascade = CascadeType.REFRESH)
-    private Tarea tarea;
-    
-    @OneToOne(cascade = CascadeType.REFRESH)
+	private Date fechaAlta;
+	private Date fechaBaja;
+
+	@OneToOne(cascade = CascadeType.REFRESH)
+	private Tarea tarea;
+
+	@OneToOne(cascade = CascadeType.REFRESH)
 	private Maquinaria maquina;
-	
-    public TareaMaquinaria() {
+
+	public TareaMaquinaria() {
 		super();
 	}
-    
-    
+
 	public TareaMaquinaria(Tarea tarea, Maquinaria maquina) {
 		super();
 		this.tarea = tarea;
@@ -49,37 +47,46 @@ public class TareaMaquinaria {
 		this.setFechaBaja(null);
 	}
 
-
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public Maquinaria getMaquina() {
 		return maquina;
 	}
+
 	public void setMaquina(Maquinaria maquina) {
 		this.maquina = maquina;
 	}
+
 	public Date getFechaAlta() {
 		return fechaAlta;
 	}
+
 	public void setFechaAlta(Date fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
+
 	public Date getFechaBaja() {
 		return fechaBaja;
 	}
+
 	public void setFechaBaja(Date fechaBaja) {
 		this.fechaBaja = fechaBaja;
 	}
+
 	public Tarea getTarea() {
 		return tarea;
 	}
+
 	public void setTarea(Tarea tarea) {
 		tarea = tarea;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -91,6 +98,7 @@ public class TareaMaquinaria {
 		result = prime * result + ((maquina == null) ? 0 : maquina.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

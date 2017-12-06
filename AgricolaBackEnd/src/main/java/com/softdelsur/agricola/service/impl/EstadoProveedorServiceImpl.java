@@ -10,28 +10,21 @@ import com.softdelsur.agricola.service.EstadoProveedorService;
 
 @Service("estadoProveedorServiceImpl")
 public class EstadoProveedorServiceImpl implements EstadoProveedorService {
-	
+
 	@Autowired
 	@Qualifier("estadoProveedorRepository")
 	EstadoProveedorRepository estadoProveedorRepository;
 
 	@Override
 	public EstadoProveedor addEstadoProveedor(EstadoProveedor estadoProveedor) {
-		
+
 		return estadoProveedorRepository.save(estadoProveedor);
 	}
 
 	@Override
 	public EstadoProveedor findEstadoByNombre(String nombre) {
-		
+
 		return estadoProveedorRepository.findByNombreEstadoProveedor(nombre);
 	}
-
-
-	
-	
-
-
-
 
 }

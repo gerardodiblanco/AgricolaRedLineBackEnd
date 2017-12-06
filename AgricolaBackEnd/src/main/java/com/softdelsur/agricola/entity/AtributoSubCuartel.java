@@ -16,82 +16,77 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
 @Table(name = "atributoSubCuartel")
 public class AtributoSubCuartel {
 
-	 private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String id;
-	    
-	    private Timestamp fechaIncioVigencia;
-	    private Timestamp fechaFinVigencia;
-	    
-	    @ManyToOne(cascade = CascadeType.REFRESH)
-	    private AtributoOpcion opcion;
-	    
-	    @ManyToOne(cascade = CascadeType.REFRESH)
-	    private SubCuartel subCuartel;
-	    
-	    
-		public AtributoSubCuartel() {
-			super();
-		}
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String id;
 
+	private Timestamp fechaIncioVigencia;
+	private Timestamp fechaFinVigencia;
 
-		public AtributoSubCuartel(AtributoOpcion opcion, SubCuartel subCuartel) {
-			this.fechaIncioVigencia = Timestamp.valueOf(LocalDateTime.now());
-			this.fechaFinVigencia = null;
-			this.opcion = opcion;
-			this.subCuartel = subCuartel;
-		
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	private AtributoOpcion opcion;
+
+	@ManyToOne(cascade = CascadeType.REFRESH)
+	private SubCuartel subCuartel;
+
+	public AtributoSubCuartel() {
+		super();
 	}
-		
-		
-		public String getId() {
-			return id;
-		}
-		public void setId(String id) {
-			this.id = id;
-		}
-		public Timestamp getFechaIncioVigencia() {
-			return fechaIncioVigencia;
-		}
-		public void setFechaIncioVigencia(Timestamp fechaIncioVigencia) {
-			this.fechaIncioVigencia = fechaIncioVigencia;
-		}
-		public Timestamp getFechaFinVigencia() {
-			return fechaFinVigencia;
-		}
-		public void setFechaFinVigencia(Timestamp fechaFinVigencia) {
-			this.fechaFinVigencia = fechaFinVigencia;
-		}
 
+	public AtributoSubCuartel(AtributoOpcion opcion, SubCuartel subCuartel) {
+		this.fechaIncioVigencia = Timestamp.valueOf(LocalDateTime.now());
+		this.fechaFinVigencia = null;
+		this.opcion = opcion;
+		this.subCuartel = subCuartel;
 
-		public AtributoOpcion getOpcion() {
-			return opcion;
-		}
+	}
 
+	public String getId() {
+		return id;
+	}
 
-		public void setOpcion(AtributoOpcion opcion) {
-			this.opcion = opcion;
-		}
+	public void setId(String id) {
+		this.id = id;
+	}
 
+	public Timestamp getFechaIncioVigencia() {
+		return fechaIncioVigencia;
+	}
 
-		public SubCuartel getSubCuartel() {
-			return subCuartel;
-		}
+	public void setFechaIncioVigencia(Timestamp fechaIncioVigencia) {
+		this.fechaIncioVigencia = fechaIncioVigencia;
+	}
 
+	public Timestamp getFechaFinVigencia() {
+		return fechaFinVigencia;
+	}
 
-		public void setSubCuartel(SubCuartel subCuartel) {
-			this.subCuartel = subCuartel;
-		}
+	public void setFechaFinVigencia(Timestamp fechaFinVigencia) {
+		this.fechaFinVigencia = fechaFinVigencia;
+	}
 
+	public AtributoOpcion getOpcion() {
+		return opcion;
+	}
 
-	    
+	public void setOpcion(AtributoOpcion opcion) {
+		this.opcion = opcion;
+	}
+
+	public SubCuartel getSubCuartel() {
+		return subCuartel;
+	}
+
+	public void setSubCuartel(SubCuartel subCuartel) {
+		this.subCuartel = subCuartel;
+	}
+
 }

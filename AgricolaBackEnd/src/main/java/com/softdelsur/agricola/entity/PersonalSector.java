@@ -10,50 +10,60 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "personal_sector")
 public class PersonalSector {
 
-	  private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String id;
-	    
+	@Id
+	@Column(name = "id", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String id;
+
 	private Date fechaAsignacion;
 	private Date fechaDesAsignacion;
 	@ManyToOne
 	public Personal personal;
-	
+
 	public PersonalSector() {
 		super();
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public Date getFechaAsignacion() {
 		return fechaAsignacion;
 	}
+
 	public void setFechaAsignacion(Date fechaAsignacion) {
 		this.fechaAsignacion = fechaAsignacion;
 	}
+
 	public Date getFechaDesAsignacion() {
 		return fechaDesAsignacion;
 	}
+
 	public void setFechaDesAsignacion(Date fechaDesAsignacion) {
 		this.fechaDesAsignacion = fechaDesAsignacion;
 	}
+
 	public Personal getPersonal() {
 		return personal;
 	}
+
 	public void setPersonal(Personal personal) {
 		this.personal = personal;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -63,6 +73,7 @@ public class PersonalSector {
 		result = prime * result + ((personal == null) ? 0 : personal.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -89,8 +100,5 @@ public class PersonalSector {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
+
 }

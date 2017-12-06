@@ -11,29 +11,32 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "tipos")
 public class TipoCampo {
-	   private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @Column(name= "id_tipo_campo", unique = true, nullable = false)
-	    @GenericGenerator(name = "uuid", strategy = "uuid2")
-	    @GeneratedValue(generator = "uuid")
-	    private String idTipo;
+	@Id
+	@Column(name = "id_tipo_campo", unique = true, nullable = false)
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@GeneratedValue(generator = "uuid")
+	private String idTipo;
 	private int codigo;
 	private String nombre;
-	
-	public TipoCampo(){
-		
+
+	public TipoCampo() {
+
 	}
 
 	public String getIdTipo() {
 		return idTipo;
 	}
+
 	public void setIdTipo(String idTipo) {
 		this.idTipo = idTipo;
 	}
+
 	public int getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
@@ -79,9 +82,5 @@ public class TipoCampo {
 			return false;
 		return true;
 	}
-
-
-
-	
 
 }
