@@ -8,6 +8,8 @@ public class UnidadTrabajoDepositoModel {
 	private String idDeposito;
 	private int codigoDeposito;
 	private String descripcionDeposito;
+	private boolean checkbox;
+	
 	
 	
 	
@@ -16,6 +18,16 @@ public class UnidadTrabajoDepositoModel {
 	}
 	
 	
+	public boolean isCheckbox() {
+		return checkbox;
+	}
+
+
+	public void setCheckbox(boolean checkbox) {
+		this.checkbox = checkbox;
+	}
+
+
 	public String getId() {
 		return id;
 	}

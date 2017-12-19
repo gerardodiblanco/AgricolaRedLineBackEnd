@@ -13,11 +13,33 @@ public class TareaModel {
 	private List<InsumoModel> insumos = new ArrayList<>();
 	private List<TratoModel> tratos = new ArrayList<>();
 	private List<MaquinariaModel> maquinarias = new ArrayList<>();
-	
+	private int cantidadPersonal;
+	private TratoModel tratoModel;
 
 	public TareaModel() {
 		super();
 	}
+	
+	public TratoModel getTratoModel() {
+		return tratoModel;
+	}
+
+
+	public void setTratoModel(TratoModel tratoModel) {
+		this.tratoModel = tratoModel;
+	}
+
+
+	public int getCantidadPersonal() {
+		return cantidadPersonal;
+	}
+
+
+	public void setCantidadPersonal(int cantidadPersonal) {
+		this.cantidadPersonal = cantidadPersonal;
+	}
+
+
 
 	public String getId() {
 		return id;

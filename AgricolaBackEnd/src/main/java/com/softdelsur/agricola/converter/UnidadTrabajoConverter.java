@@ -36,7 +36,7 @@ public class UnidadTrabajoConverter {
 	UnidadTrabajoService unidadTrabajoService;
 
 	@Autowired
-	@Qualifier("unidadTrabajoDespositoServiceImpl")
+	@Qualifier("unidadTrabajoDepositoServiceImpl")
 	UnidadTrabajoDepositoService unidadTrabajoDepositoService;
 
 	@Autowired
@@ -208,7 +208,7 @@ public class UnidadTrabajoConverter {
 			for (UnidadTrabajoSubCuartel uts : unidadTrabajoSubCuartelList) {
 				UnidadTrabajoSubCuartelModel unidadTrabajoSubCuartelModel = new UnidadTrabajoSubCuartelModel();
 				// GETS Y SETS
-				unidadTrabajoSubCuartelModel.setId(uts.getId());
+				unidadTrabajoSubCuartelModel.setIdUnidadTrabajoSubCuartel(uts.getId());
 				unidadTrabajoSubCuartelModel.setId(uts.getSubCuartel().getIdSubCuartel());
 				unidadTrabajoSubCuartelModel.setCodigoSubCuartel(uts.getSubCuartel().getCodigo());
 				unidadTrabajoSubCuartelModel.setDescripcion(uts.getSubCuartel().getDescripcion());
@@ -217,9 +217,8 @@ public class UnidadTrabajoConverter {
 				unidadTrabajoSubCuartelModel.setIdCuartel(uts.getSubCuartel().getCuartel().getIdCuartel());
 				unidadTrabajoSubCuartelModel.setNombreCampo(uts.getSubCuartel().getCuartel().getCampo().getNombre());
 				unidadTrabajoSubCuartelModel.setNombreCuartel(uts.getSubCuartel().getCuartel().getDescripcion());
-				
+			
 				unidadTrabajoSubCuartelModelList.add(unidadTrabajoSubCuartelModel);
-
 			}
 
 		}

@@ -11,8 +11,8 @@ import com.softdelsur.agricola.entity.UnidadTrabajoDeposito;
 import com.softdelsur.agricola.repository.UnidadTrabajoDepositoRepository;
 import com.softdelsur.agricola.service.UnidadTrabajoDepositoService;
 
-@Service("unidadTrabajoDespositoServiceImpl")
-public class UnidadTrabajoDepositoServiceImpl  implements UnidadTrabajoDepositoService{
+@Service("unidadTrabajoDepositoServiceImpl")
+public class UnidadTrabajoDepositoServiceImpl implements UnidadTrabajoDepositoService{
 	
 	@Autowired
 	@Qualifier("unidadTrabajoDepositoRepository")
@@ -27,7 +27,7 @@ public class UnidadTrabajoDepositoServiceImpl  implements UnidadTrabajoDepositoS
 	@Override
 	public UnidadTrabajoDeposito findById(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return unidadTrabajoDepositoRepository.findById(id);
 	}
 
 	@Override

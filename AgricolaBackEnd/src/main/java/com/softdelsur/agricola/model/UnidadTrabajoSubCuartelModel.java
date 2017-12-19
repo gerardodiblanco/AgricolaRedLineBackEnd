@@ -17,10 +17,25 @@ public class UnidadTrabajoSubCuartelModel {
 	private String nombreCuartel;
 	private String idCuartel;
 	private String variedad;
+	private boolean checkbox;
 	
 	public UnidadTrabajoSubCuartelModel() {
 		super();
 	}
+	
+	
+
+	public boolean isCheckbox() {
+		return checkbox;
+	}
+
+
+
+	public void setCheckbox(boolean checkbox) {
+		this.checkbox = checkbox;
+	}
+
+
 
 	public String getIdUnidadTrabajoSubCuartel() {
 		return idUnidadTrabajoSubCuartel;

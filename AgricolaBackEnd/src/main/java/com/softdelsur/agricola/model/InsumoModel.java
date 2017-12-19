@@ -7,10 +7,25 @@ public class InsumoModel {
 	private String descripcion;
 	private String unidadMedida;
 	private boolean checkbox;
+	private double cantidad;
 
 	public InsumoModel() {
 		super();
 	}
+	
+	
+
+	public double getCantidad() {
+		return cantidad;
+	}
+
+
+
+	public void setCantidad(double cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
 
 	public boolean isCheckbox() {
 		return checkbox;

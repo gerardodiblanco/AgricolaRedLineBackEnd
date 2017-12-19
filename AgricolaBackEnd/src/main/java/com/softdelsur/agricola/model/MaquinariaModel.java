@@ -5,13 +5,24 @@ public class MaquinariaModel {
     private String id;
 	private int codigo;
 	private String descripcion;
-	 private boolean checkbox;
+	private boolean checkbox;
+	private int cantidad;
 	
 	public MaquinariaModel() {
 		super();
 	}
 	
 	
+	public int getCantidad() {
+		return cantidad;
+	}
+
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
 	public String getId() {
 		return id;
 	}

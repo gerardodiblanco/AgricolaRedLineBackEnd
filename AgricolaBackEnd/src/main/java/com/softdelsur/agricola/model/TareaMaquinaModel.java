@@ -6,12 +6,27 @@ public class TareaMaquinaModel {
     private String id;
 	private float consumo;
 	private int horasTrabajo;
+	private double cantidad;
 
 	private MaquinariaModel maquina;
 
 	public TareaMaquinaModel() {
 		super();
 	}
+	
+	
+
+	public double getCantidad() {
+		return cantidad;
+	}
+
+
+
+	public void setCantidad(double cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
 
 	public String getId() {
 		return id;

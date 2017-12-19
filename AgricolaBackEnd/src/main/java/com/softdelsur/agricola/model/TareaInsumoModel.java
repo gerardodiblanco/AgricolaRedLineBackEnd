@@ -5,12 +5,27 @@ package com.softdelsur.agricola.model;
 public class TareaInsumoModel {
     private String id;
 	private float cantConsumida;
+	private double cantidad;
 
 	private InsumoModel insumo;
 
 	public TareaInsumoModel() {
 		super();
 	}
+	
+	
+
+	public double getCantidad() {
+		return cantidad;
+	}
+
+
+
+	public void setCantidad(double cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
 
 	public String getId() {
 		return id;

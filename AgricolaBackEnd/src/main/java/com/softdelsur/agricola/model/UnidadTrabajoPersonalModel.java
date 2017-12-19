@@ -6,10 +6,22 @@ public class UnidadTrabajoPersonalModel {
 	private String idPersonal;
 	private String nombre;
 	private String dni;
+	private boolean checkbox;
+	
 	
 	
 	public UnidadTrabajoPersonalModel() {
 		super();
+	}
+
+
+	public boolean isCheckbox() {
+		return checkbox;
+	}
+
+
+	public void setCheckbox(boolean checkbox) {
+		this.checkbox = checkbox;
 	}
 
 
