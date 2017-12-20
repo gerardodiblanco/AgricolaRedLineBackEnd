@@ -8,12 +8,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.softdelsur.agricola.entity.Campo;
-
 import com.softdelsur.agricola.entity.Domicilio;
 import com.softdelsur.agricola.entity.Localidad;
 import com.softdelsur.agricola.entity.Proveedor;
 import com.softdelsur.agricola.model.CampoModel;
-
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.CoordenadaService;
 import com.softdelsur.agricola.service.DomicilioService;

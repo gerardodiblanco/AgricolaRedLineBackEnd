@@ -10,9 +10,9 @@ import com.softdelsur.agricola.entity.Atributo;
 
 @Repository("atributoRepository")
 public interface AtributoRepository extends JpaRepository<Atributo, Serializable> {
-	
+
 	Atributo findAtributoById(String id);
+
 	List<Atributo> findAtributosByEstado(boolean estado);
-	
 
 }

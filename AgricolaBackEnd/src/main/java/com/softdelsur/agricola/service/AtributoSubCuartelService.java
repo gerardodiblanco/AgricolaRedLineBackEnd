@@ -8,9 +8,9 @@ import com.softdelsur.agricola.entity.SubCuartel;
 public interface AtributoSubCuartelService {
 
 	AtributoSubCuartel findAtributoSubCuartelById(String id);
-	
+
 	AtributoSubCuartel addAtributoSubCuartel(AtributoSubCuartel atributoSubCuartel);
-	
+
 	List<AtributoSubCuartel> findAtributosSubCuartelesBySubCuartel(SubCuartel subCuartel);
 
 }

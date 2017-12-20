@@ -15,12 +15,12 @@ import com.softdelsur.agricola.service.UnidadTrabajoService;
 import com.softdelsur.agricola.service.UnidadTrabajoSubCuartelService;
 
 @Service("unidadTrabajoServiceImpl")
-public class UnidadTrabajoServiceImpl implements UnidadTrabajoService{
-	
+public class UnidadTrabajoServiceImpl implements UnidadTrabajoService {
+
 	@Autowired
 	@Qualifier("unidadTrabajoRepository")
 	UnidadTrabajoRepository unidadTrabajoRepository;
-	
+
 	@Autowired
 	@Qualifier("unidadTrabajoSubCuartelServiceImpl")
 	UnidadTrabajoSubCuartelService unidadTrabajoSubCuartelService;
@@ -46,12 +46,14 @@ public class UnidadTrabajoServiceImpl implements UnidadTrabajoService{
 	@Override
 	public void remove(String id) {
 		UnidadTrabajo unidadTrabajo = unidadTrabajoRepository.findUnidadTrabajoById(id);
-		
+
 		unidadTrabajo.setEstadoActivo(false);
-		List<UnidadTrabajoSubCuartel> unidadTrabajoSubCuartelList = unidadTrabajoSubCuartelService.findVigenteByUnidadTrabajo(unidadTrabajo);
+		List<UnidadTrabajoSubCuartel> unidadTrabajoSubCuartelList = unidadTrabajoSubCuartelService
+				.findVigenteByUnidadTrabajo(unidadTrabajo);
 		for (UnidadTrabajoSubCuartel unidadTrabajoSubCuartel : unidadTrabajoSubCuartelList) {
 			unidadTrabajoSubCuartel.setFechaBaja(Date.valueOf(LocalDate.now()));
-			unidadTrabajoSubCuartel = unidadTrabajoSubCuartelService.addUnidadTrabajoSubCuartel(unidadTrabajoSubCuartel);
+			unidadTrabajoSubCuartel = unidadTrabajoSubCuartelService
+					.addUnidadTrabajoSubCuartel(unidadTrabajoSubCuartel);
 		}
 		unidadTrabajo = unidadTrabajoRepository.save(unidadTrabajo);
 	}

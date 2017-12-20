@@ -16,7 +16,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "unidad_trabajo_personal")
 public class UnidadTrabajoPersonal {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -27,11 +27,11 @@ public class UnidadTrabajoPersonal {
 	private String idPersonal;
 	private Date fechaAlta;
 	private Date fechaBaja;
-	
+
 	@JoinColumn
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private UnidadTrabajo unidadTrabajo;
-	
+
 	public UnidadTrabajoPersonal() {
 		super();
 	}
@@ -118,8 +118,5 @@ public class UnidadTrabajoPersonal {
 			return false;
 		return true;
 	}
-	
-	
-	
 
 }

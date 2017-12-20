@@ -7,14 +7,13 @@ import com.softdelsur.agricola.entity.Cuartel;
 import com.softdelsur.agricola.entity.EstadoCuartel;
 
 public interface CuartelService {
-	
+
 	List<Cuartel> findCuartelesByCampoAndEstadoCuartel(Campo campo, EstadoCuartel estadoCuartel);
-	
+
 	Cuartel addCuartel(Cuartel cuartel);
-	
+
 	Cuartel findCuartelById(String id);
-	
-	String eliminarCuartel(String id); 
-	
+
+	String eliminarCuartel(String id);
 
 }

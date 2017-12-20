@@ -1,13 +1,13 @@
 package com.softdelsur.agricola.model;
 
 public class ProveedorModelABMCampo {
-	
+
 	private String descripcion;
 
 	private String razonSocial;
-	
-	public ProveedorModelABMCampo(){
-		
+
+	public ProveedorModelABMCampo() {
+
 	}
 
 	public String getDescripcion() {
@@ -25,9 +25,5 @@ public class ProveedorModelABMCampo {
 	public void setRazonSocial(String razonSocial) {
 		this.razonSocial = razonSocial;
 	}
-	
 
-
-	
-	
 }

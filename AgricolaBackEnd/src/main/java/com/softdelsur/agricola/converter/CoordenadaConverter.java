@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.softdelsur.agricola.entity.Coordenada;
-
 import com.softdelsur.agricola.model.CoordenadaModel;
 import com.softdelsur.agricola.service.CoordenadaService;
 

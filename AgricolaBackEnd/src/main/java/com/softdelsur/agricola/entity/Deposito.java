@@ -20,7 +20,7 @@ public class Deposito {
 	private String id;
 	private String referenciaId;
 	private boolean estadoActivo;
-	
+
 	public Deposito() {
 		super();
 	}
@@ -82,9 +82,5 @@ public class Deposito {
 			return false;
 		return true;
 	}
-	
-	
-	
-	
-	
+
 }

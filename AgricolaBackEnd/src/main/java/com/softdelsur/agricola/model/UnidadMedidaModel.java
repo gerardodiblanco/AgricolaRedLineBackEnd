@@ -1,28 +1,28 @@
 package com.softdelsur.agricola.model;
 
 public class UnidadMedidaModel {
-	
-    private String idUnidadMedida;
-private String nombreUM;
 
-public UnidadMedidaModel() {
-	super();
-}
+	private String idUnidadMedida;
+	private String nombreUM;
 
-public String getIdUnidadMedida() {
-	return idUnidadMedida;
-}
+	public UnidadMedidaModel() {
+		super();
+	}
 
-public void setIdUnidadMedida(String idUnidadMedida) {
-	this.idUnidadMedida = idUnidadMedida;
-}
+	public String getIdUnidadMedida() {
+		return idUnidadMedida;
+	}
 
-public String getNombreUM() {
-	return nombreUM;
-}
-public void setNombreUM(String nombreUM) {
-	this.nombreUM = nombreUM;
-}
+	public void setIdUnidadMedida(String idUnidadMedida) {
+		this.idUnidadMedida = idUnidadMedida;
+	}
 
+	public String getNombreUM() {
+		return nombreUM;
+	}
+
+	public void setNombreUM(String nombreUM) {
+		this.nombreUM = nombreUM;
+	}
 
 }

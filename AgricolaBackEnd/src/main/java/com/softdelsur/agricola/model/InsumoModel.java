@@ -12,20 +12,14 @@ public class InsumoModel {
 	public InsumoModel() {
 		super();
 	}
-	
-	
 
 	public double getCantidad() {
 		return cantidad;
 	}
 
-
-
 	public void setCantidad(double cantidad) {
 		this.cantidad = cantidad;
 	}
-
-
 
 	public boolean isCheckbox() {
 		return checkbox;

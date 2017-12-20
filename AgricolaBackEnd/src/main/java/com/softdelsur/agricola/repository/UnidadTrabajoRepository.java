@@ -11,7 +11,7 @@ import com.softdelsur.agricola.entity.UnidadTrabajo;
 @Repository("unidadTrabajoRepository")
 public interface UnidadTrabajoRepository extends JpaRepository<UnidadTrabajo, Serializable> {
 
-	
 	UnidadTrabajo findUnidadTrabajoById(String id);
+
 	List<UnidadTrabajo> findAllActivosByEstadoActivo(boolean estadoActivo);
 }

@@ -19,6 +19,7 @@ import com.softdelsur.agricola.entity.Cuartel;
 import com.softdelsur.agricola.entity.Domicilio;
 import com.softdelsur.agricola.entity.EstadoCampo;
 import com.softdelsur.agricola.entity.EstadoCuartel;
+import com.softdelsur.agricola.entity.EstadoOrdenTrabajoTarea;
 import com.softdelsur.agricola.entity.EstadoProveedor;
 import com.softdelsur.agricola.entity.EstadoSubCuartel;
 import com.softdelsur.agricola.entity.Localidad;
@@ -39,6 +40,7 @@ import com.softdelsur.agricola.service.CuartelService;
 import com.softdelsur.agricola.service.DomicilioService;
 import com.softdelsur.agricola.service.EstadoCampoService;
 import com.softdelsur.agricola.service.EstadoCuartelService;
+import com.softdelsur.agricola.service.EstadoOrdenTrabajoTareaService;
 import com.softdelsur.agricola.service.EstadoProveedorService;
 import com.softdelsur.agricola.service.EstadoSubCuartelService;
 import com.softdelsur.agricola.service.LocalidadService;
@@ -135,6 +137,10 @@ public class Pruebas {
 	@Qualifier("maquinariaServiceImpl")
 	MaquinariaService maquinariaService;
 
+	@Autowired
+	@Qualifier("estadoOrdenTrabajoTareaServiceImpl")
+	EstadoOrdenTrabajoTareaService estadoOrdenTrabajoTareaService;
+
 	@GetMapping("/campo")
 	public String crear() {
 
@@ -143,6 +149,31 @@ public class Pruebas {
 
 		EstadoCampo estadoCampoActivo = new EstadoCampo(EntidadesBasicas.estadoCampoActivo);
 		estadoCampoActivo = estadoCampoService.addEstadoCampo(estadoCampoActivo);
+
+		EstadoOrdenTrabajoTarea estadoOrdenTrabajoTareaPlanificado = new EstadoOrdenTrabajoTarea(
+				EntidadesBasicas.estadoOrdenTrabajoTareaPlanificado);
+		estadoOrdenTrabajoTareaPlanificado = estadoOrdenTrabajoTareaService
+				.addEstadoOrdenTrabajoTarea(estadoOrdenTrabajoTareaPlanificado);
+
+		EstadoOrdenTrabajoTarea estadoOrdenTrabajoTareaFinalizado = new EstadoOrdenTrabajoTarea(
+				EntidadesBasicas.estadoOrdenTrabajoTareaFinalizado);
+		estadoOrdenTrabajoTareaFinalizado = estadoOrdenTrabajoTareaService
+				.addEstadoOrdenTrabajoTarea(estadoOrdenTrabajoTareaFinalizado);
+
+		EstadoOrdenTrabajoTarea estadoOrdenTrabajoTareaEliminado = new EstadoOrdenTrabajoTarea(
+				EntidadesBasicas.estadoOrdenTrabajoTareaEliminado);
+		estadoOrdenTrabajoTareaEliminado = estadoOrdenTrabajoTareaService
+				.addEstadoOrdenTrabajoTarea(estadoOrdenTrabajoTareaEliminado);
+
+		EstadoOrdenTrabajoTarea estadoOrdenTrabajoTareaCreado = new EstadoOrdenTrabajoTarea(
+				EntidadesBasicas.estadoOrdenTrabajoTareaCreado);
+		estadoOrdenTrabajoTareaCreado = estadoOrdenTrabajoTareaService
+				.addEstadoOrdenTrabajoTarea(estadoOrdenTrabajoTareaCreado);
+
+		EstadoOrdenTrabajoTarea estadoOrdenTrabajoTareaEnCurso = new EstadoOrdenTrabajoTarea(
+				EntidadesBasicas.estadoOrdenTrabajoTareaEnCurso);
+		estadoOrdenTrabajoTareaEnCurso = estadoOrdenTrabajoTareaService
+				.addEstadoOrdenTrabajoTarea(estadoOrdenTrabajoTareaEnCurso);
 
 		Domicilio domicilio = new Domicilio();
 		Localidad localidad = new Localidad();

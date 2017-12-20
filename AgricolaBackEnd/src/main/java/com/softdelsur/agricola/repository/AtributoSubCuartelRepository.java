@@ -11,8 +11,10 @@ import com.softdelsur.agricola.entity.AtributoSubCuartel;
 import com.softdelsur.agricola.entity.SubCuartel;
 
 @Repository("atributoSubCuartelRepository")
-public interface AtributoSubCuartelRepository  extends JpaRepository<AtributoSubCuartel, Serializable>{
+public interface AtributoSubCuartelRepository extends JpaRepository<AtributoSubCuartel, Serializable> {
 
 	AtributoSubCuartel findAtributoSubCuartelById(String id);
-	List<AtributoSubCuartel> findAtributosSubCuartelesBySubCuartelAndFechaFinVigencia(SubCuartel subCuartel,Timestamp fecha);
+
+	List<AtributoSubCuartel> findAtributosSubCuartelesBySubCuartelAndFechaFinVigencia(SubCuartel subCuartel,
+			Timestamp fecha);
 }

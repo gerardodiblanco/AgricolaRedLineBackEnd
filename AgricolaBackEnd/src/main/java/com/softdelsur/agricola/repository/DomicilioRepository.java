@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.Domicilio;
 
 @Repository("domicilioRepository")
-public interface DomicilioRepository extends JpaRepository<Domicilio, Serializable>{
+public interface DomicilioRepository extends JpaRepository<Domicilio, Serializable> {
 
 }

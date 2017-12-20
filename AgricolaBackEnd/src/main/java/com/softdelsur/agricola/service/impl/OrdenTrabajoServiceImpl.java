@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.service.impl;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +9,10 @@ import org.springframework.stereotype.Service;
 import com.softdelsur.agricola.entity.OrdenTrabajo;
 import com.softdelsur.agricola.repository.OrdenTrabajoRepository;
 import com.softdelsur.agricola.service.OrdenTrabajoService;
+
 @Service("ordenTrabajoServiceImpl")
 public class OrdenTrabajoServiceImpl implements OrdenTrabajoService {
-	
+
 	@Autowired
 	@Qualifier("ordenTrabajoRepository")
 	OrdenTrabajoRepository ordenTrabajoRepository;

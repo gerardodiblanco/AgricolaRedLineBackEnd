@@ -9,8 +9,9 @@ public interface InsumoService {
 	List<Insumo> findInsumosActivos();
 
 	Insumo addInsumo(Insumo trato);
-	Insumo findInsumoById(String id);
-	Insumo removeInsumo(String id);
 
+	Insumo findInsumoById(String id);
+
+	Insumo removeInsumo(String id);
 
 }

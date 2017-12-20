@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.ParteDiario;
 
 @Repository("parteDiarioRepository")
-public interface ParteDiarioRepository extends JpaRepository<ParteDiario, Serializable>{
+public interface ParteDiarioRepository extends JpaRepository<ParteDiario, Serializable> {
 
 }

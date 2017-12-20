@@ -7,9 +7,11 @@ import com.softdelsur.agricola.entity.OrdenTrabajo;
 import com.softdelsur.agricola.entity.OrdenTrabajoTarea;
 
 public interface OrdenTrabajoTareaService {
-	
+
 	OrdenTrabajoTarea addOrdenTrabajoTarea(OrdenTrabajoTarea ordenTrabajoTarea);
-	List<OrdenTrabajoTarea> findOrdenTrabajoTareaByOrdenTrabajoAndEstado(OrdenTrabajo ordenTrabajo, EstadoOrdenTrabajoTarea estadoOrdenTrabajoTarea);
-	
+
+	List<OrdenTrabajoTarea> findOrdenTrabajoTareaByOrdenTrabajoAndEstado(OrdenTrabajo ordenTrabajo,
+			EstadoOrdenTrabajoTarea estadoOrdenTrabajoTarea);
+
 	void delelteOrdenTrabajoTarea(OrdenTrabajoTarea ordenTrabajoTarea);
 }

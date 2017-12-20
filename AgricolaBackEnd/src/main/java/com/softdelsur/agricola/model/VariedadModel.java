@@ -2,17 +2,14 @@ package com.softdelsur.agricola.model;
 
 public class VariedadModel {
 
-	
-    private String id;
-    
-    private String nombre;
-    
-    private String colorVariedad;
-    
-    
+	private String id;
+
+	private String nombre;
+
+	private String colorVariedad;
 
 	public VariedadModel() {
-		
+
 	}
 
 	public String getId() {
@@ -38,7 +35,5 @@ public class VariedadModel {
 	public void setColorVariedad(String colorVariedad) {
 		this.colorVariedad = colorVariedad;
 	}
-
-    
 
 }

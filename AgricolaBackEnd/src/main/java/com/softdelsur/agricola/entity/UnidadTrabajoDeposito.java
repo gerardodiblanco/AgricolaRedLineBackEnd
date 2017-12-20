@@ -13,11 +13,9 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
 @Table(name = "unidad_trabajo_deposito")
 public class UnidadTrabajoDeposito {
-
 
 	@Id
 	@Column(name = "id_unidad_trabajo_deposito", unique = true, nullable = false)
@@ -26,16 +24,15 @@ public class UnidadTrabajoDeposito {
 	private String id;
 	private Date fechaAlta;
 	private Date fechaBaja;
-	
+
 	@JoinColumn
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private UnidadTrabajo unidadTrabajo;
-	
+
 	@JoinColumn
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private Deposito deposito;
-	
-	
+
 	public UnidadTrabajoDeposito() {
 		super();
 	}
@@ -80,7 +77,4 @@ public class UnidadTrabajoDeposito {
 		this.unidadTrabajo = unidadTrabajo;
 	}
 
-	
-	
-	
 }

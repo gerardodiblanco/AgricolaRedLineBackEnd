@@ -3,8 +3,6 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class SubCuartelModel {
 	private String id;
 	private int codigo;
@@ -34,8 +32,6 @@ public class SubCuartelModel {
 	public void setCoordenadaList(List<CoordenadaModel> coordenadaList) {
 		this.coordenadaList = coordenadaList;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -140,8 +136,5 @@ public class SubCuartelModel {
 	public void setIdVariedad(String idVariedad) {
 		this.idVariedad = idVariedad;
 	}
-	
-	
-	
 
 }

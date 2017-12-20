@@ -25,34 +25,32 @@ public class OrdenTrabajoTarea {
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
 	private String id;
-	
+
 	@JoinColumn
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	private OrdenTrabajo ordenTrabajo;
-	
+
 	@JoinColumn
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	private Tarea tarea;
-	
+
 	@JoinColumn
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	private EstadoOrdenTrabajoTarea estado;
-	
+
 	@JoinColumn
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	private Trato trato;
-	
+
 	@JoinColumn
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<OrdenTrabajoTareaMaquinaria> ordenTrabajoTareaMaquinariaList = new ArrayList<>();
-	
+
 	@JoinColumn
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<OrdenTrabajoTareaInsumo> ordenTrabajoTareaInsumoList = new ArrayList<>();
-	
+
 	private int cantidadPersonal;
-	
-	
 
 	public String getId() {
 		return id;
@@ -183,11 +181,4 @@ public class OrdenTrabajoTarea {
 		return true;
 	}
 
-
-
-	
-
-
-	
-	
 }

@@ -9,7 +9,7 @@ import com.softdelsur.agricola.entity.TipoCampo;
 
 @Repository("tipoCampoRepository")
 public interface TipoCampoRepository extends JpaRepository<TipoCampo, Serializable> {
-	
+
 	TipoCampo findByNombre(String nombre);
 
 }

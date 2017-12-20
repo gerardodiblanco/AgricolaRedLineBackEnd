@@ -10,7 +10,7 @@ import com.softdelsur.agricola.service.EstadoOrdenTrabajoTareaService;
 
 @Service("estadoOrdenTrabajoTareaServiceImpl")
 public class EstadoOrdenTrabajoTareaServiceImpl implements EstadoOrdenTrabajoTareaService {
-	
+
 	@Autowired
 	@Qualifier("estadoOrdenTrabajoTareaRepository")
 	EstadoOrdenTrabajoTareaRepository estadoOrdenTrabajoTareaRepository;

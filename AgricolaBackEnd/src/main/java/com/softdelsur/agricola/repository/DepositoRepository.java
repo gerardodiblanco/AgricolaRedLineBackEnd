@@ -9,7 +9,7 @@ import com.softdelsur.agricola.entity.Deposito;
 
 @Repository("depositoRepository")
 public interface DepositoRepository extends JpaRepository<Deposito, Serializable> {
-	
+
 	Deposito findDepositoById(String id);
 
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import com.softdelsur.agricola.configuration.EntidadesBasicas;
 import com.softdelsur.agricola.entity.EstadoSubCuartel;
 import com.softdelsur.agricola.repository.EstadoSubCuartelRepository;
 import com.softdelsur.agricola.service.EstadoSubCuartelService;
@@ -24,13 +25,13 @@ public class EstadoSubCuartelServiceImpl implements EstadoSubCuartelService {
 	@Override
 	public EstadoSubCuartel buscarEstadoActivo() {
 
-		return estadoSubCuartelRepository.findByDescripcion("Activo");
+		return estadoSubCuartelRepository.findByDescripcion(EntidadesBasicas.estadoSubCuartelActivo);
 	}
 
 	@Override
 	public EstadoSubCuartel buscarEstadoInactivo() {
 		// TODO Auto-generated method stub
-		return estadoSubCuartelRepository.findByDescripcion("Inactivo");
+		return estadoSubCuartelRepository.findByDescripcion(EntidadesBasicas.estadoSubCuartelInactivo);
 	}
 
 }

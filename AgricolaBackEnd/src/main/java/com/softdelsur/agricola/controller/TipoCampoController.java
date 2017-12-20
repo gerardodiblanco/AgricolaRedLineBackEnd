@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.model.TipoCampoModel;
-
 import com.softdelsur.agricola.service.TipoCampoService;
 
 @RestController

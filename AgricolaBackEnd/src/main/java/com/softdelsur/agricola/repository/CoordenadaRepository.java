@@ -9,8 +9,7 @@ import com.softdelsur.agricola.entity.Coordenada;
 
 @Repository("coordenadaRepository")
 public interface CoordenadaRepository extends JpaRepository<Coordenada, Serializable> {
-	
-	
+
 	Coordenada findById(String id);
 
 }

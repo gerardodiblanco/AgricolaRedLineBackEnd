@@ -8,7 +8,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-
 @Entity
 @Table(name = "unidad_trabajo")
 public class UnidadTrabajo {
@@ -22,7 +21,7 @@ public class UnidadTrabajo {
 	private String id;
 	private String nombre;
 	private boolean estadoActivo;
-	
+
 	public UnidadTrabajo() {
 		super();
 	}
@@ -42,7 +41,6 @@ public class UnidadTrabajo {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
 
 	public boolean getEstadoActivo() {
 		return estadoActivo;
@@ -52,7 +50,6 @@ public class UnidadTrabajo {
 		this.estadoActivo = estadoActivo;
 	}
 
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -87,9 +84,4 @@ public class UnidadTrabajo {
 		return true;
 	}
 
-	
-	
-
-	
-	
 }

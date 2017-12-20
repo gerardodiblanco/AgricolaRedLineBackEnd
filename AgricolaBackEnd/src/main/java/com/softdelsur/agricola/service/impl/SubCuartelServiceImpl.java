@@ -55,7 +55,7 @@ public class SubCuartelServiceImpl implements SubCuartelService {
 	@Override
 	public List<SubCuartel> buscarSubCuartelesActivos() {
 		EstadoSubCuartel estadoSubCuartel = estadoSubCuartelService.buscarEstadoActivo();
-		
+
 		return subCuartelRepository.findByEstado(estadoSubCuartel);
 	}
 

@@ -1,8 +1,5 @@
 package com.softdelsur.agricola.entity;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 

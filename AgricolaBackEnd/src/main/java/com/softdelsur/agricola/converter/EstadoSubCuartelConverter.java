@@ -1,6 +1,7 @@
 package com.softdelsur.agricola.converter;
 
 import org.springframework.stereotype.Component;
+
 import com.softdelsur.agricola.entity.EstadoSubCuartel;
 import com.softdelsur.agricola.model.EstadoSubCuartelModel;
 

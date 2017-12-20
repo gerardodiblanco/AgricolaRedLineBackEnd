@@ -3,12 +3,10 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class SectorDetalleModel {
 
-    private String id;
-    
+	private String id;
+
 	private int codigo;
 	private String descripcion;
 
@@ -56,6 +54,4 @@ public class SectorDetalleModel {
 		this.tareasDetalle = tareasDetalle;
 	}
 
-
-	
 }

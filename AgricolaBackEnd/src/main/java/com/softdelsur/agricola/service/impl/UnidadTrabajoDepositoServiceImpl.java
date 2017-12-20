@@ -12,8 +12,8 @@ import com.softdelsur.agricola.repository.UnidadTrabajoDepositoRepository;
 import com.softdelsur.agricola.service.UnidadTrabajoDepositoService;
 
 @Service("unidadTrabajoDepositoServiceImpl")
-public class UnidadTrabajoDepositoServiceImpl implements UnidadTrabajoDepositoService{
-	
+public class UnidadTrabajoDepositoServiceImpl implements UnidadTrabajoDepositoService {
+
 	@Autowired
 	@Qualifier("unidadTrabajoDepositoRepository")
 	UnidadTrabajoDepositoRepository unidadTrabajoDepositoRepository;

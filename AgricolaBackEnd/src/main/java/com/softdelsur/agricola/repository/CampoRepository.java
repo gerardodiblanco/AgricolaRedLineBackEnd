@@ -10,10 +10,10 @@ import com.softdelsur.agricola.entity.Campo;
 import com.softdelsur.agricola.entity.EstadoCampo;
 
 @Repository("campoRepository")
-public interface CampoRepository extends JpaRepository<Campo, Serializable>{
-	
+public interface CampoRepository extends JpaRepository<Campo, Serializable> {
+
 	Campo findCampoByIdCampo(String idCampo);
-	
+
 	List<Campo> findByEstadoCampo(EstadoCampo estadoCampo);
 
 }

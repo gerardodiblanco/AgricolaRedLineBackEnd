@@ -2,26 +2,27 @@ package com.softdelsur.agricola.model;
 
 public class AtributoOpcionModel {
 
-	
-    private String id;  
-    private String nombreOpcion;
-    private String nombreAtributo;
-    private String idAtributo;
-    
-    
+	private String id;
+	private String nombreOpcion;
+	private String nombreAtributo;
+	private String idAtributo;
+
 	public AtributoOpcionModel() {
 		super();
 	}
-	
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public String getNombreOpcion() {
 		return nombreOpcion;
 	}
+
 	public void setNombreOpcion(String nombreOpcion) {
 		this.nombreOpcion = nombreOpcion;
 	}
@@ -41,8 +42,5 @@ public class AtributoOpcionModel {
 	public void setIdAtributo(String idAtributo) {
 		this.idAtributo = idAtributo;
 	}
-	
-	
-    
-    
+
 }

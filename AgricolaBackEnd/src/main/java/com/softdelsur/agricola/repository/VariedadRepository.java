@@ -9,12 +9,12 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.Variedad;
 
 @Repository("variedadRepository")
-public interface VariedadRepository extends JpaRepository<Variedad, Serializable>{
-	
+public interface VariedadRepository extends JpaRepository<Variedad, Serializable> {
+
 	Variedad findById(String id);
+
 	List<Variedad> findByEstado(boolean estado);
+
 	Variedad findByNombreAndEstado(String nombre, boolean estado);
-	
-	
 
 }

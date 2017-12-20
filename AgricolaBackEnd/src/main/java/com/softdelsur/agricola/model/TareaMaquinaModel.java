@@ -1,9 +1,8 @@
 package com.softdelsur.agricola.model;
 
-
 public class TareaMaquinaModel {
-	
-    private String id;
+
+	private String id;
 	private float consumo;
 	private int horasTrabajo;
 	private double cantidad;
@@ -13,20 +12,14 @@ public class TareaMaquinaModel {
 	public TareaMaquinaModel() {
 		super();
 	}
-	
-	
 
 	public double getCantidad() {
 		return cantidad;
 	}
 
-
-
 	public void setCantidad(double cantidad) {
 		this.cantidad = cantidad;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -59,7 +52,5 @@ public class TareaMaquinaModel {
 	public void setMaquina(MaquinariaModel maquina) {
 		this.maquina = maquina;
 	}
-	
-	
 
 }

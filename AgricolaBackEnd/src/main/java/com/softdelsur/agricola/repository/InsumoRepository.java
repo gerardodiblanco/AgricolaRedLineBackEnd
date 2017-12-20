@@ -10,8 +10,9 @@ import com.softdelsur.agricola.entity.Insumo;
 
 @Repository("insumoRepository")
 public interface InsumoRepository extends JpaRepository<Insumo, Serializable> {
-	
+
 	List<Insumo> findInsumosByEstado(boolean estado);
+
 	Insumo findInsumoByIdInsumo(String id);
 
 }

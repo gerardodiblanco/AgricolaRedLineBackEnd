@@ -11,9 +11,9 @@ import com.softdelsur.agricola.entity.UnidadTrabajo;
 import com.softdelsur.agricola.entity.UnidadTrabajoPersonal;
 
 @Repository("unidadTrabajoPersonalRepository")
-public interface UnidadTrabajoPersonalRepository extends JpaRepository<UnidadTrabajoPersonal, Serializable>{
+public interface UnidadTrabajoPersonalRepository extends JpaRepository<UnidadTrabajoPersonal, Serializable> {
 
-	
 	List<UnidadTrabajoPersonal> findUTPByUnidadTrabajoAndFechaBaja(UnidadTrabajo unidadTrabajo, Date fechaBaja);
+
 	UnidadTrabajoPersonal findUTPById(String id);
 }

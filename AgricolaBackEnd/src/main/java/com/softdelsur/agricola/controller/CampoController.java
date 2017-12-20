@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.softdelsur.agricola.converter.CampoConverter;
 import com.softdelsur.agricola.model.CampoDTO;
-
 import com.softdelsur.agricola.model.CampoModel;
-
 import com.softdelsur.agricola.service.CampoService;
 import com.softdelsur.agricola.service.EstadoCampoService;
 

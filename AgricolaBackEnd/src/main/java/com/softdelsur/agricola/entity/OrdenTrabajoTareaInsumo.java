@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "orden_de_trabajo_tarea_insumo")
 public class OrdenTrabajoTareaInsumo {
@@ -21,36 +21,39 @@ public class OrdenTrabajoTareaInsumo {
 	@GeneratedValue(generator = "uuid")
 	private String id;
 	private double cantidad;
-	
+
 	@JoinColumn
 	@ManyToOne
 	private Insumo insumo;
-	
-	
-	
+
 	public OrdenTrabajoTareaInsumo() {
 		super();
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 	public double getCantidad() {
 		return cantidad;
 	}
+
 	public void setCantidad(double cantidad) {
 		this.cantidad = cantidad;
 	}
-	
-	
+
 	public Insumo getInsumo() {
 		return insumo;
 	}
+
 	public void setInsumo(Insumo insumo) {
 		this.insumo = insumo;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -61,6 +64,7 @@ public class OrdenTrabajoTareaInsumo {
 		result = prime * result + ((insumo == null) ? 0 : insumo.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -80,8 +84,4 @@ public class OrdenTrabajoTareaInsumo {
 		return true;
 	}
 
-
-	
-	
-	
 }

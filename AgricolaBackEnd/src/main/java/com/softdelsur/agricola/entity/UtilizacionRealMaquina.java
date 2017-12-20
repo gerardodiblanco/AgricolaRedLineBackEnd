@@ -22,7 +22,7 @@ public class UtilizacionRealMaquina {
 	private String id;
 	private int cantHoras;
 	private int consumo;
-	
+
 	@ManyToOne
 	public Maquinaria maquina;
 

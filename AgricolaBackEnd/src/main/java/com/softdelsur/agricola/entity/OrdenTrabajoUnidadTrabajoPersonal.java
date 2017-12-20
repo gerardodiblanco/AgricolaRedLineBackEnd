@@ -23,26 +23,20 @@ public class OrdenTrabajoUnidadTrabajoPersonal {
 	@GeneratedValue(generator = "uuid")
 	private String id;
 	private boolean seleccion;
-	
+
 	@JoinColumn
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private UnidadTrabajoPersonal unidadTrabajoPersonal;
-	
-	
 
 	public OrdenTrabajoUnidadTrabajoPersonal() {
 		super();
 	}
 
-	
-	
 	public OrdenTrabajoUnidadTrabajoPersonal(boolean seleccion, UnidadTrabajoPersonal unidadTrabajoPersonal) {
 		super();
 		this.seleccion = seleccion;
 		this.unidadTrabajoPersonal = unidadTrabajoPersonal;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -67,7 +61,5 @@ public class OrdenTrabajoUnidadTrabajoPersonal {
 	public void setUnidadTrabajoPersonal(UnidadTrabajoPersonal unidadTrabajoPersonal) {
 		this.unidadTrabajoPersonal = unidadTrabajoPersonal;
 	}
-
-	
 
 }

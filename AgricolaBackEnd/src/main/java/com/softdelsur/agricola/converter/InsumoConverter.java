@@ -57,7 +57,7 @@ public class InsumoConverter {
 		insumoModel.setId(insumo.getIdInsumo());
 		insumoModel.setCodigo(insumo.getCodigo());
 		insumoModel.setDescripcion(insumo.getDescripcion());
-		
+
 		// insumoModel.setUnidadMedida(insumo.getUnidadMedida().getNombreUM());
 
 		return insumoModel;

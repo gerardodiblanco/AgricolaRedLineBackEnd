@@ -3,11 +3,8 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public class TareaModel {
-    private String id;
+	private String id;
 	private int codigo;
 	private String descripcion;
 	private List<InsumoModel> insumos = new ArrayList<>();
@@ -19,27 +16,22 @@ public class TareaModel {
 	public TareaModel() {
 		super();
 	}
-	
+
 	public TratoModel getTratoModel() {
 		return tratoModel;
 	}
-
 
 	public void setTratoModel(TratoModel tratoModel) {
 		this.tratoModel = tratoModel;
 	}
 
-
 	public int getCantidadPersonal() {
 		return cantidadPersonal;
 	}
 
-
 	public void setCantidadPersonal(int cantidadPersonal) {
 		this.cantidadPersonal = cantidadPersonal;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -65,8 +57,6 @@ public class TareaModel {
 		this.descripcion = descripcion;
 	}
 
-
-
 	public List<InsumoModel> getInsumos() {
 		return insumos;
 	}
@@ -91,7 +81,4 @@ public class TareaModel {
 		this.maquinarias = maquinarias;
 	}
 
-		
-	
-	
 }

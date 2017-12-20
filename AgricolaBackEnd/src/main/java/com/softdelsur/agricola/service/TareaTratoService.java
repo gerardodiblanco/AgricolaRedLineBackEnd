@@ -6,11 +6,9 @@ import com.softdelsur.agricola.entity.Tarea;
 import com.softdelsur.agricola.entity.TareaTrato;
 
 public interface TareaTratoService {
-	
-	
-		List<TareaTrato> findTareaTratoByTarea(Tarea tarea);
-		TareaTrato addTareaTrato(TareaTrato tareaTrato);
-	
 
+	List<TareaTrato> findTareaTratoByTarea(Tarea tarea);
+
+	TareaTrato addTareaTrato(TareaTrato tareaTrato);
 
 }

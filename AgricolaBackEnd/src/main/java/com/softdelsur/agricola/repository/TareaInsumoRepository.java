@@ -11,7 +11,7 @@ import com.softdelsur.agricola.entity.Tarea;
 import com.softdelsur.agricola.entity.TareaInsumo;
 
 @Repository("tareaInsumoRepository")
-public interface TareaInsumoRepository extends JpaRepository<TareaInsumo, Serializable>{
+public interface TareaInsumoRepository extends JpaRepository<TareaInsumo, Serializable> {
 
-	List<TareaInsumo> findTareaInsumoActivasByTareaAndFechaBaja(Tarea tarea,Date fechaBaja);
+	List<TareaInsumo> findTareaInsumoActivasByTareaAndFechaBaja(Tarea tarea, Date fechaBaja);
 }

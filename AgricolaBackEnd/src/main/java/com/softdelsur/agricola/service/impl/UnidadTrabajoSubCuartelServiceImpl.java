@@ -9,20 +9,19 @@ import org.springframework.stereotype.Service;
 import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.entity.UnidadTrabajo;
 import com.softdelsur.agricola.entity.UnidadTrabajoSubCuartel;
-import com.softdelsur.agricola.repository.UnidadTrabajoRepository;
 import com.softdelsur.agricola.repository.UnidadTrabajoSubCuartelRepository;
 import com.softdelsur.agricola.service.UnidadTrabajoSubCuartelService;
 
 @Service("unidadTrabajoSubCuartelServiceImpl")
 public class UnidadTrabajoSubCuartelServiceImpl implements UnidadTrabajoSubCuartelService {
-	
+
 	@Autowired
 	@Qualifier("unidadTrabajoSubCuartelRepository")
 	UnidadTrabajoSubCuartelRepository unidadTrabajoSubCuartelRepository;
 
 	@Override
 	public UnidadTrabajoSubCuartel buscarUnidadTrabajoVigentePorSubCuartel(SubCuartel subCuartel) {
-		
+
 		return unidadTrabajoSubCuartelRepository.findBySubCuartelAndFechaBaja(subCuartel, null);
 	}
 

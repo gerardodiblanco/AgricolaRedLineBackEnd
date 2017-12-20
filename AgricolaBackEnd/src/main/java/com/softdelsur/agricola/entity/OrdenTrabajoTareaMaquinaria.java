@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.entity;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+
 @Entity
 @Table(name = "orden_de_trabajo_tarea_maquinaria")
 public class OrdenTrabajoTareaMaquinaria {
@@ -22,11 +22,11 @@ public class OrdenTrabajoTareaMaquinaria {
 	@GeneratedValue(generator = "uuid")
 	private String id;
 	private int cantidad;
-	
+
 	@JoinColumn
 	@ManyToOne
 	private Maquinaria maquinaria;
-	
+
 	public OrdenTrabajoTareaMaquinaria() {
 		super();
 	}
@@ -47,8 +47,6 @@ public class OrdenTrabajoTareaMaquinaria {
 		this.cantidad = cantidad;
 	}
 
-	
-	
 	public Maquinaria getMaquinaria() {
 		return maquinaria;
 	}
@@ -85,7 +83,4 @@ public class OrdenTrabajoTareaMaquinaria {
 		return true;
 	}
 
-
-	
-	
 }

@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.Tarea;
 
 @Repository("tareaRepository")
-public interface TareaRepository extends JpaRepository<Tarea, Serializable>{
+public interface TareaRepository extends JpaRepository<Tarea, Serializable> {
 
-	
-List<Tarea> findTareasByFechaBaja(Date fechaBaja);
-Tarea findTareaById(String id);
-	
+	List<Tarea> findTareasByFechaBaja(Date fechaBaja);
+
+	Tarea findTareaById(String id);
+
 }

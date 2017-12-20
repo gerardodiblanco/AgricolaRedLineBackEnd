@@ -10,7 +10,7 @@ import com.softdelsur.agricola.service.OrdenTrabajoUnidadTrabajoSubCuartelServic
 
 @Service("ordenTrabajoUnidadTrabajoSubCuartelServiceImpl")
 public class OrdenTrabajoUnidadTrabajoSubCuartelServiceImpl implements OrdenTrabajoUnidadTrabajoSubCuartelService {
-	
+
 	@Autowired
 	@Qualifier("ordenTrabajoUnidadTrabajoSubCuartelRepository")
 	OrdenTrabajoUnidadTrabajoSubCuartelRepository ordenTrabajoUnidadTrabajoSubCuartelRepository;
@@ -21,6 +21,5 @@ public class OrdenTrabajoUnidadTrabajoSubCuartelServiceImpl implements OrdenTrab
 		// TODO Auto-generated method stub
 		return ordenTrabajoUnidadTrabajoSubCuartelRepository.save(ordenTrabajoUnidadTrabajoSubCuartel);
 	}
-	
 
 }

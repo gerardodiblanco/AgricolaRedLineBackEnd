@@ -10,7 +10,7 @@ import com.softdelsur.agricola.service.DepositoService;
 
 @Service("depositoServiceImpl")
 public class DepositoServiceImpl implements DepositoService {
-	
+
 	@Autowired
 	@Qualifier("depositoRepository")
 	DepositoRepository depositoRepository;

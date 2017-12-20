@@ -16,8 +16,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.mysql.fabric.xmlrpc.base.Array;
-
 @Entity
 @Table(name = "orden_de_trabajo")
 public class OrdenTrabajo {
@@ -31,54 +29,42 @@ public class OrdenTrabajo {
 	private String descripcion;
 	private Date fechaAlta;
 	private Date fechaBaja;
-	
+
 	@JoinColumn(name = "id_unidad_trabajo")
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private UnidadTrabajo unidadTrabajo;
-	
+
 	@JoinColumn(name = "id_orden_trabajo")
 	@OneToMany(cascade = CascadeType.REFRESH)
 	private List<OrdenTrabajoUnidadTrabajoSubCuartel> ordenTrabajoUnidadTrabajoSubCuartelList = new ArrayList<>();
-	
+
 	@JoinColumn(name = "id_orden_trabajo")
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<OrdenTrabajoUnidadTrabajoDeposito> ordenTrabajoUnidadTrabajoDepositoList = new ArrayList<>();
-	
+
 	@JoinColumn(name = "id_orden_trabajo")
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<OrdenTrabajoUnidadTrabajoPersonal> ordenTrabajoUnidadTrabajoPersonalList = new ArrayList<>();
-	
-	
 
 	public OrdenTrabajo() {
 		super();
 	}
-	
-	
 
 	public Date getFechaAlta() {
 		return fechaAlta;
 	}
 
-
-
 	public void setFechaAlta(Date fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
-
-
 
 	public Date getFechaBaja() {
 		return fechaBaja;
 	}
 
-
-
 	public void setFechaBaja(Date fechaBaja) {
 		this.fechaBaja = fechaBaja;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -104,48 +90,32 @@ public class OrdenTrabajo {
 		this.unidadTrabajo = unidadTrabajo;
 	}
 
-	
-	
 	public List<OrdenTrabajoUnidadTrabajoSubCuartel> getOrdenTrabajoUnidadTrabajoSubCuartelList() {
 		return ordenTrabajoUnidadTrabajoSubCuartelList;
 	}
-	
-	
-
-
 
 	public List<OrdenTrabajoUnidadTrabajoDeposito> getOrdenTrabajoUnidadTrabajoDepositoList() {
 		return ordenTrabajoUnidadTrabajoDepositoList;
 	}
-
-
 
 	public void setOrdenTrabajoUnidadTrabajoDepositoList(
 			List<OrdenTrabajoUnidadTrabajoDeposito> ordenTrabajoUnidadTrabajoDepositoList) {
 		this.ordenTrabajoUnidadTrabajoDepositoList = ordenTrabajoUnidadTrabajoDepositoList;
 	}
 
-
-
 	public List<OrdenTrabajoUnidadTrabajoPersonal> getOrdenTrabajoUnidadTrabajoPersonalList() {
 		return ordenTrabajoUnidadTrabajoPersonalList;
 	}
-
-
 
 	public void setOrdenTrabajoUnidadTrabajoPersonalList(
 			List<OrdenTrabajoUnidadTrabajoPersonal> ordenTrabajoUnidadTrabajoPersonalList) {
 		this.ordenTrabajoUnidadTrabajoPersonalList = ordenTrabajoUnidadTrabajoPersonalList;
 	}
 
-
-
 	public void setOrdenTrabajoUnidadTrabajoSubCuartelList(
 			List<OrdenTrabajoUnidadTrabajoSubCuartel> ordenTrabajoUnidadTrabajoSubCuartelList) {
 		this.ordenTrabajoUnidadTrabajoSubCuartelList = ordenTrabajoUnidadTrabajoSubCuartelList;
 	}
-
-
 
 	@Override
 	public int hashCode() {
@@ -164,8 +134,6 @@ public class OrdenTrabajo {
 		result = prime * result + ((unidadTrabajo == null) ? 0 : unidadTrabajo.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -218,7 +186,5 @@ public class OrdenTrabajo {
 			return false;
 		return true;
 	}
-
-
 
 }

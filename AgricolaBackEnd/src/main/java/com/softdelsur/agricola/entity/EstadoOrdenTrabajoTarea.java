@@ -11,20 +11,24 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "estado_orden_de_trabajo_tarea")
 public class EstadoOrdenTrabajoTarea {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "id_maquina", unique = true, nullable = false)
+	@Column(name = "id_estado_orden_de_trabajo_tarea", unique = true, nullable = false)
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid")
 	private String id;
-	
+
 	private String nombre;
-	
 
 	public EstadoOrdenTrabajoTarea() {
 		super();
+	}
+
+	public EstadoOrdenTrabajoTarea(String nombre) {
+		super();
+		this.nombre = nombre;
 	}
 
 	public String getId() {
@@ -73,7 +77,5 @@ public class EstadoOrdenTrabajoTarea {
 			return false;
 		return true;
 	}
-	
-	
 
 }

@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.model;
 
-
 public class DomicilioModel {
 	private String idDomicilio;
 	private String calle;

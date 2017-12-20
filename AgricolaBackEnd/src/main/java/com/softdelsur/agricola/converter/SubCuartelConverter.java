@@ -213,7 +213,7 @@ public class SubCuartelConverter {
 	public List<SubCuartel> convertListSubCuartelModelToListSubCuartel(List<SubCuartelModel> listSubCuartelModel) {
 		List<SubCuartel> subCuartelList = new ArrayList<SubCuartel>();
 		for (SubCuartelModel subCuartelModel : listSubCuartelModel) {
-			 subCuartelList.add(convertSubCuartelModelToSubCuartel(subCuartelModel));
+			subCuartelList.add(convertSubCuartelModelToSubCuartel(subCuartelModel));
 		}
 		return subCuartelList;
 	}

@@ -3,23 +3,21 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class TareaDetalleSectorModel {
-	
-    private String id;
-    
+
+	private String id;
+
 	private int codigo;
-	
+
 	private EstadoTareaDetalleSectorModel estado;
-	
+
 	private TareaModel tarea;
-	
+
 	private List<PersonalTareaModel> personalTareaList = new ArrayList<PersonalTareaModel>();
 
-	private List<ConsumoRealInsumoModel> consumoRealInsumoList =new ArrayList<ConsumoRealInsumoModel>();
+	private List<ConsumoRealInsumoModel> consumoRealInsumoList = new ArrayList<ConsumoRealInsumoModel>();
 
-	private List<UtilizacionRealMaquinaModel>  utilizacionRealMaquinaList = new ArrayList<UtilizacionRealMaquinaModel>();
+	private List<UtilizacionRealMaquinaModel> utilizacionRealMaquinaList = new ArrayList<UtilizacionRealMaquinaModel>();
 
 	public TareaDetalleSectorModel() {
 		super();
@@ -81,5 +79,4 @@ public class TareaDetalleSectorModel {
 		this.utilizacionRealMaquinaList = utilizacionRealMaquinaList;
 	}
 
-	
 }

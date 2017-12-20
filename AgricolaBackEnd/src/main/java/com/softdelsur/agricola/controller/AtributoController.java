@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,49 +18,44 @@ import com.softdelsur.agricola.model.AtributoConOpcionesModel;
 import com.softdelsur.agricola.model.AtributoModel;
 import com.softdelsur.agricola.service.AtributoService;
 
-
 @RestController
 @RequestMapping("/atributo")
 public class AtributoController {
-	
+
 	@Autowired
 	@Qualifier("atributoServiceImpl")
 	AtributoService atributoService;
-	
+
 	@Autowired
 	@Qualifier("atributoConverter")
 	AtributoConverter atributoConverter;
-	
-	
+
 	@CrossOrigin
 	@GetMapping("/allActivos")
-	public List<AtributoModel> buscarAtributos(){
+	public List<AtributoModel> buscarAtributos() {
 		return atributoConverter.convertListAtributoToListAtributoModel(atributoService.findAtributosActivos());
 	}
-	
+
 	@CrossOrigin
 	@PostMapping("/save")
 	public AtributoModel addAtributo(@RequestBody AtributoModel atributoModel) {
 		System.out.println(atributoModel.getNombreAtributo());
-		
+
 		return atributoConverter.convertAtributoToAtributoModel(
 				atributoService.addAtributo(atributoConverter.convertAtributoMiodelToAtributo(atributoModel)));
-		
-	}
-	
-	@CrossOrigin
-	@DeleteMapping("/remove/{idAtributo}")
-	public AtributoModel eliminarAtributo(@PathVariable("idAtributo") String idAtributo ) {
-		return atributoConverter.convertAtributoToAtributoModel(
-				atributoService.eliminarAtributo(idAtributo));
+
 	}
 
-	
+	@CrossOrigin
+	@DeleteMapping("/remove/{idAtributo}")
+	public AtributoModel eliminarAtributo(@PathVariable("idAtributo") String idAtributo) {
+		return atributoConverter.convertAtributoToAtributoModel(atributoService.eliminarAtributo(idAtributo));
+	}
+
 	@CrossOrigin
 	@GetMapping("/allActivosConOpciones")
-	public List<AtributoConOpcionesModel> buscarAtributosConOpciones(){
+	public List<AtributoConOpcionesModel> buscarAtributosConOpciones() {
 		return atributoService.findAtributosActivosConOpciones();
 	}
-	
 
 }

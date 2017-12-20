@@ -14,7 +14,7 @@ import com.softdelsur.agricola.service.OrdenTrabajoTareaService;
 
 @Service("ordenTrabajoTareaServiceImpl")
 public class OrdenTrabajoTareaServiceImpl implements OrdenTrabajoTareaService {
-	
+
 	@Autowired
 	@Qualifier("ordenTrabajoTareaRepository")
 	OrdenTrabajoTareaRepository ordenTrabajoTareaRepository;
@@ -28,15 +28,17 @@ public class OrdenTrabajoTareaServiceImpl implements OrdenTrabajoTareaService {
 	@Override
 	public List<OrdenTrabajoTarea> findOrdenTrabajoTareaByOrdenTrabajoAndEstado(OrdenTrabajo ordenTrabajo,
 			EstadoOrdenTrabajoTarea estadoOrdenTrabajoTarea) {
-	
+
 		// TODO Auto-generated method stub
-		return ordenTrabajoTareaRepository.findOrdenTrabajoTareaByOrdenTrabajoAndEstado(ordenTrabajo, estadoOrdenTrabajoTarea);
+		return ordenTrabajoTareaRepository.findOrdenTrabajoTareaByOrdenTrabajoAndEstado(ordenTrabajo,
+				estadoOrdenTrabajoTarea);
 	}
 
 	@Override
 	public void delelteOrdenTrabajoTarea(OrdenTrabajoTarea ordenTrabajoTarea) {
 		// TODO Auto-generated method stub
-		 ordenTrabajoTareaRepository.delete(ordenTrabajoTarea);;
+		ordenTrabajoTareaRepository.delete(ordenTrabajoTarea);
+		;
 	}
 
 }

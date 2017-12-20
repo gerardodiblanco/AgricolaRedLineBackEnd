@@ -7,8 +7,8 @@ import com.softdelsur.agricola.entity.TareaMaquinaria;
 
 public interface TareaMaquinariaService {
 
-		List<TareaMaquinaria> findTareaMaquinariaByTarea(Tarea tarea);
-		TareaMaquinaria addTareaMaquinaria(TareaMaquinaria tareaMaquinaria);
-	
+	List<TareaMaquinaria> findTareaMaquinariaByTarea(Tarea tarea);
+
+	TareaMaquinaria addTareaMaquinaria(TareaMaquinaria tareaMaquinaria);
 
 }

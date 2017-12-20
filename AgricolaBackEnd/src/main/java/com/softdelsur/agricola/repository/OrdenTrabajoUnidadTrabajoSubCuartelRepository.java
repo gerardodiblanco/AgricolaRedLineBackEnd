@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.OrdenTrabajoUnidadTrabajoSubCuartel;
 
 @Repository("ordenTrabajoUnidadTrabajoSubCuartelRepository")
-public interface OrdenTrabajoUnidadTrabajoSubCuartelRepository extends JpaRepository<OrdenTrabajoUnidadTrabajoSubCuartel, Serializable> {
+public interface OrdenTrabajoUnidadTrabajoSubCuartelRepository
+		extends JpaRepository<OrdenTrabajoUnidadTrabajoSubCuartel, Serializable> {
 
 }

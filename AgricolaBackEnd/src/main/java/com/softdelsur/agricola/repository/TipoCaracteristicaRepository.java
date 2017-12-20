@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.TipoCaracteristica;
 
 @Repository("tipoCaracteristicaRepository")
-public interface TipoCaracteristicaRepository extends JpaRepository<TipoCaracteristica, Serializable>{
+public interface TipoCaracteristicaRepository extends JpaRepository<TipoCaracteristica, Serializable> {
 
 }

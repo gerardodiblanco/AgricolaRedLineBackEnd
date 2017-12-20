@@ -5,12 +5,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.hibernate.internal.util.beans.BeanInfoHelper.ReturningBeanInfoDelegate;
-import org.hibernate.loader.plan.exec.process.spi.ReturnReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.RequestToViewNameTranslator;
 
 import com.softdelsur.agricola.entity.SubCuartel;
 import com.softdelsur.agricola.entity.UnidadTrabajo;
@@ -81,8 +78,8 @@ public class UnidadTrabajoConverter {
 					unidadTrabajo);
 
 			if (unidadTrabajoSubCuartelModels != null) {
-				for(UnidadTrabajoSubCuartelModel unidadTrabajoSubCuartelModel: unidadTrabajoSubCuartelModels)
-				unidadTrabajoModel.getSubCuarteles().add(unidadTrabajoSubCuartelModel);
+				for (UnidadTrabajoSubCuartelModel unidadTrabajoSubCuartelModel : unidadTrabajoSubCuartelModels)
+					unidadTrabajoModel.getSubCuarteles().add(unidadTrabajoSubCuartelModel);
 			}
 
 		}
@@ -90,8 +87,6 @@ public class UnidadTrabajoConverter {
 		return unidadTrabajoModel;
 	}
 
-	
-	
 	public List<UnidadTrabajoModel> convertListUnidadTrabajoToListUnidadTrabajoModel(
 			List<UnidadTrabajo> unidadTrabajoList) {
 		List<UnidadTrabajoModel> unidadTrabajoModelList = new ArrayList<>();
@@ -117,21 +112,21 @@ public class UnidadTrabajoConverter {
 			System.out.println("antes de guardar la unidad de trabajo");
 			unidadTrabajo = unidadTrabajoService.addUnidadTrabajo(unidadTrabajo);
 			System.out.println("se guardo la unidad de trabajo");
-			
-			
+
 			// eliminar UnidadTrabajoDeposito , UnidadTrabajoPersonal y
 			// UnidaTrabajoSubCuartel
-			
+
 			List<UnidadTrabajoSubCuartel> unidadTrabajoSubCuartelList = null;
 			unidadTrabajoSubCuartelList = unidadTrabajoSubCuartelService.findVigenteByUnidadTrabajo(unidadTrabajo);
 			if (unidadTrabajoSubCuartelList != null) {
 				for (UnidadTrabajoSubCuartel unidadTrabajoSubCuartel : unidadTrabajoSubCuartelList) {
 					unidadTrabajoSubCuartel.setFechaBaja(Date.valueOf(LocalDate.now()));
-					unidadTrabajoSubCuartel = unidadTrabajoSubCuartelService.addUnidadTrabajoSubCuartel(unidadTrabajoSubCuartel);
+					unidadTrabajoSubCuartel = unidadTrabajoSubCuartelService
+							.addUnidadTrabajoSubCuartel(unidadTrabajoSubCuartel);
 				}
 			}
-			
-	// crear realciones 		
+
+			// crear realciones
 
 			for (UnidadTrabajoDepositoModel unidadTrabajoDepositoModel : unidadTrabajoModel.getDepositos()) {
 				UnidadTrabajoDeposito unidadTrabajoDeposito = null;
@@ -217,14 +212,14 @@ public class UnidadTrabajoConverter {
 				unidadTrabajoSubCuartelModel.setIdCuartel(uts.getSubCuartel().getCuartel().getIdCuartel());
 				unidadTrabajoSubCuartelModel.setNombreCampo(uts.getSubCuartel().getCuartel().getCampo().getNombre());
 				unidadTrabajoSubCuartelModel.setNombreCuartel(uts.getSubCuartel().getCuartel().getDescripcion());
-			
+
 				unidadTrabajoSubCuartelModelList.add(unidadTrabajoSubCuartelModel);
 			}
 
 		}
 		return unidadTrabajoSubCuartelModelList;
 	}
-	
+
 	UnidadTrabajoPersonalModel convertUnidadTrabajoPersonalToModel(UnidadTrabajo unidadTrabajo) {
 		List<UnidadTrabajoPersonal> unidadTrabajoPersonalList = null;
 		UnidadTrabajoPersonalModel unidadTrabajoPersonalModel = null;
@@ -254,7 +249,7 @@ public class UnidadTrabajoConverter {
 		}
 		return unidadTrabajoDepositoModel;
 	}
-	
+
 	public UnidadTrabajoSubCuartelModel convertSubCuartelToUnidadTrabajoSubCuartelModel(SubCuartel subCuartel) {
 		UnidadTrabajoSubCuartelModel unidadTrabajoSubCuartelModel = new UnidadTrabajoSubCuartelModel();
 		unidadTrabajoSubCuartelModel.setId(null);

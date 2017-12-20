@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,31 +20,31 @@ import com.softdelsur.agricola.service.OrdenTrabajoService;
 @RestController
 @RequestMapping("/ordenTrabajo")
 public class OrdenTrabajoController {
-	
+
 	@Autowired
 	@Qualifier("ordenTrabajoServiceImpl")
 	OrdenTrabajoService ordenTrabajoService;
-	
+
 	@Autowired
 	@Qualifier("ordenTrabajoConverter")
 	OrdenTrabajoConverter ordenTrabajoConverter;
 
-	
 	@CrossOrigin
 	@PostMapping("/save")
 	public void guardarOrdenTrabajo(@RequestBody OrdenTrabajoModel ordenTrabajoModel) {
 
 		OrdenTrabajo ordenTrabajo = ordenTrabajoConverter.convertOrdenTrabajoModelToOrdenTrabajo(ordenTrabajoModel);
-	//	ordenTrabajo = ordenTrabajoService.addOrdenTrabajo(ordenTrabajo);
-	
+		// ordenTrabajo = ordenTrabajoService.addOrdenTrabajo(ordenTrabajo);
+
 	}
 
 	@CrossOrigin
 	@GetMapping("/all")
 	public List<OrdenTrabajoModel> buscarOrdenesTrabajo() {
-		return ordenTrabajoConverter.convertListOrdenTrabajoToListOrdenTrabajoModel(ordenTrabajoService.findOrdenesTrabajosActivos());
+		return ordenTrabajoConverter
+				.convertListOrdenTrabajoToListOrdenTrabajoModel(ordenTrabajoService.findOrdenesTrabajosActivos());
 	}
-	
+
 	@CrossOrigin
 	@GetMapping("/findOrdenTrabajo/{idOrdenTrabajo}")
 	public OrdenTrabajoModel buscarOrdenTrabajo(@PathVariable("idOrdenTrabajo") String idOrdenTrabajo) {

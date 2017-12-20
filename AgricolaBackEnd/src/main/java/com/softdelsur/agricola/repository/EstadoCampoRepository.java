@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.EstadoCampo;
 
 @Repository("estadoCampoRepository")
-public interface EstadoCampoRepository extends JpaRepository<EstadoCampo,Serializable> {
+public interface EstadoCampoRepository extends JpaRepository<EstadoCampo, Serializable> {
 
 	EstadoCampo findEstadoCampoByNombre(String nombre);
 }

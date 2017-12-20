@@ -3,9 +3,6 @@ package com.softdelsur.agricola.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.softdelsur.agricola.entity.UnidadTrabajoDeposito;
-import com.softdelsur.agricola.entity.UnidadTrabajoPersonal;
-
 public class UnidadTrabajoModel {
 
 	private String id;
@@ -13,7 +10,7 @@ public class UnidadTrabajoModel {
 	private List<UnidadTrabajoSubCuartelModel> subCuarteles = new ArrayList<>();
 	private List<UnidadTrabajoPersonalModel> personaless = new ArrayList<>();
 	private List<UnidadTrabajoDepositoModel> depositos = new ArrayList<>();
-	
+
 	public UnidadTrabajoModel() {
 		super();
 	}
@@ -58,8 +55,4 @@ public class UnidadTrabajoModel {
 		this.depositos = depositos;
 	}
 
-
-	
-	
-	
 }

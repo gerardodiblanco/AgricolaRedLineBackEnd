@@ -1,6 +1,5 @@
 package com.softdelsur.agricola.model;
 
-
 public class EstadoProveedorModel {
 	private String idEstadoProveedor;
 	private String nombreEstadoProveedor;

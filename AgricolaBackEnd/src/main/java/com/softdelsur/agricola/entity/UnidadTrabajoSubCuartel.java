@@ -25,7 +25,7 @@ public class UnidadTrabajoSubCuartel {
 	private String id;
 	private Date fechaAlta;
 	private Date fechaBaja;
-	
+
 	@JoinColumn
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private UnidadTrabajo unidadTrabajo;
@@ -33,7 +33,7 @@ public class UnidadTrabajoSubCuartel {
 	@JoinColumn
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	private SubCuartel subCuartel;
-	
+
 	public UnidadTrabajoSubCuartel() {
 		super();
 	}
@@ -45,8 +45,6 @@ public class UnidadTrabajoSubCuartel {
 	public void setId(String id) {
 		this.id = id;
 	}
-
-
 
 	public Date getFechaAlta() {
 		return fechaAlta;
@@ -128,7 +126,5 @@ public class UnidadTrabajoSubCuartel {
 			return false;
 		return true;
 	}
-
-
 
 }

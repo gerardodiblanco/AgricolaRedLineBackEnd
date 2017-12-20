@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.softdelsur.agricola.entity.EstadoParteDiario;
 
 @Repository("estadoParteDiarioRepository")
-public interface EstadoParteDiarioRepository extends JpaRepository<EstadoParteDiario, Serializable>{
+public interface EstadoParteDiarioRepository extends JpaRepository<EstadoParteDiario, Serializable> {
 
 }

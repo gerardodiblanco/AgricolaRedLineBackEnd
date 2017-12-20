@@ -11,10 +11,11 @@ import com.softdelsur.agricola.entity.EstadoSubCuartel;
 import com.softdelsur.agricola.entity.SubCuartel;
 
 @Repository("subCuartelRepository")
-public interface SubCuartelRepository  extends JpaRepository<SubCuartel, Serializable>{
+public interface SubCuartelRepository extends JpaRepository<SubCuartel, Serializable> {
 
 	SubCuartel findByIdSubCuartel(String id);
-	List<SubCuartel> findByCuartelAndEstado(Cuartel cuartel,EstadoSubCuartel estadoSubCuartel);
-	
+
+	List<SubCuartel> findByCuartelAndEstado(Cuartel cuartel, EstadoSubCuartel estadoSubCuartel);
+
 	List<SubCuartel> findByEstado(EstadoSubCuartel estadoSubCuartel);
 }
